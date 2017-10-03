@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.46.2"></a>
+## [4.46.2](https://github.com/lonelyplanet/backpack-ui/compare/v4.46.1...v4.46.2) (2017-10-03)
+
+
+### Bug Fixes
+
+* handle issue where style is not being passed to flyout ([#515](https://github.com/lonelyplanet/backpack-ui/issues/515)) ([5bcd301](https://github.com/lonelyplanet/backpack-ui/commit/5bcd301))
+
+
+
 <a name="4.46.1"></a>
 ## [4.46.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.46.0...v4.46.1) (2017-10-02)
 
