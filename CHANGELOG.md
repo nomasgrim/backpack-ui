@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.46.3"></a>
+## [4.46.3](https://github.com/lonelyplanet/backpack-ui/compare/v4.46.2...v4.46.3) (2017-10-05)
+
+
+### Bug Fixes
+
+* Work on upgrading to react 16 ([cabf025](https://github.com/lonelyplanet/backpack-ui/commit/cabf025))
+
+
+
 <a name="4.46.2"></a>
 ## [4.46.2](https://github.com/lonelyplanet/backpack-ui/compare/v4.46.1...v4.46.2) (2017-10-03)
 
