@@ -73,7 +73,7 @@
     "truncate": "^2.0.0"
   },
   "peerDependencies": {
-    "react": "^15.0.0|^16.0.0"
+    "react": "^15.0.0 || ^16.0.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.1.9",
