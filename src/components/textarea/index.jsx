@@ -96,6 +96,7 @@ class Textarea extends React.Component {
     delete props.autogrow;
     delete props.autofocus;
     delete props.maxLines;
+    delete props.disableEnter;
 
     return (
       <textarea
