@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.46.5"></a>
+## [4.46.5](https://github.com/lonelyplanet/backpack-ui/compare/v4.46.4...v4.46.5) (2017-10-11)
+
+
+### Bug Fixes
+
+* Update style, add keyframes to Loading component ([5b6cb02](https://github.com/lonelyplanet/backpack-ui/commit/5b6cb02))
+
+
+
 <a name="4.46.4"></a>
 ## [4.46.4](https://github.com/lonelyplanet/backpack-ui/compare/v4.46.3...v4.46.4) (2017-10-11)
 
