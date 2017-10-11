@@ -2415,7 +2415,7 @@ storiesOf("Strapline", module)
 storiesOf("Switch", module)
   .addDecorator(withKnobs)
   .add("Default", () => (
-    <Center>
+    <Center backgroundColor="white">
       <Switch
         id={text("ID", "privacy-control")}
         name={text("Name", "privacy_control")}
