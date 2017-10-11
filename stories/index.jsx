@@ -91,7 +91,7 @@ import ListItemBookmark from "../src/components/listItemBookmark";
 import ListItemBookmarkEntry from "../src/components/listItemBookmarkEntry";
 import ListItemNews from "../src/components/listItemNews";
 // ListItemWireframe
-// Loading
+import Loading from "../src/components/loading";
 // Location
 import LocationLabel from "../src/components/locationLabel";
 import Logo from "../src/components/logo";
@@ -1223,6 +1223,16 @@ storiesOf("List item (news)", module)
         size={select("Size", ["small", "medium"], "medium")}
         isSponsored={boolean("Sponsored", false)}
       />
+    </StyleRoot>
+  ));
+
+storiesOf("Loading", module)
+  .addDecorator(withKnobs)
+  .add("Default", () => (
+    <StyleRoot>
+      <Center backgroundColor="white">
+        <Loading />
+      </Center>
     </StyleRoot>
   ));
 
