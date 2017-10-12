@@ -78,9 +78,9 @@ class EditListModal extends React.Component {
             {(currentStep, goToNextStep, goToPreviousStep, setCurrentStep) => (
               <div>
                 <BookmarkListMenu
+                  className="BookmarksMenuOptions"
                   iconName="Ellipsis"
                   iconLabel="View list options"
-                  style={[styles.bookmarksMenu, styles.bookmarksMenuOptions]}
                 >
                   <BookmarkListMenuOption
                     onClick={toggle}
