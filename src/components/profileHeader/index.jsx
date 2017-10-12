@@ -18,6 +18,7 @@ const ProfileHeader = ({
   interestsLimit,
   alignment,
   style,
+  website,
 }) => (
   <div
     className="ProfileHeader"
@@ -76,6 +77,14 @@ const ProfileHeader = ({
         </TextBodySmall>
       }
 
+      {website && (<div>
+        <TextBodySmall style={{ marginTop: "10px" }}>
+          <a href={website} target="_blank" rel="noopener noreferrer">
+            {website}
+          </a>
+        </TextBodySmall>
+      </div>)}
+
       {interests && interests.length > 0 &&
         <TagList
           style={{ marginTop: "39px" }}
@@ -94,6 +103,7 @@ const ProfileHeader = ({
 ProfileHeader.propTypes = {
   name: PropTypes.string.isRequired,
   intro: PropTypes.string,
+  website: PropTypes.website,
   avatarSrc: PropTypes.string,
   location: PropTypes.string,
   interests: PropTypes.arrayOf(PropTypes.string),
