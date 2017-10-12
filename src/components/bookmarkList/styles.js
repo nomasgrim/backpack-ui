@@ -19,9 +19,6 @@ import { span } from "../../utils/grid";
 
 const gutters = [16, 32, 64];
 const m24 = 24;
-const m40 = 40;
-const m104 = 104;
-const m208 = 208;
 
 const listItemAnchorHover = {
   inline: {
@@ -64,45 +61,6 @@ const listItemAnchorHover = {
 };
 
 const styles = {
-  container: {
-    marginTop: `${m40}px`,
-
-    [`@media (max-width: ${mq.max["720"]})`]: {
-      marginBottom: "40vh",
-    },
-
-    [`@media (min-width: ${mq.min["720"]})`]: {
-      marginBottom: `${m208}px`,
-      marginTop: `${m104}px`,
-    },
-  },
-
-  bookmarksMenu: {
-    position: "absolute",
-    top: "-8px",
-    zIndex: zIndex.default,
-
-    [`@media (min-width: ${mq.min["720"]})`]: {
-      top: "-12px",
-    },
-  },
-
-  bookmarksMenuShare: {
-    right: `${gutters[0] + 40}px`,
-
-    [`@media (min-width: ${mq.min["720"]})`]: {
-      right: "40px",
-    },
-  },
-
-  bookmarksMenuOptions: {
-    right: `${gutters[0]}px`,
-
-    [`@media (min-width: ${mq.min["720"]})`]: {
-      right: 0,
-    },
-  },
-
   listItemAnchor: {
     color: "inherit",
     display: "block",
