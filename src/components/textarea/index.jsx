@@ -15,11 +15,13 @@ class Textarea extends React.Component {
     this.state = {
       height: Input.height,
       hideOverflow: true,
+      currentValue: props.value,
     };
 
     this.onInput = this.onInput.bind(this);
     this.disableEnterKey = this.disableEnterKey.bind(this);
     this.autoGrow = this.autoGrow.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
@@ -76,6 +78,13 @@ class Textarea extends React.Component {
     }
   }
 
+  handleChange(e) {
+    if (this.props.onChange) {
+      this.props.onChange(e);
+    }
+    this.setState({ currentValue: e.target.value });
+  }
+
   autoGrow() {
     const maxHeight = (this.props.maxLines * Input.lineHeight) + Input.height;
 
@@ -100,8 +109,10 @@ class Textarea extends React.Component {
     return (
       <textarea
         {...props}
+        value={this.state.currentValue}
         ref={node => { this.textarea = node; }}
         onInput={this.onInput}
+        onChange={this.handleChange}
         style={[
           styles,
           !this.props.autogrow && {
@@ -125,6 +136,8 @@ Textarea.propTypes = {
   onInput: PropTypes.func,
   disableEnter: PropTypes.bool,
   style: propTypes.style,
+  onChange: PropTypes.func,
+  value: PropTypes.string,
 };
 
 Textarea.defaultProps = {
@@ -134,6 +147,7 @@ Textarea.defaultProps = {
   onInput: null,
   disableEnter: false,
   style: null,
+  onChange: null,
 };
 
 export default radium(Textarea);
