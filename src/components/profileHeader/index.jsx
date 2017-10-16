@@ -1,99 +1,305 @@
 import React from "react";
 import PropTypes from "prop-types";
-import radium from "radium";
+import radium, { Style } from "radium";
+import MarkdownRenderer from "react-markdown-renderer";
 import Avatar from "../avatar";
 import LocationLabel from "../locationLabel";
 import Tag from "../tag";
 import TagList from "../tagList";
-import { Heading, TextBodySmall } from "../text";
+import MoreLink from "../moreLink";
+import { Heading } from "../text";
+import colors from "../../styles/colors";
+import {
+  fontSizeHeading7,
+  fontSizeBodySmall,
+  lineHeightHeading7,
+  lineHeightReset,
+} from "../../styles/typography";
+import { textBodySmall } from "../../utils/typography";
 import propTypes from "../../utils/propTypes";
-import { span, gutter } from "../../utils/grid";
 
-const ProfileHeader = ({
-  name,
-  intro,
-  avatarSrc,
-  location,
-  interests,
-  interestsLimit,
-  alignment,
-  style,
-}) => (
-  <div
-    className="ProfileHeader"
-    style={[
-      (alignment === "center") && { textAlign: "center" },
-      (alignment === "left" && {
-        display: "flex",
-        flexDirection: "row-reverse",
-        justifyContent: "space-between",
-        maxWidth: span(6, "static"),
-      }),
+class ProfileHeader extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      expanded: false,
+      showReadMore: false,
+    };
+
+    this.maxLines = 3;
+    this.paragraphLineHeight = 24;
+    this.maxHeight = (this.paragraphLineHeight * this.maxLines);
+
+    this.toggleReadMoreLink = this.toggleReadMoreLink.bind(this);
+    this.toggleExpandedState = this.toggleExpandedState.bind(this);
+  }
+
+  componentDidMount() {
+    window.addEventListener("resize", () => {
+      setTimeout(() => {
+        this.toggleReadMoreLink();
+      }, 100);
+    });
+
+    this.toggleReadMoreLink();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.toggleReadMoreLink);
+  }
+
+  toggleReadMoreLink() {
+    // MarkdownRenderer wraps `props.intro` with `p` element, which is
+    // needed to calculate the height of the text. If you remove
+    // MarkdownRenderer, make sure to wrap `props.intro` with a `p`
+    // element.
+    const height = this.clampedText.querySelector("p").offsetHeight;
+
+    this.setState({
+      showReadMore: (height / this.paragraphLineHeight) > this.maxLines,
+    });
+  }
+
+  toggleExpandedState() {
+    this.setState({
+      expanded: !this.state.expanded,
+    });
+  }
+
+  render() {
+    const {
+      name,
+      intro,
+      avatarSrc,
+      website,
+      location,
+      interests,
+      interestsLimit,
+      alignment,
       style,
-    ]}
-  >
-    {avatarSrc &&
-      <div
-        className="ProfileHeader-avatar"
+    } = this.props;
+
+    const styles = {
+      header: {
+        center: {
+          textAlign: "center",
+        },
+
+        left: {},
+      },
+
+      flexContainer: {
+        center: {},
+
+        left: {
+          display: "flex",
+          alignItems: "center",
+        },
+      },
+
+      avatar: {
+        center: {},
+
+        left: {
+          marginRight: "33px",
+        },
+      },
+
+      textContainer: {
+        center: {
+          marginTop: "23px",
+        },
+
+        left: {},
+      },
+
+      locationLabel: {
+        center: {
+          marginBottom: "10px",
+        },
+
+        left: {
+          marginBottom: "7px",
+        },
+      },
+
+      heading: {
+        lineHeight: lineHeightReset,
+      },
+
+      website: {
+        default: {
+          fontSize: `${fontSizeHeading7}px`,
+          lineHeight: lineHeightReset,
+        },
+
+        center: {
+          marginTop: "6px",
+        },
+
+        left: {
+          marginTop: "8px",
+        },
+      },
+
+      bio: {
+        default: {
+          marginTop: "37px",
+        },
+
+        center: {
+          lineHeight: (this.paragraphLineHeight / fontSizeBodySmall),
+        },
+
+        left: {
+          fontSize: `${fontSizeHeading7}px`,
+          lineHeight: lineHeightHeading7,
+        },
+      },
+
+      clampedText: {
+        display: "-webkit-box",
+        maxHeight: `${this.maxHeight}px`,
+        overflow: "hidden",
+        textOverflow: "ellipsis",
+        WebkitBoxOrient: "vertical",
+        WebkitLineClamp: this.maxLines,
+      },
+
+      tagList: {
+        center: {
+          marginTop: "39px",
+        },
+
+        left: {
+          marginTop: "31px",
+        },
+      },
+
+      textBodySmall: Object.assign({}, {
+        color: colors.textPrimary,
+        marginBottom: 0,
+        marginTop: 0,
+      }, textBodySmall()),
+    };
+
+    return (
+      <header
+        className="ProfileHeader"
         style={[
-          (alignment === "left") && {
-            flexShrink: 0,
-            marginLeft: gutter("static"),
-            maxWidth: span(1, "static"),
-          },
+          styles.header[alignment],
+          style,
         ]}
       >
-        <Avatar
-          src={avatarSrc}
-          alt={`Avatar for user ${name}`}
-          size={80}
+        <Style
+          scopeSelector=".ProfileHeader-bio"
+          rules={{
+            "img, video, iframe": {
+              display: "none !important",
+            },
+          }}
         />
-      </div>
-    }
 
-    <div
-      className="ProfileHeader-info"
-      style={[
-        (alignment === "center" && { marginTop: "23px" }),
-        (alignment === "left" && { maxWidth: span(4, "static") }),
-      ]}
-    >
-      {name &&
-        <Heading level={1} size={4} weight="medium">
-          {name}
-        </Heading>
-      }
+        <div style={styles.flexContainer[alignment]}>
+          {avatarSrc &&
+            <Avatar
+              src={avatarSrc}
+              alt={`Avatar for user ${name}`}
+              size={80}
+              className="ProfileHeader-avatar"
+              style={styles.avatar[alignment]}
+            />
+          }
 
-      {location &&
-        <LocationLabel style={{ marginTop: "5px" }}>
-          {location}
-        </LocationLabel>
-      }
+          <div style={styles.textContainer[alignment]}>
+            {location &&
+              <LocationLabel style={styles.locationLabel[alignment]}>
+                {location}
+              </LocationLabel>
+            }
 
-      {intro &&
-        <TextBodySmall style={{ marginTop: "25px" }}>
-          {intro}
-        </TextBodySmall>
-      }
+            {name &&
+              <Heading
+                level={1}
+                size={5}
+                weight="medium"
+                style={styles.heading}
+              >
+                {name}
+              </Heading>
+            }
 
-      {interests && interests.length > 0 &&
-        <TagList
-          style={{ marginTop: "39px" }}
-          limit={interestsLimit}
-          rows={10}
-        >
-          {interests.map((interest) => (
-            <Tag key={interest}>{interest}</Tag>
-          ))}
-        </TagList>
-      }
-    </div>
-  </div>
-);
+            {website &&
+              <p
+                style={[
+                  styles.textBodySmall,
+                  styles.website.default,
+                  styles.website[alignment],
+                ]}
+              >
+                <a href={website} target="_blank" rel="noopener noreferrer">
+                  {website.substr(website.indexOf("://") + 3).replace("www.", "")}
+                </a>
+              </p>
+            }
+          </div>
+        </div>
+
+        {intro &&
+          <div
+            style={[
+              styles.textBodySmall,
+              styles.bio.default,
+              styles.bio[alignment],
+            ]}
+          >
+            <div
+              ref={node => { this.clampedText = node; }}
+              style={[!this.state.expanded && styles.clampedText]}
+            >
+              {/*
+                Wrap {intro} with `p` and delete this comment
+                **if** MarkdownRenderer is removed
+              */}
+              <MarkdownRenderer
+                markdown={intro}
+              />
+            </div>
+
+            {this.state.showReadMore &&
+              <MoreLink
+                caps
+                size="small"
+                hideIcon
+                onClick={this.toggleExpandedState}
+              >
+                {this.state.expanded ? "Read less" : "Read more"}
+              </MoreLink>
+            }
+          </div>
+        }
+
+        {interests && interests.length > 0 &&
+          <TagList
+            style={styles.tagList[alignment]}
+            limit={interestsLimit}
+            rows={10}
+          >
+            {interests.map((interest) => (
+              <Tag key={interest}>{interest}</Tag>
+            ))}
+          </TagList>
+        }
+      </header>
+    );
+  }
+}
 
 ProfileHeader.propTypes = {
   name: PropTypes.string.isRequired,
   intro: PropTypes.string,
+  website: PropTypes.website,
   avatarSrc: PropTypes.string,
   location: PropTypes.string,
   interests: PropTypes.arrayOf(PropTypes.string),

@@ -1757,6 +1757,7 @@ storiesOf("Profile header", module)
       avatarSrc={text("Avatar URL", "https://img2.wikia.nocookie.net/__cb20111018235020/muppet/images/thumb/1/14/Rizzo11.png/300px-Rizzo11.png")}
       name={text("Name", "Rizzo the Rat")}
       location={text("Location", "Ottawa, Ontario")}
+      website={text("Website URL", "https://www.lonelyplanet.com")}
       intro={text("Introduction", `The very basic core of a woman’s living spirit is
         her passion for adventure. The joy of life comes from our encounters with new
         experiences, and hence there is no greater joy than to have an endlessly changing
