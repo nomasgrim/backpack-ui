@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.47.0"></a>
+# [4.47.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.46.5...v4.47.0) (2017-10-16)
+
+
+### Bug Fixes
+
+* Update profile header component ([2fb2b3e](https://github.com/lonelyplanet/backpack-ui/commit/2fb2b3e))
+* Update styles for LocationLabel ([81849b0](https://github.com/lonelyplanet/backpack-ui/commit/81849b0))
+
+
+### Features
+
+* Add id, className props to Avatar component ([01ded9f](https://github.com/lonelyplanet/backpack-ui/commit/01ded9f))
+* add reveal with flyout to bookmarkListMenu ([#525](https://github.com/lonelyplanet/backpack-ui/issues/525)) ([e5426ed](https://github.com/lonelyplanet/backpack-ui/commit/e5426ed))
+* Update ProfileHeader component ([dd0dbf3](https://github.com/lonelyplanet/backpack-ui/commit/dd0dbf3))
+
+
+
 <a name="4.46.5"></a>
 ## [4.46.5](https://github.com/lonelyplanet/backpack-ui/compare/v4.46.4...v4.46.5) (2017-10-11)
 
