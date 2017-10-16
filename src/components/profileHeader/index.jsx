@@ -7,8 +7,15 @@ import LocationLabel from "../locationLabel";
 import Tag from "../tag";
 import TagList from "../tagList";
 import MoreLink from "../moreLink";
-import { Heading, TextBodySmall } from "../text";
-import { fontSizeHeading7, lineHeightReset } from "../../styles/typography";
+import { Heading } from "../text";
+import colors from "../../styles/colors";
+import {
+  fontSizeHeading7,
+  fontSizeBodySmall,
+  lineHeightHeading7,
+  lineHeightReset,
+} from "../../styles/typography";
+import { textBodySmall } from "../../utils/typography";
 import propTypes from "../../utils/propTypes";
 
 class ProfileHeader extends React.Component {
@@ -17,12 +24,44 @@ class ProfileHeader extends React.Component {
 
     this.state = {
       expanded: false,
+      showReadMore: false,
     };
 
-    this.readMore = this.readMore.bind(this);
+    this.maxLines = 3;
+    this.paragraphLineHeight = 24;
+    this.maxHeight = (this.paragraphLineHeight * this.maxLines);
+
+    this.toggleReadMoreLink = this.toggleReadMoreLink.bind(this);
+    this.toggleExpandedState = this.toggleExpandedState.bind(this);
   }
 
-  readMore() {
+  componentDidMount() {
+    window.addEventListener("resize", () => {
+      setTimeout(() => {
+        this.toggleReadMoreLink();
+      }, 100);
+    });
+
+    this.toggleReadMoreLink();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.toggleReadMoreLink);
+  }
+
+  toggleReadMoreLink() {
+    // MarkdownRenderer wraps `props.intro` with `p` element, which is
+    // needed to calculate the height of the text. If you remove
+    // MarkdownRenderer, make sure to wrap `props.intro` with a `p`
+    // element.
+    const height = this.clampedText.querySelector("p").offsetHeight;
+
+    this.setState({
+      showReadMore: (height / this.paragraphLineHeight) > this.maxLines,
+    });
+  }
+
+  toggleExpandedState() {
     this.setState({
       expanded: !this.state.expanded,
     });
@@ -41,11 +80,115 @@ class ProfileHeader extends React.Component {
       style,
     } = this.props;
 
+    const styles = {
+      header: {
+        center: {
+          textAlign: "center",
+        },
+
+        left: {},
+      },
+
+      flexContainer: {
+        center: {},
+
+        left: {
+          display: "flex",
+          alignItems: "center",
+        },
+      },
+
+      avatar: {
+        center: {},
+
+        left: {
+          marginRight: "33px",
+        },
+      },
+
+      textContainer: {
+        center: {
+          marginTop: "23px",
+        },
+
+        left: {},
+      },
+
+      locationLabel: {
+        center: {
+          marginBottom: "10px",
+        },
+
+        left: {
+          marginBottom: "7px",
+        },
+      },
+
+      heading: {
+        lineHeight: lineHeightReset,
+      },
+
+      website: {
+        default: {
+          fontSize: `${fontSizeHeading7}px`,
+          lineHeight: lineHeightReset,
+        },
+
+        center: {
+          marginTop: "6px",
+        },
+
+        left: {
+          marginTop: "8px",
+        },
+      },
+
+      bio: {
+        default: {
+          marginTop: "37px",
+        },
+
+        center: {
+          lineHeight: (this.paragraphLineHeight / fontSizeBodySmall),
+        },
+
+        left: {
+          fontSize: `${fontSizeHeading7}px`,
+          lineHeight: lineHeightHeading7,
+        },
+      },
+
+      clampedText: {
+        display: "-webkit-box",
+        maxHeight: `${this.maxHeight}px`,
+        overflow: "hidden",
+        textOverflow: "ellipsis",
+        WebkitBoxOrient: "vertical",
+        WebkitLineClamp: this.maxLines,
+      },
+
+      tagList: {
+        center: {
+          marginTop: "39px",
+        },
+
+        left: {
+          marginTop: "31px",
+        },
+      },
+
+      textBodySmall: Object.assign({}, {
+        color: colors.textPrimary,
+        marginBottom: 0,
+        marginTop: 0,
+      }, textBodySmall()),
+    };
+
     return (
       <header
         className="ProfileHeader"
         style={[
-          (alignment === "center") && { textAlign: "center" },
+          styles.header[alignment],
           style,
         ]}
       >
@@ -58,110 +201,88 @@ class ProfileHeader extends React.Component {
           }}
         />
 
-        <div
-          style={[
-            (alignment === "left") && { display: "flex", alignItems: "center" },
-          ]}
-        >
+        <div style={styles.flexContainer[alignment]}>
           {avatarSrc &&
             <Avatar
               src={avatarSrc}
               alt={`Avatar for user ${name}`}
               size={80}
               className="ProfileHeader-avatar"
-              style={[
-                (alignment === "left") && {
-                  marginRight: "33px",
-                },
-              ]}
+              style={styles.avatar[alignment]}
             />
           }
 
-          <div
-            style={[
-              (alignment === "center") && { marginTop: "23px" },
-            ]}
-          >
+          <div style={styles.textContainer[alignment]}>
             {location &&
-              <LocationLabel
-                style={[
-                  (alignment === "center") && { marginBottom: "10px" },
-                  (alignment === "left") && { marginBottom: "7px" },
-                ]}
-              >
+              <LocationLabel style={styles.locationLabel[alignment]}>
                 {location}
               </LocationLabel>
             }
 
             {name &&
-              <Heading level={1} size={5} weight="medium" style={{ lineHeight: lineHeightReset }}>
+              <Heading
+                level={1}
+                size={5}
+                weight="medium"
+                style={styles.heading}
+              >
                 {name}
               </Heading>
             }
 
             {website &&
-              <TextBodySmall
+              <p
                 style={[
-                  { fontSize: `${fontSizeHeading7}px`, lineHeight: lineHeightReset },
-                  (alignment === "center") && { marginTop: "6px" },
-                  (alignment === "left") && { marginTop: "8px" },
+                  styles.textBodySmall,
+                  styles.website.default,
+                  styles.website[alignment],
                 ]}
               >
                 <a href={website} target="_blank" rel="noopener noreferrer">
                   {website.substr(website.indexOf("://") + 3).replace("www.", "")}
                 </a>
-              </TextBodySmall>
+              </p>
             }
           </div>
         </div>
 
         {intro &&
-          <div className="ProfileHeader-bio">
-            <TextBodySmall
-              style={[
-                { marginTop: "37px" },
-                (alignment === "center") && {
-                  lineHeight: (24 / 14),
-                },
-                (alignment === "left") && {
-                  fontSize: "16px",
-                  lineHeight: (24 / 16),
-                },
-              ]}
+          <div
+            style={[
+              styles.textBodySmall,
+              styles.bio.default,
+              styles.bio[alignment],
+            ]}
+          >
+            <div
+              ref={node => { this.clampedText = node; }}
+              style={[!this.state.expanded && styles.clampedText]}
             >
-              <div
-                style={[!this.state.expanded && {
-                  display: "-webkit-box",
-                  maxHeight: `${24 * 3}px`,
-                  overflow: "hidden",
-                  textOverflow: "ellipsis",
-                  WebkitBoxOrient: "vertical",
-                  WebkitLineClamp: 3,
-                }]}
-              >
-                <MarkdownRenderer
-                  markdown={intro}
-                />
-              </div>
+              {/*
+                Wrap {intro} with `p` and delete this comment
+                **if** MarkdownRenderer is removed
+              */}
+              <MarkdownRenderer
+                markdown={intro}
+              />
+            </div>
 
+            {this.state.showReadMore &&
               <MoreLink
                 caps
                 size="small"
                 hideIcon
-                onClick={this.readMore}
+                onClick={this.toggleExpandedState}
               >
                 {this.state.expanded ? "Read less" : "Read more"}
               </MoreLink>
-            </TextBodySmall>
+            }
           </div>
         }
 
         {interests && interests.length > 0 &&
           <TagList
-            style={[
-              (alignment === "center") && { marginTop: "39px" },
-              (alignment === "left") && { marginTop: "31px" },
-            ]}
+            style={styles.tagList[alignment]}
             limit={interestsLimit}
             rows={10}
           >
