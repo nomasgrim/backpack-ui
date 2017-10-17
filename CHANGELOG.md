@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.47.3"></a>
+## [4.47.3](https://github.com/lonelyplanet/backpack-ui/compare/v4.47.2...v4.47.3) (2017-10-17)
+
+
+### Bug Fixes
+
+* Improve line clamping for ProfileHeader bio ([#527](https://github.com/lonelyplanet/backpack-ui/issues/527)) ([c37ec4e](https://github.com/lonelyplanet/backpack-ui/commit/c37ec4e))
+
+
+
 <a name="4.47.2"></a>
 ## [4.47.2](https://github.com/lonelyplanet/backpack-ui/compare/v4.47.1...v4.47.2) (2017-10-17)
 
