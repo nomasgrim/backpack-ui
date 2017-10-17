@@ -79,7 +79,7 @@ class Textarea extends React.Component {
   }
 
   handleChange(e) {
-    if (this.props.onChange) {
+    if (this.props.onChange && typeof this.props.onChange === "function") {
       this.props.onChange(e);
     }
     this.setState({ currentValue: e.target.value });
