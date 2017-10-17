@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.47.2"></a>
+## [4.47.2](https://github.com/lonelyplanet/backpack-ui/compare/v4.47.1...v4.47.2) (2017-10-17)
+
+
+### Bug Fixes
+
+* check if onChange is a function ([d429008](https://github.com/lonelyplanet/backpack-ui/commit/d429008))
+* make textarea controlled input ([d825734](https://github.com/lonelyplanet/backpack-ui/commit/d825734))
+
+
+
 <a name="4.47.1"></a>
 ## [4.47.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.47.0...v4.47.1) (2017-10-17)
 
