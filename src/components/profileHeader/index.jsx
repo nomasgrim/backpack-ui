@@ -225,6 +225,16 @@ class ProfileHeader extends React.Component {
       }
     `;
 
+    const urlRegex = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/; // eslint-disable-line max-len
+
+    const validateUrl = (url) => urlRegex.test(url);
+
+    const urlParser = (url) => {
+      const anchor = document.createElement("a");
+      anchor.href = url;
+      return anchor;
+    };
+
     return (
       <header
         className="ProfileHeader"
@@ -266,7 +276,7 @@ class ProfileHeader extends React.Component {
               </Heading>
             }
 
-            {website &&
+            {website && validateUrl(website) &&
               <p
                 style={[
                   styles.textBodySmall,
@@ -274,12 +284,12 @@ class ProfileHeader extends React.Component {
                   styles.website[alignment],
                 ]}
               >
-                <a href={website} target="_blank" rel="noopener noreferrer">
-                  {website
-                    .replace("https://", "")
-                    .replace("http://", "")
-                    .replace("www.", "")
-                  }
+                <a
+                  href={website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {urlParser(website).hostname.replace("www.", "")}
                 </a>
               </p>
             }
