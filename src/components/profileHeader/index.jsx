@@ -38,17 +38,21 @@ class ProfileHeader extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener("resize", () => {
-      setTimeout(() => {
-        this.toggleReadMoreLink();
-      }, 100);
-    });
+    if (this.props.intro) {
+      window.addEventListener("resize", () => {
+        setTimeout(() => {
+          this.toggleReadMoreLink();
+        }, 100);
+      });
 
-    this.toggleReadMoreLink();
+      this.toggleReadMoreLink();
+    }
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this.toggleReadMoreLink);
+    if (this.props.intro) {
+      window.removeEventListener("resize", this.toggleReadMoreLink);
+    }
   }
 
   toggleReadMoreLink() {
@@ -271,7 +275,11 @@ class ProfileHeader extends React.Component {
                 ]}
               >
                 <a href={website} target="_blank" rel="noopener noreferrer">
-                  {website.substr(website.indexOf("://") + 3).replace("www.", "")}
+                  {website
+                    .replace("https://", "")
+                    .replace("http://", "")
+                    .replace("www.", "")
+                  }
                 </a>
               </p>
             }
@@ -331,7 +339,7 @@ class ProfileHeader extends React.Component {
 ProfileHeader.propTypes = {
   name: PropTypes.string.isRequired,
   intro: PropTypes.string,
-  website: PropTypes.website,
+  website: PropTypes.string,
   avatarSrc: PropTypes.string,
   location: PropTypes.string,
   interests: PropTypes.arrayOf(PropTypes.string),
@@ -341,7 +349,13 @@ ProfileHeader.propTypes = {
 };
 
 ProfileHeader.defaultProps = {
+  intro: "",
+  website: "",
+  avatarSrc: "",
+  location: "",
+  interests: [],
   alignment: "center",
+  style: null,
 };
 
 export default radium(ProfileHeader);
