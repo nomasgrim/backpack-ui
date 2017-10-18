@@ -65,7 +65,7 @@
     "react-portal": "^3.0.0",
     "react-recaptcha": "^2.2.5",
     "react-router": "^2.8.1",
-    "react-scroll": "^1.4.4",
+    "react-scroll": "~1.5.2",
     "react-slick": "0.14.4",
     "react-stickynode": "^1.2.1",
     "react-tether": "^0.5.2",
