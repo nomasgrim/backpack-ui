@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.47.10"></a>
+## [4.47.10](https://github.com/lonelyplanet/backpack-ui/compare/v4.47.9...v4.47.10) (2017-10-19)
+
+
+### Bug Fixes
+
+* make typeahead respond to touch events ([045f606](https://github.com/lonelyplanet/backpack-ui/commit/045f606))
+
+
+
 <a name="4.47.9"></a>
 ## [4.47.9](https://github.com/lonelyplanet/backpack-ui/compare/v4.47.8...v4.47.9) (2017-10-19)
 
