@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.47.11"></a>
+## [4.47.11](https://github.com/lonelyplanet/backpack-ui/compare/v4.47.10...v4.47.11) (2017-10-19)
+
+
+### Bug Fixes
+
+* update navigation tab :focus styles ([#535](https://github.com/lonelyplanet/backpack-ui/issues/535)) ([079ee4d](https://github.com/lonelyplanet/backpack-ui/commit/079ee4d))
+
+
+
 <a name="4.47.10"></a>
 ## [4.47.10](https://github.com/lonelyplanet/backpack-ui/compare/v4.47.9...v4.47.10) (2017-10-19)
 
