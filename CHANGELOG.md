@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.47.8"></a>
+## [4.47.8](https://github.com/lonelyplanet/backpack-ui/compare/v4.47.7...v4.47.8) (2017-10-19)
+
+
+### Bug Fixes
+
+* Return false if document is undefined in ProfileHeader ([#532](https://github.com/lonelyplanet/backpack-ui/issues/532)) ([93ba3a1](https://github.com/lonelyplanet/backpack-ui/commit/93ba3a1))
+
+
+
 <a name="4.47.7"></a>
 ## [4.47.7](https://github.com/lonelyplanet/backpack-ui/compare/v4.47.6...v4.47.7) (2017-10-19)
 
