@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.47.9"></a>
+## [4.47.9](https://github.com/lonelyplanet/backpack-ui/compare/v4.47.8...v4.47.9) (2017-10-19)
+
+
+### Bug Fixes
+
+* return empty hostname from urlparser if server rendr ([#533](https://github.com/lonelyplanet/backpack-ui/issues/533)) ([940c438](https://github.com/lonelyplanet/backpack-ui/commit/940c438))
+
+
+
 <a name="4.47.8"></a>
 ## [4.47.8](https://github.com/lonelyplanet/backpack-ui/compare/v4.47.7...v4.47.8) (2017-10-19)
 
