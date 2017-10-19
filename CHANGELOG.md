@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.47.7"></a>
+## [4.47.7](https://github.com/lonelyplanet/backpack-ui/compare/v4.47.6...v4.47.7) (2017-10-19)
+
+
+### Bug Fixes
+
+* only allow photos to be uploaded via avatart uploader ([#531](https://github.com/lonelyplanet/backpack-ui/issues/531)) ([7bc8bed](https://github.com/lonelyplanet/backpack-ui/commit/7bc8bed))
+
+
+
 <a name="4.47.6"></a>
 ## [4.47.6](https://github.com/lonelyplanet/backpack-ui/compare/v4.47.5...v4.47.6) (2017-10-18)
 
