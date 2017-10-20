@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.48.0"></a>
+# [4.48.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.47.11...v4.48.0) (2017-10-20)
+
+
+### Bug Fixes
+
+* Add white background color to switch story ([ffa9926](https://github.com/lonelyplanet/backpack-ui/commit/ffa9926))
+* Delete disableEnter from props spread in textarea component ([8a8368a](https://github.com/lonelyplanet/backpack-ui/commit/8a8368a))
+* Separate padding values in input component ([2e6944b](https://github.com/lonelyplanet/backpack-ui/commit/2e6944b))
+* Use UI green for switch component ([57c5cef](https://github.com/lonelyplanet/backpack-ui/commit/57c5cef))
+
+
+### Features
+
+* Add UI color green to styles/colors ([5ff4f4f](https://github.com/lonelyplanet/backpack-ui/commit/5ff4f4f))
+
+
+
 <a name="4.47.11"></a>
 ## [4.47.11](https://github.com/lonelyplanet/backpack-ui/compare/v4.47.10...v4.47.11) (2017-10-19)
 
