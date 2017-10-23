@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.48.2"></a>
+## [4.48.2](https://github.com/lonelyplanet/backpack-ui/compare/v4.48.1...v4.48.2) (2017-10-23)
+
+
+### Bug Fixes
+
+* Fix bug in iOS; screen appears blank when modal opens ([#538](https://github.com/lonelyplanet/backpack-ui/issues/538)) ([ea9ffe3](https://github.com/lonelyplanet/backpack-ui/commit/ea9ffe3))
+* Make some accessibility improvements to Toast component ([#539](https://github.com/lonelyplanet/backpack-ui/issues/539)) ([f864578](https://github.com/lonelyplanet/backpack-ui/commit/f864578))
+
+
+
 <a name="4.48.1"></a>
 ## [4.48.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.48.0...v4.48.1) (2017-10-20)
 
