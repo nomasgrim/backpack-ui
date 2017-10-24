@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import radium from "radium";
+import Measure from "react-measure";
 import Avatar from "../avatar";
 import LocationLabel from "../locationLabel";
 import Tag from "../tag";
@@ -22,6 +23,9 @@ class ProfileHeader extends React.Component {
     super(props);
 
     this.state = {
+      dimensions: {
+        width: -1,
+      },
     };
 
     this.paragraphLineHeight = 24;
@@ -36,9 +40,13 @@ class ProfileHeader extends React.Component {
       location,
       interests,
       interestsLimit,
-      alignment,
       style,
     } = this.props;
+
+    const { width } = this.state.dimensions;
+
+    // Change the layout based on the component's size
+    const alignment = (width > 540) ? "left" : "center";
 
     const styles = {
       header: {
@@ -150,92 +158,104 @@ class ProfileHeader extends React.Component {
     };
 
     return (
-      <header
-        className="ProfileHeader"
-        style={[
-          styles.header[alignment],
-          style,
-        ]}
+      <Measure
+        bounds
+        onResize={(contentRect) => {
+          this.setState({
+            dimensions: contentRect.bounds,
+          });
+        }}
       >
-        <div style={styles.flexContainer[alignment]}>
-          {avatarSrc &&
-            <Avatar
-              src={avatarSrc}
-              alt={`Avatar for user ${name}`}
-              size={80}
-              className="ProfileHeader-avatar"
-              style={styles.avatar[alignment]}
-            />
-          }
-
-          <div style={styles.textContainer[alignment]}>
-            {location &&
-              <LocationLabel style={styles.locationLabel[alignment]}>
-                {location}
-              </LocationLabel>
-            }
-
-            {name &&
-              <Heading
-                level={1}
-                size={5}
-                weight="medium"
-                style={styles.heading}
-              >
-                {name}
-              </Heading>
-            }
-
-            {website && validateUrl(website) &&
-              <p
-                style={[
-                  styles.textBodySmall,
-                  styles.website.default,
-                  styles.website[alignment],
-                ]}
-              >
-                <a
-                  href={website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {urlParser(website).hostname.replace("www.", "")}
-                </a>
-              </p>
-            }
-          </div>
-        </div>
-
-        {intro &&
-          <ProfileIntro
-            maxLines={3}
-            fontSize={
-              (alignment === "center" && fontSizeBodySmall) ||
-              (alignment === "left" && fontSizeHeading7)
-            }
-            lineHeight={this.paragraphLineHeight}
+        {({ measureRef }) => (
+          <header
+            className="ProfileHeader"
+            ref={measureRef}
             style={[
-              styles.textBodySmall,
-              styles.intro.default,
-              styles.intro[alignment],
+              styles.header[alignment],
+              style,
             ]}
           >
-            {intro}
-          </ProfileIntro>
-        }
+            <div style={styles.flexContainer[alignment]}>
+              {avatarSrc &&
+                <Avatar
+                  src={avatarSrc}
+                  alt={`Avatar for user ${name}`}
+                  size={80}
+                  className="ProfileHeader-avatar"
+                  style={styles.avatar[alignment]}
+                />
+              }
 
-        {interests && interests.length > 0 &&
-          <TagList
-            style={styles.tagList[alignment]}
-            limit={interestsLimit}
-            rows={10}
-          >
-            {interests.map((interest) => (
-              <Tag key={interest}>{interest}</Tag>
-            ))}
-          </TagList>
-        }
-      </header>
+              <div style={styles.textContainer[alignment]}>
+                {location &&
+                  <LocationLabel style={styles.locationLabel[alignment]}>
+                    {location}
+                  </LocationLabel>
+                }
+
+                {name &&
+                  <Heading
+                    level={1}
+                    size={5}
+                    weight="medium"
+                    style={styles.heading}
+                  >
+                    {name}
+                  </Heading>
+                }
+
+                {website && validateUrl(website) &&
+                  <p
+                    style={[
+                      styles.textBodySmall,
+                      styles.website.default,
+                      styles.website[alignment],
+                    ]}
+                  >
+                    <a
+                      href={website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {urlParser(website).hostname.replace("www.", "")}
+                    </a>
+                  </p>
+                }
+              </div>
+            </div>
+
+            {intro &&
+              <ProfileIntro
+                maxLines={3}
+                fontSize={
+                  (alignment === "center" && fontSizeBodySmall) ||
+                  (alignment === "left" && fontSizeHeading7)
+                }
+                lineHeight={this.paragraphLineHeight}
+                style={[
+                  styles.textBodySmall,
+                  styles.intro.default,
+                  styles.intro[alignment],
+                ]}
+              >
+                {intro}
+              </ProfileIntro>
+            }
+
+            {interests && interests.length > 0 &&
+              <TagList
+                style={styles.tagList[alignment]}
+                limit={interestsLimit}
+                rows={10}
+              >
+                {interests.map((interest) => (
+                  <Tag key={interest}>{interest}</Tag>
+                ))}
+              </TagList>
+            }
+          </header>
+        )}
+      </Measure>
     );
   }
 }
@@ -248,7 +268,6 @@ ProfileHeader.propTypes = {
   location: PropTypes.string,
   interests: PropTypes.arrayOf(PropTypes.string),
   interestsLimit: PropTypes.number,
-  alignment: PropTypes.oneOf(["center", "left"]),
   style: propTypes.style,
 };
 
@@ -258,7 +277,6 @@ ProfileHeader.defaultProps = {
   avatarSrc: "",
   location: "",
   interests: [],
-  alignment: "center",
   style: null,
 };
 
