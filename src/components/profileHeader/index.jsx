@@ -1,14 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import radium from "radium";
-import MarkdownRenderer from "react-markdown-renderer";
-import cn from "classnames";
 import Avatar from "../avatar";
 import LocationLabel from "../locationLabel";
 import Tag from "../tag";
 import TagList from "../tagList";
-import MoreLink from "../moreLink";
 import { Heading } from "../text";
+import ProfileIntro from "../profileIntro";
 import colors from "../../styles/colors";
 import {
   fontSizeHeading7,
@@ -17,7 +15,6 @@ import {
   lineHeightReset,
 } from "../../styles/typography";
 import { textBodySmall } from "../../utils/typography";
-import { rgba } from "../../utils/color";
 import propTypes from "../../utils/propTypes";
 
 class ProfileHeader extends React.Component {
@@ -25,52 +22,9 @@ class ProfileHeader extends React.Component {
     super(props);
 
     this.state = {
-      expanded: false,
-      showReadMore: false,
     };
 
-    this.maxLines = 3;
     this.paragraphLineHeight = 24;
-    this.maxHeight = (this.paragraphLineHeight * this.maxLines);
-
-    this.toggleReadMoreLink = this.toggleReadMoreLink.bind(this);
-    this.toggleExpandedState = this.toggleExpandedState.bind(this);
-  }
-
-  componentDidMount() {
-    if (this.props.intro) {
-      window.addEventListener("resize", () => {
-        setTimeout(() => {
-          this.toggleReadMoreLink();
-        }, 100);
-      });
-
-      this.toggleReadMoreLink();
-    }
-  }
-
-  componentWillUnmount() {
-    if (this.props.intro) {
-      window.removeEventListener("resize", this.toggleReadMoreLink);
-    }
-  }
-
-  toggleReadMoreLink() {
-    // MarkdownRenderer wraps `props.intro` with `p` element, which is
-    // needed to calculate the height of the text. If you remove
-    // MarkdownRenderer, make sure to wrap `props.intro` with a `p`
-    // element.
-    const height = this.clampedText.querySelector("p").offsetHeight;
-
-    this.setState({
-      showReadMore: (height / this.paragraphLineHeight) > this.maxLines,
-    });
-  }
-
-  toggleExpandedState() {
-    this.setState({
-      expanded: !this.state.expanded,
-    });
   }
 
   render() {
@@ -149,7 +103,7 @@ class ProfileHeader extends React.Component {
         },
       },
 
-      bio: {
+      intro: {
         default: {
           marginTop: "37px",
         },
@@ -181,50 +135,6 @@ class ProfileHeader extends React.Component {
       }, textBodySmall()),
     };
 
-    const lineHeight = (alignment === "center" && (this.paragraphLineHeight / fontSizeBodySmall)) ||
-      (alignment === "left" && lineHeightHeading7);
-
-    const markup = (htmlContent) => ({ __html: htmlContent });
-
-    const dangerousStyles = `
-      .ProfileHeader .ClampedText img,
-      .ProfileHeader .ClampedText video,
-      .ProfileHeader .ClampedText iframe {
-        display: none !important;
-      }
-
-      .ProfileHeader .ClampedText:not(.expanded) {
-        display: block;
-        display: -webkit-box;
-        height: calc(1em * ${lineHeight} * ${this.maxLines});
-        line-height: ${lineHeight};
-        overflow: hidden;
-        padding: 0;
-        position: relative;
-        text-overflow: ellipsis;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: ${this.maxLines};
-      }
-
-      .ProfileHeader .ClampedText:not(.expanded)::after {
-        background: linear-gradient(to right, ${rgba(colors.bgPrimary, 0)}, ${rgba(colors.bgPrimary, 1)} 75%);
-        bottom: 0;
-        content: "…";
-        display: block;
-        height: calc(1em * ${lineHeight});
-        position: absolute;
-        right: 0;
-        text-align: right;
-        width: 10%;
-      }
-
-      @supports (-webkit-line-clamp: ${this.maxLines}) {
-        .ProfileHeader .ClampedText:not(.expanded)::after {
-          display: none !important;
-        }
-      }
-    `;
-
     const urlRegex = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/; // eslint-disable-line max-len
 
     const validateUrl = (url) => urlRegex.test(url);
@@ -247,10 +157,6 @@ class ProfileHeader extends React.Component {
           style,
         ]}
       >
-        <style
-          dangerouslySetInnerHTML={markup(dangerousStyles)}
-        />
-
         <div style={styles.flexContainer[alignment]}>
           {avatarSrc &&
             <Avatar
@@ -301,37 +207,21 @@ class ProfileHeader extends React.Component {
         </div>
 
         {intro &&
-          <div
+          <ProfileIntro
+            maxLines={3}
+            fontSize={
+              (alignment === "center" && fontSizeBodySmall) ||
+              (alignment === "left" && fontSizeHeading7)
+            }
+            lineHeight={this.paragraphLineHeight}
             style={[
               styles.textBodySmall,
-              styles.bio.default,
-              styles.bio[alignment],
+              styles.intro.default,
+              styles.intro[alignment],
             ]}
           >
-            <div
-              className={cn("ClampedText", this.state.expanded && "expanded")}
-              ref={node => { this.clampedText = node; }}
-            >
-              {/*
-                Wrap {intro} with `p` and delete this comment
-                **if** MarkdownRenderer is removed
-              */}
-              <MarkdownRenderer
-                markdown={intro}
-              />
-            </div>
-
-            {this.state.showReadMore &&
-              <MoreLink
-                caps
-                size="small"
-                hideIcon
-                onClick={this.toggleExpandedState}
-              >
-                {this.state.expanded ? "Read less" : "Read more"}
-              </MoreLink>
-            }
-          </div>
+            {intro}
+          </ProfileIntro>
         }
 
         {interests && interests.length > 0 &&
