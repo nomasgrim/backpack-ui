@@ -1,14 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import radium from "radium";
-import MarkdownRenderer from "react-markdown-renderer";
-import cn from "classnames";
+import Measure from "react-measure";
 import Avatar from "../avatar";
 import LocationLabel from "../locationLabel";
 import Tag from "../tag";
 import TagList from "../tagList";
-import MoreLink from "../moreLink";
 import { Heading } from "../text";
+import ProfileIntro from "../profileIntro";
 import colors from "../../styles/colors";
 import {
   fontSizeHeading7,
@@ -17,7 +16,6 @@ import {
   lineHeightReset,
 } from "../../styles/typography";
 import { textBodySmall } from "../../utils/typography";
-import { rgba } from "../../utils/color";
 import propTypes from "../../utils/propTypes";
 
 class ProfileHeader extends React.Component {
@@ -25,52 +23,12 @@ class ProfileHeader extends React.Component {
     super(props);
 
     this.state = {
-      expanded: false,
-      showReadMore: false,
+      dimensions: {
+        width: -1,
+      },
     };
 
-    this.maxLines = 3;
     this.paragraphLineHeight = 24;
-    this.maxHeight = (this.paragraphLineHeight * this.maxLines);
-
-    this.toggleReadMoreLink = this.toggleReadMoreLink.bind(this);
-    this.toggleExpandedState = this.toggleExpandedState.bind(this);
-  }
-
-  componentDidMount() {
-    if (this.props.intro) {
-      window.addEventListener("resize", () => {
-        setTimeout(() => {
-          this.toggleReadMoreLink();
-        }, 100);
-      });
-
-      this.toggleReadMoreLink();
-    }
-  }
-
-  componentWillUnmount() {
-    if (this.props.intro) {
-      window.removeEventListener("resize", this.toggleReadMoreLink);
-    }
-  }
-
-  toggleReadMoreLink() {
-    // MarkdownRenderer wraps `props.intro` with `p` element, which is
-    // needed to calculate the height of the text. If you remove
-    // MarkdownRenderer, make sure to wrap `props.intro` with a `p`
-    // element.
-    const height = this.clampedText.querySelector("p").offsetHeight;
-
-    this.setState({
-      showReadMore: (height / this.paragraphLineHeight) > this.maxLines,
-    });
-  }
-
-  toggleExpandedState() {
-    this.setState({
-      expanded: !this.state.expanded,
-    });
   }
 
   render() {
@@ -82,9 +40,13 @@ class ProfileHeader extends React.Component {
       location,
       interests,
       interestsLimit,
-      alignment,
       style,
     } = this.props;
+
+    const { width } = this.state.dimensions;
+
+    // Change the layout based on the component's size
+    const alignment = (width > 540) ? "left" : "center";
 
     const styles = {
       header: {
@@ -149,7 +111,7 @@ class ProfileHeader extends React.Component {
         },
       },
 
-      bio: {
+      intro: {
         default: {
           marginTop: "37px",
         },
@@ -181,50 +143,6 @@ class ProfileHeader extends React.Component {
       }, textBodySmall()),
     };
 
-    const lineHeight = (alignment === "center" && (this.paragraphLineHeight / fontSizeBodySmall)) ||
-      (alignment === "left" && lineHeightHeading7);
-
-    const markup = (htmlContent) => ({ __html: htmlContent });
-
-    const dangerousStyles = `
-      .ProfileHeader .ClampedText img,
-      .ProfileHeader .ClampedText video,
-      .ProfileHeader .ClampedText iframe {
-        display: none !important;
-      }
-
-      .ProfileHeader .ClampedText:not(.expanded) {
-        display: block;
-        display: -webkit-box;
-        height: calc(1em * ${lineHeight} * ${this.maxLines});
-        line-height: ${lineHeight};
-        overflow: hidden;
-        padding: 0;
-        position: relative;
-        text-overflow: ellipsis;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: ${this.maxLines};
-      }
-
-      .ProfileHeader .ClampedText:not(.expanded)::after {
-        background: linear-gradient(to right, ${rgba(colors.bgPrimary, 0)}, ${rgba(colors.bgPrimary, 1)} 75%);
-        bottom: 0;
-        content: "…";
-        display: block;
-        height: calc(1em * ${lineHeight});
-        position: absolute;
-        right: 0;
-        text-align: right;
-        width: 10%;
-      }
-
-      @supports (-webkit-line-clamp: ${this.maxLines}) {
-        .ProfileHeader .ClampedText:not(.expanded)::after {
-          display: none !important;
-        }
-      }
-    `;
-
     const urlRegex = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/; // eslint-disable-line max-len
 
     const validateUrl = (url) => urlRegex.test(url);
@@ -240,112 +158,104 @@ class ProfileHeader extends React.Component {
     };
 
     return (
-      <header
-        className="ProfileHeader"
-        style={[
-          styles.header[alignment],
-          style,
-        ]}
+      <Measure
+        bounds
+        onResize={(contentRect) => {
+          this.setState({
+            dimensions: contentRect.bounds,
+          });
+        }}
       >
-        <style
-          dangerouslySetInnerHTML={markup(dangerousStyles)}
-        />
-
-        <div style={styles.flexContainer[alignment]}>
-          {avatarSrc &&
-            <Avatar
-              src={avatarSrc}
-              alt={`Avatar for user ${name}`}
-              size={80}
-              className="ProfileHeader-avatar"
-              style={styles.avatar[alignment]}
-            />
-          }
-
-          <div style={styles.textContainer[alignment]}>
-            {location &&
-              <LocationLabel style={styles.locationLabel[alignment]}>
-                {location}
-              </LocationLabel>
-            }
-
-            {name &&
-              <Heading
-                level={1}
-                size={5}
-                weight="medium"
-                style={styles.heading}
-              >
-                {name}
-              </Heading>
-            }
-
-            {website && validateUrl(website) &&
-              <p
-                style={[
-                  styles.textBodySmall,
-                  styles.website.default,
-                  styles.website[alignment],
-                ]}
-              >
-                <a
-                  href={website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {urlParser(website).hostname.replace("www.", "")}
-                </a>
-              </p>
-            }
-          </div>
-        </div>
-
-        {intro &&
-          <div
+        {({ measureRef }) => (
+          <header
+            className="ProfileHeader"
+            ref={measureRef}
             style={[
-              styles.textBodySmall,
-              styles.bio.default,
-              styles.bio[alignment],
+              styles.header[alignment],
+              style,
             ]}
           >
-            <div
-              className={cn("ClampedText", this.state.expanded && "expanded")}
-              ref={node => { this.clampedText = node; }}
-            >
-              {/*
-                Wrap {intro} with `p` and delete this comment
-                **if** MarkdownRenderer is removed
-              */}
-              <MarkdownRenderer
-                markdown={intro}
-              />
+            <div style={styles.flexContainer[alignment]}>
+              {avatarSrc &&
+                <Avatar
+                  src={avatarSrc}
+                  alt={`Avatar for user ${name}`}
+                  size={80}
+                  className="ProfileHeader-avatar"
+                  style={styles.avatar[alignment]}
+                />
+              }
+
+              <div style={styles.textContainer[alignment]}>
+                {location &&
+                  <LocationLabel style={styles.locationLabel[alignment]}>
+                    {location}
+                  </LocationLabel>
+                }
+
+                {name &&
+                  <Heading
+                    level={1}
+                    size={5}
+                    weight="medium"
+                    style={styles.heading}
+                  >
+                    {name}
+                  </Heading>
+                }
+
+                {website && validateUrl(website) &&
+                  <p
+                    style={[
+                      styles.textBodySmall,
+                      styles.website.default,
+                      styles.website[alignment],
+                    ]}
+                  >
+                    <a
+                      href={website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {urlParser(website).hostname.replace("www.", "")}
+                    </a>
+                  </p>
+                }
+              </div>
             </div>
 
-            {this.state.showReadMore &&
-              <MoreLink
-                caps
-                size="small"
-                hideIcon
-                onClick={this.toggleExpandedState}
+            {intro &&
+              <ProfileIntro
+                maxLines={3}
+                fontSize={
+                  (alignment === "center" && fontSizeBodySmall) ||
+                  (alignment === "left" && fontSizeHeading7)
+                }
+                lineHeight={this.paragraphLineHeight}
+                style={[
+                  styles.textBodySmall,
+                  styles.intro.default,
+                  styles.intro[alignment],
+                ]}
               >
-                {this.state.expanded ? "Read less" : "Read more"}
-              </MoreLink>
+                {intro}
+              </ProfileIntro>
             }
-          </div>
-        }
 
-        {interests && interests.length > 0 &&
-          <TagList
-            style={styles.tagList[alignment]}
-            limit={interestsLimit}
-            rows={10}
-          >
-            {interests.map((interest) => (
-              <Tag key={interest}>{interest}</Tag>
-            ))}
-          </TagList>
-        }
-      </header>
+            {interests && interests.length > 0 &&
+              <TagList
+                style={styles.tagList[alignment]}
+                limit={interestsLimit}
+                rows={10}
+              >
+                {interests.map((interest) => (
+                  <Tag key={interest}>{interest}</Tag>
+                ))}
+              </TagList>
+            }
+          </header>
+        )}
+      </Measure>
     );
   }
 }
@@ -358,7 +268,6 @@ ProfileHeader.propTypes = {
   location: PropTypes.string,
   interests: PropTypes.arrayOf(PropTypes.string),
   interestsLimit: PropTypes.number,
-  alignment: PropTypes.oneOf(["center", "left"]),
   style: propTypes.style,
 };
 
@@ -368,7 +277,6 @@ ProfileHeader.defaultProps = {
   avatarSrc: "",
   location: "",
   interests: [],
-  alignment: "center",
   style: null,
 };
 
