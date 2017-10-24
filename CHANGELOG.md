@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.49.0"></a>
+# [4.49.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.48.2...v4.49.0) (2017-10-24)
+
+
+### Bug Fixes
+
+* Add story for ProfileHeader with markdown ([4560c3e](https://github.com/lonelyplanet/backpack-ui/commit/4560c3e))
+* Use ProfileIntro in ProfileHeader ([49f0e84](https://github.com/lonelyplanet/backpack-ui/commit/49f0e84))
+
+
+### Features
+
+* Create ProfileIntro component ([43686bd](https://github.com/lonelyplanet/backpack-ui/commit/43686bd))
+* Install react-measure module ([0cfa846](https://github.com/lonelyplanet/backpack-ui/commit/0cfa846))
+* Remove alignment prop; use react-measure for ProfileHeader layout ([b13b988](https://github.com/lonelyplanet/backpack-ui/commit/b13b988))
+
+
+
 <a name="4.48.2"></a>
 ## [4.48.2](https://github.com/lonelyplanet/backpack-ui/compare/v4.48.1...v4.48.2) (2017-10-23)
 
