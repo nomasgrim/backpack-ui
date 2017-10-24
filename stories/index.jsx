@@ -1774,6 +1774,26 @@ storiesOf("Profile header", module)
         center: "Center",
       }, "center")}
     />
+  ))
+  .add("With Markdown", () => (
+    <ProfileHeader
+      avatarSrc={text("Avatar URL", "https://img2.wikia.nocookie.net/__cb20111018235020/muppet/images/thumb/1/14/Rizzo11.png/300px-Rizzo11.png")}
+      name={text("Name", "Rizzo the Rat")}
+      location={text("Location", "Ottawa, Ontario")}
+      website={text("Website URL", "https://www.lonelyplanet.com")}
+      intro={text("Introduction", "# Heading \n* List item 1 \n* List item 2 \n* List item 3 \nThe very basic core of a woman’s living spirit is her passion for adventure. \n### Heading \nThe joy of life comes from our encounters with new experiences, and hence there is no greater joy than to have an endlessly changing horizon.")}
+      interests={array("Interests", [
+        "Family",
+        "Shopping",
+        "Adventure",
+        "Art and architecture",
+        "Food",
+      ])}
+      alignment={select("Alignment", {
+        left: "Left",
+        center: "Center",
+      }, "center")}
+    />
   ));
 
 storiesOf("Promoted guidebook", module)
