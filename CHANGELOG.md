@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.49.1"></a>
+## [4.49.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.49.0...v4.49.1) (2017-10-26)
+
+
+### Bug Fixes
+
+* focus state for tag selector ([#542](https://github.com/lonelyplanet/backpack-ui/issues/542)) ([c539795](https://github.com/lonelyplanet/backpack-ui/commit/c539795))
+
+
+
 <a name="4.49.0"></a>
 # [4.49.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.48.2...v4.49.0) (2017-10-24)
 
