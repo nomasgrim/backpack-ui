@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.49.2"></a>
+## [4.49.2](https://github.com/lonelyplanet/backpack-ui/compare/v4.49.1...v4.49.2) (2017-10-27)
+
+
+### Bug Fixes
+
+* accordion timing animations" ([21efa9b](https://github.com/lonelyplanet/backpack-ui/commit/21efa9b))
+
+
+
 <a name="4.49.1"></a>
 ## [4.49.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.49.0...v4.49.1) (2017-10-26)
 
