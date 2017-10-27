@@ -9,7 +9,7 @@ const styles = {
     color: "inherit",
     cursor: "pointer",
     ":focus": {
-      border: "none",
+      outline: "none",
     },
   },
 
