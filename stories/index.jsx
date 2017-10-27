@@ -2054,6 +2054,12 @@ storiesOf("Setting Block", module)
               <Tag href="#">Europe</Tag>
               <Tag href="#">Middle East & Africa</Tag>
               <Tag href="#">Editor’s pick</Tag>
+              <Tag href="#">The Americas</Tag>
+              <Tag href="#">World</Tag>
+              <Tag href="#">Asia & the Pacific</Tag>
+              <Tag href="#">Europe</Tag>
+              <Tag href="#">Middle East & Africa</Tag>
+              <Tag href="#">Editor’s pick</Tag>
             </TagList>
           </SettingBlockAccordion>
         )}

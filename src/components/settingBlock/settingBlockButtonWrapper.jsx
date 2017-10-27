@@ -8,7 +8,9 @@ const styles = {
   container: {
     color: "inherit",
     cursor: "pointer",
-    ":focus": outline(),
+    ":focus": {
+      border: "none",
+    },
   },
 
   buttonResets: {
