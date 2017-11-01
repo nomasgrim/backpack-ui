@@ -62,6 +62,7 @@ import ErrorMessages from "../src/components/form/errorMessages";
 import ExpandButton from "../src/components/expandButton";
 import FeaturedArticle from "../src/components/featuredArticle";
 import Flag from "../src/components/flag";
+import FlightSearchWidget from "../src/components/flightSearchWidget";
 import Flyout from "../src/components/flyout";
 import GridColumn from "../src/components/gridColumn";
 import GridRow from "../src/components/gridRow";
@@ -836,6 +837,26 @@ storiesOf("Flag", module)
   .addDecorator(withKnobs)
   .add("Default", () => (
     <Flag>{text("Text", "Private")}</Flag>
+  ));
+
+storiesOf("Flight search widget", module)
+  .addDecorator(withKnobs)
+  .add("Default", () => (
+    <FlightSearchWidget
+      depart={{
+        airportCode: "BNA",
+        city: "Nashville",
+      }}
+      arrive={{
+        airportCode: "LAX",
+        city: "Los Angeles",
+      }}
+      price={{
+        amount: 600,
+        currency: "USD",
+      }}
+      onClick={action("Flight search widget")}
+    />
   ));
 
 storiesOf("Flyout", module)
