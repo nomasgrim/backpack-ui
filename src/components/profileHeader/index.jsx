@@ -17,6 +17,7 @@ import {
 } from "../../styles/typography";
 import { textBodySmall } from "../../utils/typography";
 import propTypes from "../../utils/propTypes";
+import { urlRegex } from "../../utils/validations";
 
 class ProfileHeader extends React.Component {
   constructor(props) {
@@ -142,8 +143,6 @@ class ProfileHeader extends React.Component {
         marginTop: 0,
       }, textBodySmall()),
     };
-
-    const urlRegex = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/; // eslint-disable-line max-len
 
     const validateUrl = (url) => urlRegex.test(url);
 
