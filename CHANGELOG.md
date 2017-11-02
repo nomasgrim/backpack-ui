@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.50.0"></a>
+# [4.50.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.49.4...v4.50.0) (2017-11-02)
+
+
+### Bug Fixes
+
+* Add story for FlightSearchWidget ([2a43478](https://github.com/lonelyplanet/backpack-ui/commit/2a43478))
+* Add urlRegex method to default export in validations utility ([b05b679](https://github.com/lonelyplanet/backpack-ui/commit/b05b679))
+* Adjust styles for arrow icon in FlightSearchWidget ([dc5acc0](https://github.com/lonelyplanet/backpack-ui/commit/dc5acc0))
+* Use style prop type validation from propTypes util for Button component ([abb93a0](https://github.com/lonelyplanet/backpack-ui/commit/abb93a0))
+
+
+### Features
+
+* Add currency prop type to propTypes utility ([1438ee2](https://github.com/lonelyplanet/backpack-ui/commit/1438ee2))
+* Create FlightSearchWidget component ([6eea2b7](https://github.com/lonelyplanet/backpack-ui/commit/6eea2b7))
+* Create utility to export currency symbols ([f318775](https://github.com/lonelyplanet/backpack-ui/commit/f318775))
+
+
+
 <a name="4.49.4"></a>
 ## [4.49.4](https://github.com/lonelyplanet/backpack-ui/compare/v4.49.3...v4.49.4) (2017-11-01)
 
