@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.50.1"></a>
+## [4.50.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.50.0...v4.50.1) (2017-11-08)
+
+
+### Bug Fixes
+
+* make flight widget arrow centered ([#547](https://github.com/lonelyplanet/backpack-ui/issues/547)) ([4bc548b](https://github.com/lonelyplanet/backpack-ui/commit/4bc548b))
+
+
+
 <a name="4.50.0"></a>
 # [4.50.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.49.4...v4.50.0) (2017-11-02)
 
