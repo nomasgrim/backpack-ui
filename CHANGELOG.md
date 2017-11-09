@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.50.2"></a>
+## [4.50.2](https://github.com/lonelyplanet/backpack-ui/compare/v4.50.1...v4.50.2) (2017-11-09)
+
+
+### Bug Fixes
+
+* Add style prop to Overlay ([5ef8e2b](https://github.com/lonelyplanet/backpack-ui/commit/5ef8e2b))
+* Replace settings.json in Overlay ([5dd1360](https://github.com/lonelyplanet/backpack-ui/commit/5dd1360))
+
+
+
 <a name="4.50.1"></a>
 ## [4.50.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.50.0...v4.50.1) (2017-11-08)
 
