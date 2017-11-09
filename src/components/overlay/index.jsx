@@ -6,6 +6,7 @@ import colors from "../../styles/colors";
 import timing from "../../styles/timing";
 import zIndexDefault from "../../styles/zIndex";
 import { rgb } from "../../utils/color";
+import propTypes from "../../utils/propTypes";
 
 const styles = {
   portal: {
@@ -35,7 +36,7 @@ const styles = {
   },
 };
 
-function Overlay({ animationDuration, attached, color, onClick, visible, zIndex }) {
+function Overlay({ animationDuration, attached, color, onClick, visible, zIndex, style }) {
   return (
     <Portal
       className="Overlay-portal"
@@ -52,6 +53,7 @@ function Overlay({ animationDuration, attached, color, onClick, visible, zIndex 
           animationDuration && { transitionDuration: `${animationDuration}ms` },
           zIndex && { zIndex },
           visible ? styles.overlay.visible : styles.overlay.hidden,
+          style,
         ]}
       />
     </Portal>
@@ -96,6 +98,11 @@ Overlay.propTypes = {
    * Used to control where the overlay should be placed on the z-axis
    */
   zIndex: PropTypes.number,
+
+  /**
+   * Apply custom styles
+   */
+  style: propTypes.style,
 };
 
 Overlay.defaultProps = {
@@ -110,6 +117,8 @@ Overlay.defaultProps = {
   visible: false,
 
   zIndex: zIndexDefault.overlay,
+
+  style: null,
 };
 
 export default radium(Overlay);
