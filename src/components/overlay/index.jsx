@@ -107,17 +107,11 @@ Overlay.propTypes = {
 
 Overlay.defaultProps = {
   animationDuration: parseInt(timing.default.replace("ms", ""), 10),
-
   attached: false,
-
   color: `rgba(${rgb(colors.bgOverlay)}, .3)`,
-
   onClick: null,
-
   visible: false,
-
   zIndex: zIndexDefault.overlay,
-
   style: null,
 };
 
