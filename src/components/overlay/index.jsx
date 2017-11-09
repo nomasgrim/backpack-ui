@@ -2,7 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import Portal from "react-portal";
 import radium from "radium";
-import settings from "../../../settings.json";
+import colors from "../../styles/colors";
+import timing from "../../styles/timing";
+import zIndexDefault from "../../styles/zIndex";
 import { rgb } from "../../utils/color";
 
 const styles = {
@@ -97,17 +99,17 @@ Overlay.propTypes = {
 };
 
 Overlay.defaultProps = {
-  animationDuration: parseInt(settings.timing.default.replace("ms", ""), 10),
+  animationDuration: parseInt(timing.default.replace("ms", ""), 10),
 
   attached: false,
 
-  color: `rgba(${rgb(settings.color.black)}, .3)`,
+  color: `rgba(${rgb(colors.bgOverlay)}, .3)`,
 
   onClick: null,
 
   visible: false,
 
-  zIndex: settings.zIndex.overlay,
+  zIndex: zIndexDefault.overlay,
 };
 
 export default radium(Overlay);
