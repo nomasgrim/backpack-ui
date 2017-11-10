@@ -85,11 +85,11 @@ class ProfileHeader extends React.Component {
 
       locationLabel: {
         center: {
-          marginBottom: "10px",
+          marginTop: "10px",
         },
 
         left: {
-          marginBottom: "7px",
+          marginTop: "7px",
         },
       },
 
@@ -186,12 +186,6 @@ class ProfileHeader extends React.Component {
               }
 
               <div style={styles.textContainer[alignment]}>
-                {location &&
-                  <LocationLabel style={styles.locationLabel[alignment]}>
-                    {location}
-                  </LocationLabel>
-                }
-
                 {name &&
                   <Heading
                     level={1}
@@ -201,6 +195,12 @@ class ProfileHeader extends React.Component {
                   >
                     {name}
                   </Heading>
+                }
+
+                {location &&
+                  <LocationLabel style={styles.locationLabel[alignment]}>
+                    {location}
+                  </LocationLabel>
                 }
 
                 {website && validateUrl(website) &&
