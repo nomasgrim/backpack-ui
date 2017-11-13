@@ -67,104 +67,96 @@ const styles = {
 /**
  * PageHeader component
  */
-class PageHeader extends React.Component {
-  constructor() {
-    super();
-  }
+const PageHeader = ({
+  alignment,
+  contained,
+  topChoice,
+  neighborhood,
+  place,
+  strapline,
+  titleHref,
+  title,
+  heading,
+  type,
+  stars,
+}) => {
+  const TopChoiceText = topChoice && (
+    <span key="topChoice">
+      <em style={styles.topChoice.base}>Top choice</em>
+    </span>
+  );
 
-  render() {
-    const {
-      alignment,
-      contained,
-      topChoice,
-      neighborhood,
-      place,
-      strapline,
-      titleHref,
-      title,
-      heading,
-      type,
-      stars,
-    } = this.props;
+  const TypeText = (topChoice || stars > 0) ? type.toLowerCase() : _.capitalize(type);
 
-    const TopChoiceText = topChoice && (
-      <span key="topChoice">
-        <em style={styles.topChoice.base}>Top choice</em>
-      </span>
-    );
+  const PlaceText = (
+    <span key="placeText">
+      {neighborhood ?
+        `${TypeText} in the ${neighborhood} neighbourhood` :
+        `${TypeText} in ${place}`}
+    </span>
+  );
 
-    const TypeText = (topChoice || stars > 0) ? type.toLowerCase() : _.capitalize(type);
+  const StarText = stars > 0 && (
+    <span key="starRating">
+      {stars} star
+    </span>
+  );
 
-    const PlaceText = (
-      <span key="placeText">
-        {neighborhood ?
-          `${TypeText} in the ${neighborhood} neighbourhood` :
-          `${TypeText} in ${place}`}
-      </span>
-    );
+  const straplineText = strapline || [TopChoiceText, " ", StarText, " ", PlaceText];
 
-    const StarText = stars > 0 && (
-      <span key="starRating">
-        {stars} star
-      </span>
-    );
+  const TitleContent = titleHref ? (
+    <Link to={titleHref} style={blueLink()}>
+      {title}
+    </Link>
+  ) : title;
 
-    const straplineText = strapline || [TopChoiceText, " ", StarText, " ", PlaceText];
-
-    const TitleContent = titleHref ? (
-      <Link to={titleHref} style={blueLink()}>
-        {title}
-      </Link>
-    ) : title;
-
-    return (
-      <header
-        className="PageHeader"
-        style={[
-          styles.container.base,
-          alignment && styles.container.alignment[alignment],
-          contained && styles.container.contained,
-        ]}
-      >
-        {title &&
-          <Heading
-            level={6}
-            size="tiny"
-            weight="thick"
-            importance="alert"
-            override={styles.title.base}
-            caps
-          >
-            {TitleContent}
-          </Heading>
-        }
-
+  return (
+    <header
+      className="PageHeader"
+      style={[
+        styles.container.base,
+        alignment && styles.container.alignment[alignment],
+        contained && styles.container.contained,
+      ]}
+    >
+      {title &&
         <Heading
-          level={1}
-          size="huge"
+          level={6}
+          size="tiny"
           weight="thick"
-          importance="high"
+          importance="alert"
+          override={styles.title.base}
+          caps
         >
-          {heading}
+          {TitleContent}
         </Heading>
+      }
 
-        {(type || strapline) &&
-          <div
-            className="PageHeader-strapline"
-            style={styles.strapline.base}
+      <Heading
+        level={1}
+        size="huge"
+        weight="thick"
+        importance="high"
+      >
+        {heading}
+      </Heading>
+
+      {(type || strapline) &&
+        <div
+          className="PageHeader-strapline"
+          style={styles.strapline.base}
+        >
+          <Strapline
+            size="small"
+            parent="pageHeader"
           >
-            <Strapline
-              size="small"
-              parent="pageHeader"
-            >
-              {straplineText}
-            </Strapline>
-          </div>
-        }
-      </header>
-    );
-  }
-}
+            {straplineText}
+          </Strapline>
+        </div>
+      }
+    </header>
+  );
+};
 
 PageHeader.propTypes = {
   /**
