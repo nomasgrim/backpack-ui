@@ -2,19 +2,17 @@ import React from "react";
 import PropTypes from "prop-types";
 import radium from "radium";
 import cn from "classnames";
-import { BookmarkAltActive, BookmarkAlt } from "../icon";
+import ListButton from "../listButton";
 import propTypes from "../../utils/propTypes";
-import IconRevealButton from "../iconRevealButton";
-
 
 const BookmarkButtonAlt = ({ onClick, marked, id, className, style }) => (
-  <IconRevealButton
+  <ListButton
     id={id}
     className={cn("BookmarkButtonAlt", className)}
     onClick={onClick}
-    icon={marked ? <BookmarkAltActive /> : <BookmarkAlt />}
+    label="Save to list"
+    icon={marked ? "BookmarkAltActive" : "BookmarkAlt"}
     style={style}
-    label="Save"
   />
 );
 
