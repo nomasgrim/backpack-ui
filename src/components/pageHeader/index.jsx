@@ -6,7 +6,6 @@ import capitalize from "lodash/capitalize";
 import settings from "../../../settings.json";
 import Heading from "../heading";
 import Strapline from "../strapline";
-import BookmarkButton from "../bookmarkButton";
 import { gutter, span } from "../../utils/grid";
 import { blueLink } from "../../utils/mixins";
 
@@ -29,14 +28,6 @@ const styles = {
     },
   },
 
-  content: {
-    base: {},
-
-    bookmark: {
-      display: "inline-block",
-    },
-  },
-
   title: {
     base: {
       marginBottom: "14px",
@@ -54,19 +45,6 @@ const styles = {
   topChoice: {
     base: {
       color: settings.color.red,
-    },
-  },
-
-  bookmark: {
-    base: {
-      display: "inline-block",
-      marginLeft: "8px",
-      verticalAlign: "4px",
-
-      [`@media (min-width: ${settings.media.min["600"]})`]: {
-        marginLeft: "10px",
-        verticalAlign: "30px",
-      },
     },
   },
 
@@ -92,18 +70,6 @@ const styles = {
 class PageHeader extends React.Component {
   constructor() {
     super();
-
-    this.state = {
-      marked: false,
-    };
-
-    this._bookmarkOnClick = this._bookmarkOnClick.bind(this);
-  }
-
-  _bookmarkOnClick() {
-    this.setState({
-      marked: !this.state.marked,
-    });
   }
 
   render() {
@@ -117,7 +83,6 @@ class PageHeader extends React.Component {
       titleHref,
       title,
       heading,
-      bookmark,
       type,
       stars,
     } = this.props;
@@ -181,19 +146,6 @@ class PageHeader extends React.Component {
           importance="high"
         >
           {heading}
-
-          {bookmark &&
-            <div
-              className="PageHeader-bookmark"
-              style={styles.bookmark.base}
-            >
-              <BookmarkButton
-                onClick={this._bookmarkOnClick}
-                marked={this.state.marked}
-                size="large"
-              />
-            </div>
-          }
         </Heading>
 
         {(type || strapline) &&
@@ -269,11 +221,6 @@ PageHeader.propTypes = {
   contained: PropTypes.bool,
 
   /**
-   * Whether or not to show the bookmark button
-   */
-  bookmark: PropTypes.bool,
-
-  /**
    * Number of stars a poi has
    */
   stars: PropTypes.number,
@@ -295,8 +242,6 @@ PageHeader.defaultProps = {
   alignment: "",
 
   contained: false,
-
-  bookmark: false,
 
   stars: 0,
 };
