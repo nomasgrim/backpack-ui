@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import radium from "radium";
 import cn from "classnames";
 import { BookmarkActive, Bookmark } from "../icon";
+import colors from "../../styles/colors";
 import propTypes from "../../utils/propTypes";
 import IconRevealButton from "../iconRevealButton";
 
@@ -12,7 +13,10 @@ const BookmarkButton = ({ onClick, marked, id, className, style }) => (
     className={cn("BookmarkButton", className)}
     onClick={onClick}
     icon={marked ? <BookmarkActive /> : <Bookmark />}
-    style={style}
+    style={[
+      marked && { color: colors.linkPrimary },
+      style,
+    ]}
     label="Save"
   />
 );
