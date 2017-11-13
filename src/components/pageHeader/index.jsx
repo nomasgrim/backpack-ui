@@ -64,9 +64,6 @@ const styles = {
   },
 };
 
-/**
- * PageHeader component
- */
 const PageHeader = ({
   alignment,
   contained,
