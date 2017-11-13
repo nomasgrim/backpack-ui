@@ -65,7 +65,7 @@ const styles = {
 
   strapline: {
     base: {
-      marginTop: "12px",
+      marginTop: "13px",
 
       [`@media (max-width: ${mq.max["600"]})`]: {
         paddingLeft: gutter("static"),
@@ -73,7 +73,7 @@ const styles = {
       },
 
       [`@media (min-width: ${mq.min["600"]})`]: {
-        marginTop: "4px",
+        marginTop: "14px",
       },
     },
   },
