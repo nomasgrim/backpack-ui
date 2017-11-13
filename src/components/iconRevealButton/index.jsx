@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import radium, { Style } from "radium";
 import cn from "classnames";
-import { BookmarkAlt } from "../icon";
 import colors from "../../styles/colors";
 import timing from "../../styles/timing";
 import { fontSizeUppercase, lineHeightReset } from "../../styles/typography";
@@ -103,8 +102,6 @@ IconRevealButton.propTypes = {
 };
 
 IconRevealButton.defaultProps = {
-  onClick: null,
-  icon: <BookmarkAlt />,
   id: null,
   className: null,
   style: null,
