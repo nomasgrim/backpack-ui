@@ -220,21 +220,13 @@ PageHeader.propTypes = {
 
 PageHeader.defaultProps = {
   title: "",
-
   titleHref: "",
-
   topChoice: false,
-
   type: "",
-
   neighborhood: "",
-
   place: "",
-
   alignment: "",
-
   contained: false,
-
   stars: 0,
 };
 
