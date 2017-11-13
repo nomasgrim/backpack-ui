@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.51.1"></a>
+## [4.51.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.51.0...v4.51.1) (2017-11-13)
+
+
+### Bug Fixes
+
+* Change color of icon to blue in BookmarkButton when marked ([36666ad](https://github.com/lonelyplanet/backpack-ui/commit/36666ad))
+* Update strapline top margin in PageHeader ([4e7a4f8](https://github.com/lonelyplanet/backpack-ui/commit/4e7a4f8))
+
+
+
 <a name="4.51.0"></a>
 # [4.51.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.50.3...v4.51.0) (2017-11-13)
 
