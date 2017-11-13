@@ -1684,7 +1684,6 @@ storiesOf("Page header", module)
         alignment={select("Alignment", ["", "center"], "center")}
         topChoice={boolean("Top choice", false)}
         contained={boolean("Contained", false)}
-        bookmark={boolean("Bookmark", false)}
         stars={number("Stars", 0)}
       />
     </StyleRoot>
