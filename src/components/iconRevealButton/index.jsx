@@ -87,6 +87,7 @@ const IconRevealButton = ({
         ...icon.style,
       },
     })}
+
     {label &&
       <span style={styles.label}>
         {label}
