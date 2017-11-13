@@ -95,8 +95,8 @@ const IconRevealButton = ({
 IconRevealButton.propTypes = {
   onClick: PropTypes.func.isRequired,
   icon: PropTypes.element.isRequired,
+  label: PropTypes.string.isRequired,
   id: PropTypes.string,
-  label: PropTypes.string,
   className: PropTypes.string,
   style: propTypes.style,
 };
