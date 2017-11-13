@@ -33,6 +33,8 @@ const styles = {
 
   heading: {
     base: {
+      letterSpacing: "-1px",
+
       [`@media (max-width: ${mq.max["600"]})`]: {
         fontSize: `${fontSizeHeading4}px`,
         lineHeight: lineHeightHeading4,
@@ -50,7 +52,7 @@ const styles = {
       },
 
       [`@media (min-width: ${mq.min["600"]})`]: {
-        marginBottom: "22px",
+        marginBottom: "21px",
       },
     },
   },
@@ -71,7 +73,7 @@ const styles = {
       },
 
       [`@media (min-width: ${mq.min["600"]})`]: {
-        marginTop: "5px",
+        marginTop: "4px",
       },
     },
   },
