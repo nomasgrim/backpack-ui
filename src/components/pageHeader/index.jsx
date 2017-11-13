@@ -3,7 +3,8 @@ import PropTypes from "prop-types";
 import radium from "radium";
 import { Link } from "react-router";
 import capitalize from "lodash/capitalize";
-import settings from "../../../settings.json";
+import colors from "../../styles/colors";
+import mq from "../../styles/mq";
 import Heading from "../heading";
 import Strapline from "../strapline";
 import { gutter, span } from "../../utils/grid";
@@ -33,11 +34,11 @@ const styles = {
     base: {
       marginBottom: "14px",
 
-      [`@media (min-width: ${settings.media.min["560"]})`]: {
+      [`@media (min-width: ${mq.min["560"]})`]: {
         display: "inline-block",
       },
 
-      [`@media (min-width: ${settings.media.min["600"]})`]: {
+      [`@media (min-width: ${mq.min["600"]})`]: {
         marginBottom: "22px",
       },
     },
@@ -45,7 +46,7 @@ const styles = {
 
   topChoice: {
     base: {
-      color: settings.color.red,
+      color: colors.accentRed,
     },
   },
 
@@ -53,12 +54,12 @@ const styles = {
     base: {
       marginTop: "12px",
 
-      [`@media (max-width: ${settings.media.max["600"]})`]: {
+      [`@media (max-width: ${mq.max["600"]})`]: {
         paddingLeft: gutter("static"),
         paddingRight: gutter("static"),
       },
 
-      [`@media (min-width: ${settings.media.min["600"]})`]: {
+      [`@media (min-width: ${mq.min["600"]})`]: {
         marginTop: "5px",
       },
     },
