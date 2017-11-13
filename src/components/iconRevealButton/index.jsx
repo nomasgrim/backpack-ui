@@ -4,7 +4,7 @@ import radium, { Style } from "radium";
 import cn from "classnames";
 import colors from "../../styles/colors";
 import timing from "../../styles/timing";
-import { fontSizeUppercase, lineHeightReset } from "../../styles/typography";
+import { fontSizeHeading7, fontSizeUppercase, lineHeightReset } from "../../styles/typography";
 import { outline } from "../../utils/mixins";
 import propTypes from "../../utils/propTypes";
 
@@ -12,8 +12,10 @@ const styles = {
   container: {
     alignItems: "center",
     backgroundColor: "transparent",
+    color: colors.textPrimary,
     display: "flex",
     flexDirection: "column",
+    fontSize: `${fontSizeHeading7}px`,
     justifyContent: "center",
     lineHeight: lineHeightReset,
     textAlign: "center",
@@ -22,7 +24,8 @@ const styles = {
   },
 
   icon: {
-    transition: `color ${timing.fast} ease-in-out, transform ${timing.fast} ease-in-out`,
+    transition: `color ${timing.fast} ease-in-out,
+      transform ${timing.fast} ease-in-out`,
   },
 
   label: {
