@@ -230,6 +230,4 @@ PageHeader.defaultProps = {
   stars: 0,
 };
 
-PageHeader.styles = styles;
-
 export default radium(PageHeader);
