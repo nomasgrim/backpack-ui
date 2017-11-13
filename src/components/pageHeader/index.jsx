@@ -6,6 +6,7 @@ import capitalize from "lodash/capitalize";
 import colors from "../../styles/colors";
 import mq from "../../styles/mq";
 import Heading from "../heading";
+import { TextUppercase } from "../text";
 import Strapline from "../strapline";
 import { gutter, span } from "../../utils/grid";
 import { blueLink } from "../../utils/mixins";
@@ -32,6 +33,7 @@ const styles = {
 
   title: {
     base: {
+      color: colors.accentRed,
       marginBottom: "14px",
 
       [`@media (min-width: ${mq.min["560"]})`]: {
@@ -121,16 +123,11 @@ const PageHeader = ({
       ]}
     >
       {title &&
-        <Heading
-          level={6}
-          size="tiny"
-          weight="thick"
-          importance="alert"
-          override={styles.title.base}
-          caps
+        <TextUppercase
+          style={styles.title.base}
         >
           {TitleContent}
-        </Heading>
+        </TextUppercase>
       }
 
       <Heading
