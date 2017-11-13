@@ -8,6 +8,7 @@ import Heading from "../heading";
 import Strapline from "../strapline";
 import { gutter, span } from "../../utils/grid";
 import { blueLink } from "../../utils/mixins";
+import propTypes from "../../utils/propTypes";
 
 const _ = { capitalize };
 
@@ -76,6 +77,7 @@ const PageHeader = ({
   heading,
   type,
   stars,
+  style,
 }) => {
   const TopChoiceText = topChoice && (
     <span key="topChoice">
@@ -114,6 +116,7 @@ const PageHeader = ({
         styles.container.base,
         alignment && styles.container.alignment[alignment],
         contained && styles.container.contained,
+        style,
       ]}
     >
       {title &&
@@ -213,6 +216,11 @@ PageHeader.propTypes = {
    * Number of stars a poi has
    */
   stars: PropTypes.number,
+
+  /**
+   * Apply custom styles
+   */
+  style: propTypes.style,
 };
 
 PageHeader.defaultProps = {
@@ -225,6 +233,7 @@ PageHeader.defaultProps = {
   alignment: "",
   contained: false,
   stars: 0,
+  style: null,
 };
 
 export default radium(PageHeader);
