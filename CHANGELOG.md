@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.51.0"></a>
+# [4.51.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.50.3...v4.51.0) (2017-11-13)
+
+
+### Bug Fixes
+
+* Adjust heading styles in PageHeader ([c2c1f85](https://github.com/lonelyplanet/backpack-ui/commit/c2c1f85))
+* Convert PageHeader from stateful to functional component ([8d46e99](https://github.com/lonelyplanet/backpack-ui/commit/8d46e99))
+* cursor jumps out of inputs in modal ([#551](https://github.com/lonelyplanet/backpack-ui/issues/551)) ([3c74a32](https://github.com/lonelyplanet/backpack-ui/commit/3c74a32))
+* Delete comment from PageHeader ([41c87ec](https://github.com/lonelyplanet/backpack-ui/commit/41c87ec))
+* Make label prop required in IconRevealButton ([62dcee5](https://github.com/lonelyplanet/backpack-ui/commit/62dcee5))
+* Remove defaultProp values from required props in IconRevealButton ([e940ed4](https://github.com/lonelyplanet/backpack-ui/commit/e940ed4))
+* Remove extra whitespace in PageHeader ([8bf8b87](https://github.com/lonelyplanet/backpack-ui/commit/8bf8b87))
+* Remove style export from PageHeader ([3e28ac6](https://github.com/lonelyplanet/backpack-ui/commit/3e28ac6))
+* Replace deprecated Heading with text/heading in PageHeader ([5fdaa83](https://github.com/lonelyplanet/backpack-ui/commit/5fdaa83))
+* Replace settings.json in PageHeader with style tokens ([492673f](https://github.com/lonelyplanet/backpack-ui/commit/492673f))
+* Update share icon path ([#553](https://github.com/lonelyplanet/backpack-ui/issues/553)) ([061e215](https://github.com/lonelyplanet/backpack-ui/commit/061e215))
+* Update styles for IconRevealButton ([99e5b2b](https://github.com/lonelyplanet/backpack-ui/commit/99e5b2b))
+* Use TextUppercase instead of h6 heading in PageHeader ([39647bb](https://github.com/lonelyplanet/backpack-ui/commit/39647bb))
+
+
+### Features
+
+* Add Flipboard icon ([#549](https://github.com/lonelyplanet/backpack-ui/issues/549)) ([0e5ca6f](https://github.com/lonelyplanet/backpack-ui/commit/0e5ca6f))
+* Add style prop to PageHeader ([a8a915b](https://github.com/lonelyplanet/backpack-ui/commit/a8a915b))
+* Delete bookmark from PageHeader ([3896b5f](https://github.com/lonelyplanet/backpack-ui/commit/3896b5f))
+* Switch Bookmark and BookmarkAlt buttons, deprecate BookmarkAlt ([3acdbff](https://github.com/lonelyplanet/backpack-ui/commit/3acdbff))
+* Switch Bookmark and BookmarkAlt icons, deprecate BookmarkAlt ([74f93a2](https://github.com/lonelyplanet/backpack-ui/commit/74f93a2))
+
+
+
 <a name="4.50.3"></a>
 ## [4.50.3](https://github.com/lonelyplanet/backpack-ui/compare/v4.50.2...v4.50.3) (2017-11-10)
 
