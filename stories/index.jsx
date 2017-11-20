@@ -177,6 +177,7 @@ import { Typeahead, TypeaheadTokenizer } from "../src/components/typeahead";
 import TypeSelector from "../src/components/typeSelector";
 import VideoEmbed from "../src/components/videoEmbed";
 import WatchLaterModal from "../src/components/watchLater/watchLaterModal";
+import colorTokens from "../src/styles/colors";
 
 storiesOf("Styles", module)
   .addDecorator(withKnobs)
@@ -1966,11 +1967,18 @@ storiesOf("Sectional nav", module)
 storiesOf("Section Header", module)
   .addDecorator(withKnobs)
   .add("Default", () => (
-    <StyleRoot>
+    <Center grow>
       <SectionHeader theme={select("Theme", ["default", "light"], "default")}>
         {text("title", "Top experiences in Vietnam")}
       </SectionHeader>
-    </StyleRoot>
+    </Center>
+  ))
+  .add("Light", () => (
+    <Center backgroundColor={colorTokens.textPrimary} grow>
+      <SectionHeader theme={select("Theme", ["default", "light"], "light")}>
+        {text("title", "Top experiences in Vietnam")}
+      </SectionHeader>
+    </Center>
   ));
 
 storiesOf("Select", module)
