@@ -69,6 +69,9 @@ Heading.defaultProps = {
   level: 2,
   size: 2,
   weight: "regular",
+  className: null,
+  id: null,
+  style: null,
 };
 
 export default radium(Heading);
