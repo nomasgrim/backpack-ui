@@ -4,11 +4,7 @@ import radium from "radium";
 import Measure from "react-measure";
 import { Heading } from "../text";
 import colors from "../../styles/colors";
-import {
-  fontSizeHeading2,
-  fontSizeHeading4,
-  lineHeightHeading4,
-} from "../../styles/typography";
+import { fontSizeHeading2 } from "../../styles/typography";
 import propTypes from "../../utils/propTypes";
 
 const styles = {
@@ -74,15 +70,11 @@ class SectionHeader extends React.Component {
             innerRef={measureRef}
             weight="regular"
             level={2}
-            size={2}
+            size={width < 600 ? 4 : 2}
             style={[
               styles.heading,
               styles.theme[theme].heading,
               style,
-              width < 600 && {
-                fontSize: `${fontSizeHeading4}px`,
-                lineHeight: lineHeightHeading4,
-              },
             ]}
           >
             {children}
