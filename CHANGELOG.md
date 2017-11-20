@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.52.0"></a>
+# [4.52.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.51.1...v4.52.0) (2017-11-20)
+
+
+### Bug Fixes
+
+* Add missing default prop values for TextHeading ([c1efffc](https://github.com/lonelyplanet/backpack-ui/commit/c1efffc))
+* Adjust SectionHeader size via size prop, not style prop ([4c0ace0](https://github.com/lonelyplanet/backpack-ui/commit/4c0ace0))
+* make pageHeader base header larger on mobile breakpoint ([#561](https://github.com/lonelyplanet/backpack-ui/issues/561)) ([ba6e9ff](https://github.com/lonelyplanet/backpack-ui/commit/ba6e9ff))
+* Update stories ([cd514bd](https://github.com/lonelyplanet/backpack-ui/commit/cd514bd))
+
+
+### Features
+
+* Add innerRef prop to TextHeading ([22f2b0b](https://github.com/lonelyplanet/backpack-ui/commit/22f2b0b))
+* Refactor SectionHeader component ([63c4a09](https://github.com/lonelyplanet/backpack-ui/commit/63c4a09))
+
+
+
 <a name="4.51.1"></a>
 ## [4.51.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.51.0...v4.51.1) (2017-11-13)
 
