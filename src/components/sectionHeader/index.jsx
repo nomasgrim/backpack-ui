@@ -59,8 +59,6 @@ class SectionHeader extends React.Component {
     const { width } = this.state.dimensions;
     const { children, theme, style } = this.props;
 
-    console.log(width);
-
     return (
       <Measure
         bounds
