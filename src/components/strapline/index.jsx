@@ -4,6 +4,7 @@ import radium from "radium";
 import settings from "../../../settings.json";
 import { rgb } from "../../utils/color";
 import font from "../../utils/font";
+import propTypes from "../../utils/propTypes";
 
 const styles = {
   base: {
@@ -44,7 +45,7 @@ const styles = {
 /**
  * Strapline component
  */
-function Strapline({ children, size, parent, color }) {
+function Strapline({ children, size, parent, color, style }) {
   return (
     <div
       className="Strapline"
@@ -53,6 +54,7 @@ function Strapline({ children, size, parent, color }) {
         size && styles.size[size],
         color && styles.color[color],
         parent && styles.parent[parent],
+        style,
       ]}
     >
       {children}
@@ -92,12 +94,18 @@ Strapline.propTypes = {
     "masthead",
     "pageHeader",
   ]),
+
+  /**
+   * Add custom styles
+   */
+  style: propTypes.style,
 };
 
 Strapline.defaultProps = {
   size: "",
   color: "",
   parent: "",
+  style: null,
 };
 
 export default radium(Strapline);
