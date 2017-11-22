@@ -105,9 +105,7 @@ Strapline.propTypes = {
 
 Strapline.defaultProps = {
   size: "",
-
   color: "",
-
   parent: "",
 };
 
