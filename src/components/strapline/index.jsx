@@ -45,22 +45,20 @@ const styles = {
 /**
  * Strapline component
  */
-function Strapline({ children, size, parent, color, style }) {
-  return (
-    <div
-      className="Strapline"
-      style={[
-        styles.base,
-        size && styles.size[size],
-        color && styles.color[color],
-        parent && styles.parent[parent],
-        style,
-      ]}
-    >
-      {children}
-    </div>
-  );
-}
+const Strapline = ({ children, size, parent, color, style }) => (
+  <div
+    className="Strapline"
+    style={[
+      styles.base,
+      size && styles.size[size],
+      color && styles.color[color],
+      parent && styles.parent[parent],
+      style,
+    ]}
+  >
+    {children}
+  </div>
+);
 
 Strapline.propTypes = {
   /**
