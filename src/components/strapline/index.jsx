@@ -109,6 +109,4 @@ Strapline.defaultProps = {
   parent: "",
 };
 
-Strapline.styles = styles;
-
 export default radium(Strapline);
