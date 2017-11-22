@@ -2,6 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import radium from "radium";
 import colors from "../../styles/colors";
+import {
+  fontSizeBodySmall,
+  fontSizeHeading4,
+  fontSizeHeading7,
+  lineHeightHeading4,
+  lineHeightHeading7,
+  lineHeightReset,
+} from "../../styles/typography";
 import { rgba } from "../../utils/color";
 import font from "../../utils/font";
 import propTypes from "../../utils/propTypes";
@@ -9,20 +17,21 @@ import propTypes from "../../utils/propTypes";
 const styles = {
   base: {
     fontFamily: font("miller"),
-    fontSize: "30px",
+    fontSize: `${fontSizeHeading4}px`,
     fontStyle: "italic",
+    lineHeight: lineHeightHeading4,
   },
 
   size: {
     tiny: {
-      fontSize: "14px",
+      fontSize: `${fontSizeBodySmall}px`,
       letterSpacing: ".4px",
-      lineHeight: 1,
+      lineHeight: lineHeightReset,
     },
     small: {
-      fontSize: "16px",
+      fontSize: `${fontSizeHeading7}px`,
       letterSpacing: ".4px",
-      lineHeight: (21 / 16),
+      lineHeight: lineHeightHeading7,
     },
   },
 
