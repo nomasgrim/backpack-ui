@@ -144,17 +144,20 @@ class ProfileHeader extends React.Component {
       }, textBodySmall()),
     };
 
-    const validateUrl = (url) => urlRegex.test(url);
-
     const urlParser = (url) => {
-      if (typeof document === "undefined") {
-        return { hostname: "" };
-      }
+      const parsed = urlRegex.exec(url);
 
-      const anchor = typeof document !== "undefined" ? document.createElement("a") : null;
-      anchor.href = url;
-      return anchor;
+      if (!parsed) return null;
+
+      return {
+        href: parsed[0],
+        protocol: parsed[1],
+        hostname: parsed[2],
+        pathname: parsed[3],
+      };
     };
+
+    const websiteParser = urlParser(website);
 
     return (
       <Measure
@@ -203,7 +206,7 @@ class ProfileHeader extends React.Component {
                   </LocationLabel>
                 }
 
-                {website && validateUrl(website) &&
+                {websiteParser &&
                   <p
                     style={[
                       styles.textBodySmall,
@@ -212,11 +215,11 @@ class ProfileHeader extends React.Component {
                     ]}
                   >
                     <a
-                      href={website}
+                      href={websiteParser.href}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {urlParser(website).hostname.replace("www.", "")}
+                      {`${websiteParser.hostname.replace("www.", "")}${websiteParser.pathname}`}
                     </a>
                   </p>
                 }
