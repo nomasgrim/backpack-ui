@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.53.0"></a>
+# [4.53.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.52.0...v4.53.0) (2017-11-22)
+
+
+### Bug Fixes
+
+* fix avatar uploader (use exif orientation) ([dc3ba64](https://github.com/lonelyplanet/backpack-ui/commit/dc3ba64))
+* Refactor function in Strapline ([c6b475b](https://github.com/lonelyplanet/backpack-ui/commit/c6b475b))
+* Refactor styles in Strapline ([c1cefae](https://github.com/lonelyplanet/backpack-ui/commit/c1cefae))
+* Replace settings.json with styles/colors in Strapline ([6d703be](https://github.com/lonelyplanet/backpack-ui/commit/6d703be))
+* Use rgba color util in Strapline ([db46fc4](https://github.com/lonelyplanet/backpack-ui/commit/db46fc4))
+* Use typography sizes from styles in Strapline ([913f14a](https://github.com/lonelyplanet/backpack-ui/commit/913f14a))
+
+
+### Features
+
+* Add style prop to Strapline ([5a20421](https://github.com/lonelyplanet/backpack-ui/commit/5a20421))
+
+
+
 <a name="4.52.0"></a>
 # [4.52.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.51.1...v4.52.0) (2017-11-20)
 
