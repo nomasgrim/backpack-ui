@@ -42,9 +42,6 @@ const styles = {
   },
 };
 
-/**
- * Strapline component
- */
 const Strapline = ({ children, size, parent, color, style }) => (
   <div
     className="Strapline"
