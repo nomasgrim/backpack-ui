@@ -84,6 +84,7 @@ function ModalComponent({
   disableContentPadding,
   title,
   showTitle,
+  showHeader,
   className,
   children,
   style,
@@ -164,52 +165,54 @@ function ModalComponent({
         rules={rules}
       />
 
-      <header
-        className="Modal-header clearfix"
-        style={[
-          styles.header,
-          title && {
-            [`@media (max-width: ${mq.max["768"]})`]: {
-              borderBottom: `1px solid ${colors.borderPrimary}`,
-            },
-          },
-        ]}
-      >
-        {leftAction &&
-          <button
-            style={[styles.actionItem, styles.leftAction]}
-            disabled={leftActionDisabled}
-            onClick={leftAction}
-          >
-            {leftActionContent}
-          </button>
-        }
-
-        {title &&
-          <span
-            style={[
-              styles.title,
-              !showTitle && {
-                [`@media ${largeMQ}`]: {
-                  display: "none",
-                },
+      {showHeader &&
+        <header
+          className="Modal-header clearfix"
+          style={[
+            styles.header,
+            title && {
+              [`@media (max-width: ${mq.max["768"]})`]: {
+                borderBottom: `1px solid ${colors.borderPrimary}`,
               },
-            ]}
-          >
-            {title}
-          </span>
-        }
+            },
+          ]}
+        >
+          {leftAction &&
+            <button
+              style={[styles.actionItem, styles.leftAction]}
+              disabled={leftActionDisabled}
+              onClick={leftAction}
+            >
+              {leftActionContent}
+            </button>
+          }
 
-        {rightAction &&
-          <button
-            style={[styles.actionItem, styles.rightAction]}
-            disabled={rightActionDisabled}
-            onClick={rightAction}
-          >
-            {rightActionContent}
-          </button>
-        }
-      </header>
+          {title &&
+            <span
+              style={[
+                styles.title,
+                !showTitle && {
+                  [`@media ${largeMQ}`]: {
+                    display: "none",
+                  },
+                },
+              ]}
+            >
+              {title}
+            </span>
+          }
+
+          {rightAction &&
+            <button
+              style={[styles.actionItem, styles.rightAction]}
+              disabled={rightActionDisabled}
+              onClick={rightAction}
+            >
+              {rightActionContent}
+            </button>
+          }
+        </header>
+      }
 
       <div
         className="Modal-content"
@@ -240,6 +243,7 @@ ModalComponent.propTypes = {
   desktopWidth: PropTypes.string,
   title: PropTypes.string,
   showTitle: PropTypes.bool,
+  showHeader: PropTypes.bool,
   className: PropTypes.string,
   disableContentPadding: PropTypes.bool,
   style: propTypes.style,
@@ -251,6 +255,7 @@ ModalComponent.defaultProps = {
   desktopWidth: "85%",
   closeTimeoutMS: timing.default,
   disableContentPadding: false,
+  showHeader: true,
 };
 
 ModalComponent.styles = styles;
