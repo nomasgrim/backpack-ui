@@ -45,24 +45,15 @@ const styles = {
  * Strapline component
  */
 function Strapline({ children, size, parent, color }) {
-  const style = [styles.base];
-
-  if (size) {
-    style.push(styles.size[size]);
-  }
-
-  if (color) {
-    style.push(styles.color[color]);
-  }
-
-  if (parent) {
-    style.push(styles.parent[parent]);
-  }
-
   return (
     <div
       className="Strapline"
-      style={style}
+      style={[
+        styles.base,
+        size && styles.size[size],
+        color && styles.color[color],
+        parent && styles.parent[parent],
+      ]}
     >
       {children}
     </div>
