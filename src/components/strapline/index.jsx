@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import radium from "radium";
 import settings from "../../../settings.json";
-import { rgb } from "../../utils/color";
+import { rgba } from "../../utils/color";
 import font from "../../utils/font";
 import propTypes from "../../utils/propTypes";
 
@@ -37,7 +37,7 @@ const styles = {
       color: settings.color.white,
     },
     gray: {
-      color: `rgba(${rgb(settings.color.black)}, .4)`,
+      color: rgba(settings.color.black, 0.4),
     },
   },
 };
