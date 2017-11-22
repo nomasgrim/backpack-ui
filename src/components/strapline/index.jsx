@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import radium from "radium";
-import settings from "../../../settings.json";
+import colors from "../../styles/colors";
 import { rgba } from "../../utils/color";
 import font from "../../utils/font";
 import propTypes from "../../utils/propTypes";
@@ -34,10 +34,10 @@ const styles = {
 
   color: {
     white: {
-      color: settings.color.white,
+      color: colors.textOverlay,
     },
     gray: {
-      color: rgba(settings.color.black, 0.4),
+      color: rgba(colors.bgOverlay, 0.4),
     },
   },
 };
