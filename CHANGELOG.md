@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.53.1"></a>
+## [4.53.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.53.0...v4.53.1) (2017-11-29)
+
+
+### Bug Fixes
+
+* allow hiding modal header ([cf1a95d](https://github.com/lonelyplanet/backpack-ui/commit/cf1a95d))
+
+
+
 <a name="4.53.0"></a>
 # [4.53.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.52.0...v4.53.0) (2017-11-22)
 
