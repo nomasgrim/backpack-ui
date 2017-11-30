@@ -84,7 +84,7 @@ function ModalComponent({
   disableContentPadding,
   title,
   showTitle,
-  showHeader,
+  hideHeader,
   className,
   children,
   style,
@@ -165,7 +165,7 @@ function ModalComponent({
         rules={rules}
       />
 
-      {showHeader &&
+      {!hideHeader &&
         <header
           className="Modal-header clearfix"
           style={[
@@ -243,7 +243,7 @@ ModalComponent.propTypes = {
   desktopWidth: PropTypes.string,
   title: PropTypes.string,
   showTitle: PropTypes.bool,
-  showHeader: PropTypes.bool,
+  hideHeader: PropTypes.bool,
   className: PropTypes.string,
   disableContentPadding: PropTypes.bool,
   style: propTypes.style,
@@ -255,7 +255,7 @@ ModalComponent.defaultProps = {
   desktopWidth: "85%",
   closeTimeoutMS: timing.default,
   disableContentPadding: false,
-  showHeader: true,
+  hideHeader: false,
 };
 
 ModalComponent.styles = styles;
