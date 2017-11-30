@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.54.0"></a>
+# [4.54.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.53.2...v4.54.0) (2017-11-30)
+
+
+### Bug Fixes
+
+* update article pagination item to include more specific heading styles as to not override other styles ([#571](https://github.com/lonelyplanet/backpack-ui/issues/571)) ([bea2011](https://github.com/lonelyplanet/backpack-ui/commit/bea2011))
+
+
+### Features
+
+* Update newsletter component ([#546](https://github.com/lonelyplanet/backpack-ui/issues/546)) ([2979490](https://github.com/lonelyplanet/backpack-ui/commit/2979490))
+
+
+
 <a name="4.53.2"></a>
 ## [4.53.2](https://github.com/lonelyplanet/backpack-ui/compare/v4.53.1...v4.53.2) (2017-11-30)
 
