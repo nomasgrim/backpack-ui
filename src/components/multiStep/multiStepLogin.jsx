@@ -63,6 +63,14 @@ const MultiStepLogin = ({
        that you're happy for Lonely Planet to use your information as set out in our <a href="https://www.lonelyplanet.com/legal/privacy-policy/">privacy policy</a> (including our <a href="https://www.lonelyplanet.com/legal/cookies/">cookie use</a>).
     </AuthDisclaimer>
   );
+
+  const LegacyDisclaimer = (
+    <AuthDisclaimer style={styles.disclaimerBelowButton}>
+      <a href="https://auth.lonelyplanet.com/users/password/new/">Forgot your password?</a> Please
+      contact <a href="mailto:community@lonelyplanet.com">community@lonelyplanet.com</a> for additional assistance if you do not receive an email from us soon. Be sure to check your spam or junk folder, just in case.
+    </AuthDisclaimer>
+  );
+
   return (
     <MultiStep currentStep={currentStep}>
       <AuthContainer key="home" hasLogo={showLogo}>
@@ -106,6 +114,7 @@ const MultiStepLogin = ({
         <ModalContentLegacyLoginForm
           authLink={authActions.password}
         />
+        {LegacyDisclaimer}
       </AuthContainer>
 
       <AuthContainer key="success" hasLogo={showLogo}>
