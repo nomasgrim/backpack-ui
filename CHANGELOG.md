@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.53.2"></a>
+## [4.53.2](https://github.com/lonelyplanet/backpack-ui/compare/v4.53.1...v4.53.2) (2017-11-30)
+
+
+### Bug Fixes
+
+* Add pinterest as option to SocialIconButton ([#566](https://github.com/lonelyplanet/backpack-ui/issues/566)) ([e13e2cf](https://github.com/lonelyplanet/backpack-ui/commit/e13e2cf))
+* use default hideHeader instead of showHeader ([b4b777d](https://github.com/lonelyplanet/backpack-ui/commit/b4b777d))
+
+
+
 <a name="4.53.1"></a>
 ## [4.53.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.53.0...v4.53.1) (2017-11-29)
 
