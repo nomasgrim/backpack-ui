@@ -5,9 +5,11 @@ import axios from "axios";
 import Recaptcha from "react-recaptcha";
 import { color, media } from "../../../settings.json";
 import font from "../../utils/font";
+import { outline } from "../../utils/mixins";
 import colors from "../../styles/colors";
+import { fontWeightLight } from "../../styles/typography";
 import Heading from "../heading";
-import Input from "../form/input";
+import Input from "../input";
 import Checkbox from "../checkbox";
 import Button from "../button";
 import MoreLink from "../moreLink";
@@ -63,7 +65,8 @@ const styles = {
     fontStyle: "italic",
     letterSpacing: "-.1px",
     lineHeight: (18 / 12),
-    margin: 0,
+    marginLeft: "auto",
+    marginRight: "auto",
     maxWidth: "386px",
 
     [`@media (min-width: ${media.min["480"]})`]: {
@@ -94,8 +97,15 @@ const styles = {
 
   input: {
     borderWidth: 0,
-    WebkitAppearance: "none",
-    paddingBottom: `${10 / 13}em`,
+    fontSize: "13px",
+    fontWeight: fontWeightLight,
+    height: "44px",
+    minHeight: null,
+    paddingBottom: 0,
+    paddingLeft: "16px",
+    paddingRight: "16px",
+    paddingTop: "4px",
+    ":focus": outline(),
   },
 
   checkboxFieldset: {
@@ -117,16 +127,6 @@ const styles = {
 };
 
 class Newsletter extends Component {
-  static formatFormData(data) {
-    const str = [];
-
-    Object.keys(data).forEach((item) => {
-      str.push(`${encodeURIComponent(item)}=${encodeURIComponent(data[item])}`);
-    });
-
-    return str.join("&");
-  }
-
   constructor(props) {
     super(props);
 
@@ -193,23 +193,28 @@ class Newsletter extends Component {
   }
 
   submitRequest(reCaptchaResponse) {
+    const { endpoint, signup } = this.props;
+
     this.setState({ waiting: true });
 
-    const formattedData = Newsletter.formatFormData({
-      [this.props.signup.vars]: "true",
-      "newsletter[source]": this.props.signup.source,
-      "newsletter[legalOptIn]": this.state.acceptLegalOptIn,
-      "newsletter[email]": this.state.email,
-      "g-recaptcha-response": reCaptchaResponse,
-    });
-
-    const config = {
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+    const data = {
+      newsletter: {
+        [signup.vars.replace(/newsletter\[(.*)\]/, "$1")]: true,
+        source: signup.source,
+        legalOptIn: this.state.acceptLegalOptIn,
+        email: this.state.email,
+        "g-recaptcha-response": reCaptchaResponse,
       },
     };
 
-    axios.post("https://www.lonelyplanet.com/newsletter", formattedData, config)
+    const config = {
+      headers: {
+        "X-Requested-With": "XMLHttpRequest",
+      },
+      withCredentials: true,
+    };
+
+    axios.post(endpoint, data, config)
       .then(response => this.setState({
         success: true,
         showSuccess: true,
@@ -249,8 +254,14 @@ class Newsletter extends Component {
       cta,
       confirmation,
       legalOptInLabel,
+      captchaSiteKey,
+      endpoint,
       style: overrideStyles,
     } = this.props;
+
+    if (!captchaSiteKey) {
+      throw new Error("You did not supply an API key for Recaptcha.");
+    }
 
     return (
       <div
@@ -263,6 +274,7 @@ class Newsletter extends Component {
         <Style
           scopeSelector=".Newsletter"
           rules={{
+            "a:focus": outline(),
             ".Checkbox label": {
               color: `${colors.textSecondary} !important`,
               fontSize: "9px !important",
@@ -329,18 +341,17 @@ class Newsletter extends Component {
 
               <form
                 style={styles.form}
-                action="https://www.lonelyplanet.com/newsletter"
+                action={endpoint}
                 onSubmit={this.handleSubmit}
               >
                 <div style={styles.inputFieldset}>
                   <Input
                     type="email"
-                    label="email"
                     placeholder={placeholder}
                     required
                     id="newsletter-email"
                     name="newsletter[email]"
-                    customStyles={styles.input}
+                    style={styles.input}
                     onChange={this.handleInput}
                   />
 
@@ -374,7 +385,7 @@ class Newsletter extends Component {
           {this.state.showCaptcha &&
             <div style={{ marginTop: "24px" }}>
               <Recaptcha
-                sitekey="6LegewcUAAAAAG-5-ZTtWJ9M8cUyz7Mh0-uzNbC_"
+                sitekey={captchaSiteKey}
                 render="explicit"
                 verifyCallback={this.submitRequest}
                 onloadCallback={this.recaptchCallback}
@@ -388,6 +399,7 @@ class Newsletter extends Component {
 }
 
 Newsletter.propTypes = {
+  captchaSiteKey: PropTypes.string.isRequired,
   title: PropTypes.string,
   subtitle: PropTypes.string,
   placeholder: PropTypes.string,
@@ -401,6 +413,7 @@ Newsletter.propTypes = {
     source: PropTypes.string,
   }),
   legalOptInLabel: PropTypes.string,
+  endpoint: PropTypes.string,
   style: PropTypes.objectOf(PropTypes.object),
 };
 
@@ -419,6 +432,8 @@ Newsletter.defaultProps = {
     source: "homepage",
   },
   legalOptInLabel: ["Tick to opt-in. Opt out at any time via the “unsubscribe” link in the footer of the emails. View our ", <a href="https://www.lonelyplanet.com/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">privacy policy</a>, "."],
+  captchaSiteKey: null,
+  endpoint: "https://www.lonelyplanet.com/newsletter",
 };
 
 export default radium(Newsletter);

@@ -2,10 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import radium from "radium";
 import styles from "./styles";
+import propTypes from "../../utils/propTypes";
 
 function Input(props) {
   const {
-    label,
     name,
     id,
     type,
@@ -15,41 +15,23 @@ function Input(props) {
     fill,
     customStyles,
   } = props;
-  const style = [styles.base];
-
-  style.push(styles.element.input.base);
-
-  if (size) {
-    style.push(styles.size[size]);
-    style.push(styles.element.input.size[size]);
-  }
-
-  if (theme) {
-    style.push(styles.theme[theme]);
-    style.push(styles.element.input.theme[theme]);
-
-    if (error) {
-      style.push(styles.theme[theme].error);
-    }
-  }
-
-  if (fill) {
-    style.push(styles.fill);
-  }
-
-  if (customStyles) {
-    style.push(customStyles);
-  }
-
 
   return (
     <input
       name={name || id}
-      aria-label={label}
-      title={label}
       type={type}
       {...props}
-      style={style}
+      style={[
+        styles.base,
+        styles.element.input.base,
+        size && styles.size[size],
+        size && styles.element.input.size[size],
+        theme && styles.theme[theme],
+        theme && styles.element.input.theme[theme],
+        theme && error && styles.theme[theme].error,
+        fill && styles.fill,
+        customStyles,
+      ]}
     />
   );
 }
@@ -69,16 +51,9 @@ Input.propTypes = {
     "radio",
     "checkbox",
   ]).isRequired,
-
   id: PropTypes.string.isRequired,
-
-  label: PropTypes.string.isRequired,
-
   name: PropTypes.string,
-
-
   error: PropTypes.bool,
-
   size: PropTypes.oneOf([
     "tiny",
     "small",
@@ -86,7 +61,6 @@ Input.propTypes = {
     "large",
     "huge",
   ]),
-
   theme: PropTypes.oneOf([
     "base",
     "light",
@@ -94,39 +68,21 @@ Input.propTypes = {
     "float",
     "inputGroup",
   ]),
-
   /**
    * Fills the width of the parent
    */
   fill: PropTypes.bool,
-
-  customStyles: PropTypes.objectOf(
-    PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number,
-      PropTypes.object,
-    ]),
-  ),
-
+  customStyles: propTypes.style,
 };
 
 Input.defaultProps = {
   type: "text",
-
   id: "",
-
-  label: "",
-
   name: "",
-
   size: "medium",
-
   theme: "base",
-
   fill: false,
-
   customStyles: null,
-
 };
 
 Input.styles = styles;
