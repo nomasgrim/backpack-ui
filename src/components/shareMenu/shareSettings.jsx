@@ -81,6 +81,8 @@ class ShareSettings extends React.Component {
       twitter: `https://twitter.com/intent/tweet?text=${text}&url=${url}&via=${via}`,
       facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
       email: `mailto:?subject=${text}&body=${url}`,
+      pinterest: `http://pinterest.com/pin/create/button/?url=${url}&media=${image}&description=${description}`,
+      whatsapp: `whatsapp://send?text=${text}%0A%0A${url}`,
     };
   }
 
