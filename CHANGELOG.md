@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.55.0"></a>
+# [4.55.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.54.1...v4.55.0) (2017-12-04)
+
+
+### Bug Fixes
+
+* Set color for Input component ([#573](https://github.com/lonelyplanet/backpack-ui/issues/573)) ([8a1eddd](https://github.com/lonelyplanet/backpack-ui/commit/8a1eddd))
+
+
+### Features
+
+* Add description, image props to ShareSettings ([97130e7](https://github.com/lonelyplanet/backpack-ui/commit/97130e7))
+* Add Pinterest, Whatsapp URLs to ShareSettings ([a6d28f6](https://github.com/lonelyplanet/backpack-ui/commit/a6d28f6))
+* Add Whatsapp icon ([dfb6757](https://github.com/lonelyplanet/backpack-ui/commit/dfb6757))
+* Add Whatsapp option to SocialIconButton ([5696508](https://github.com/lonelyplanet/backpack-ui/commit/5696508))
+
+
+
 <a name="4.54.1"></a>
 ## [4.54.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.54.0...v4.54.1) (2017-11-30)
 
