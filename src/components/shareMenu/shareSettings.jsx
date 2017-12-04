@@ -63,17 +63,19 @@ class ShareSettings extends React.Component {
   }
 
   formattedShareContent() {
-    const { url, text, via } = this.props.shareContent;
+    const { url, text, image, description, via } = this.props.shareContent;
 
     return {
       text: encodeURIComponent(text),
+      image: encodeURIComponent(image),
+      description: encodeURIComponent(description),
       url: encodeURIComponent(url),
       via,
     };
   }
 
   shareUrl() {
-    const { url, text, via } = this.formattedShareContent();
+    const { url, text, image, description, via } = this.formattedShareContent();
 
     return {
       twitter: `https://twitter.com/intent/tweet?text=${text}&url=${url}&via=${via}`,
@@ -99,6 +101,8 @@ ShareSettings.propTypes = {
   handleClipboardError: PropTypes.func.isRequired,
   shareContent: PropTypes.shape({
     text: PropTypes.string,
+    description: PropTypes.string,
+    image: PropTypes.string,
     url: PropTypes.string,
     via: PropTypes.string,
   }).isRequired,
