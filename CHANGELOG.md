@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.55.1"></a>
+## [4.55.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.55.0...v4.55.1) (2017-12-05)
+
+
+### Bug Fixes
+
+* don't use valid and showErrors state ([d3d23fd](https://github.com/lonelyplanet/backpack-ui/commit/d3d23fd))
+* Remove STORYBOOK_CAPTCHA_SITE_KEY var from newsletter story ([#576](https://github.com/lonelyplanet/backpack-ui/issues/576)) ([041dc5a](https://github.com/lonelyplanet/backpack-ui/commit/041dc5a))
+
+
+
 <a name="4.55.0"></a>
 # [4.55.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.54.1...v4.55.0) (2017-12-04)
 
