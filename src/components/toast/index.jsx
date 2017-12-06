@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import radium, { Style } from "radium";
+import cn from "classnames";
 import Icon from "../icon";
 import colors from "../../styles/colors";
 import dimensions from "../../styles/dimensions";
@@ -158,9 +159,10 @@ const Toast = ({
   onClose,
   buttonLabel,
   style,
+  className,
 }) => (
   <div
-    className="Toast"
+    className={cn("Toast", className)}
     role="alertdialog"
     aria-hidden={!visible}
     aria-live="assertive"
@@ -247,6 +249,7 @@ Toast.propTypes = {
   title: PropTypes.string,
   buttonLabel: PropTypes.string,
   style: propTypes.style,
+  className: PropTypes.string,
 };
 
 Toast.defaultProps = {
@@ -258,6 +261,7 @@ Toast.defaultProps = {
   title: null,
   buttonLabel: null,
   style: null,
+  className: null,
 };
 
 export default radium(Toast);

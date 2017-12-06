@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import radium from "radium";
+import cn from "classnames";
 import Logo from "../logo";
 import propTypes from "../../utils/propTypes";
 
@@ -25,9 +26,9 @@ const styles = {
   },
 };
 
-const AuthContainer = ({ children, hasLogo, style }) => (
+const AuthContainer = ({ children, hasLogo, style, className }) => (
   <div
-    className="AuthContainer"
+    className={cn("AuthContainer", className)}
     style={[styles.container, style]}
   >
     {hasLogo &&
@@ -44,6 +45,7 @@ AuthContainer.propTypes = {
   children: PropTypes.node.isRequired,
   hasLogo: PropTypes.bool,
   style: propTypes.style,
+  className: propTypes.string,
 };
 
 export default radium(AuthContainer);

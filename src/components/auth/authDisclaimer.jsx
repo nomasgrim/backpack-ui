@@ -9,7 +9,7 @@ const styles = {
 };
 
 const AuthDisclaimer = ({ children, style }) => (
-  <DisclaimerText style={[styles, style]}>
+  <DisclaimerText style={[styles, style]} className="js-gtm-disclaimer-text">
     {children}
   </DisclaimerText>
 );
