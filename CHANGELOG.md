@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.55.2"></a>
+## [4.55.2](https://github.com/lonelyplanet/backpack-ui/compare/v4.55.1...v4.55.2) (2017-12-06)
+
+
+### Bug Fixes
+
+* allow pageHeader title to have external link ([#579](https://github.com/lonelyplanet/backpack-ui/issues/579)) ([ebfbbc7](https://github.com/lonelyplanet/backpack-ui/commit/ebfbbc7))
+
+
+
 <a name="4.55.1"></a>
 ## [4.55.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.55.0...v4.55.1) (2017-12-05)
 
