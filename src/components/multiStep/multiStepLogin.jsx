@@ -73,7 +73,7 @@ const MultiStepLogin = ({
 
   return (
     <MultiStep currentStep={currentStep}>
-      <AuthContainer key="home" hasLogo={showLogo}>
+      <AuthContainer key="home" hasLogo={showLogo} className="js-gtm-auth-container">
         <AuthMessage>
           Organize your research & unlock
           tools like bookmarking.
@@ -81,6 +81,7 @@ const MultiStepLogin = ({
 
         <AuthSocialButtons
           actions={authActions}
+          className="js-gtm-auth-social-buttons"
         />
 
         <AuthEmailLink

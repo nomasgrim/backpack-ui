@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import radium, { Style } from "radium";
+import cn from "classnames";
 import colors from "../../styles/colors";
 import timing from "../../styles/timing";
 import font from "../../utils/font";
@@ -35,9 +36,9 @@ const scopedStyles = {
   },
 };
 
-const DisclaimerText = ({ children, style }) => (
+const DisclaimerText = ({ children, style, className }) => (
   <div
-    className="DisclaimerText"
+    className={cn("DisclaimerText", className)}
     style={[styles, style]}
   >
     <Style rules={scopedStyles} />
@@ -49,6 +50,7 @@ const DisclaimerText = ({ children, style }) => (
 DisclaimerText.propTypes = {
   children: PropTypes.node.isRequired,
   style: propTypes.style,
+  className: propTypes.string,
 };
 
 export default radium(DisclaimerText);

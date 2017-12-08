@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import radium from "radium";
+import cn from "classnames";
 import SocialLoginButton from "../socialLoginButton";
 import propTypes from "../../utils/propTypes";
 
@@ -10,9 +11,9 @@ const styles = {
   },
 };
 
-const AuthSocialButtons = ({ actions, style }) => (
+const AuthSocialButtons = ({ actions, style, className }) => (
   <div
-    className="AuthSocialButtons"
+    className={cn("AuthSocialButtons", className)}
     style={[styles.spacing, style]}
   >
     <SocialLoginButton
@@ -47,6 +48,7 @@ AuthSocialButtons.propTypes = {
     google: PropTypes.func,
   }).isRequired,
   style: propTypes.style,
+  className: propTypes.string,
 };
 
 export default radium(AuthSocialButtons);
