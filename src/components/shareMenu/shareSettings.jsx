@@ -69,22 +69,25 @@ class ShareSettings extends React.Component {
   }
 
   formattedShareContent() {
-    const { url, text, image, description, via } = this.props.shareContent;
+    const { url, text, image, description, twitterContent, via } = this.props.shareContent;
 
     return {
       text: encodeURIComponent(text),
       image: encodeURIComponent(image),
       description: encodeURIComponent(description),
+      twitterContent: encodeURIComponent(twitterContent),
       url: encodeURIComponent(url),
       via,
     };
   }
 
   shareUrl() {
-    const { url, text, image, description, via } = this.formattedShareContent();
+    const { url, text, image, description, twitterContent, via } = this.formattedShareContent();
+
+    const twitterText = twitterContent || `${description}&url=${url}&via=${via}`;
 
     return {
-      twitter: `https://twitter.com/intent/tweet?text=${text}&url=${url}&via=${via}`,
+      twitter: `https://twitter.com/intent/tweet?text=${twitterText}`,
       facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
       email: `mailto:?subject=${text}&body=${url}`,
       pinterest: `http://pinterest.com/pin/create/button/?url=${url}&media=${image}&description=${description}`,
@@ -110,6 +113,7 @@ ShareSettings.propTypes = {
   shareContent: PropTypes.shape({
     text: PropTypes.string,
     description: PropTypes.string,
+    twitterContent: PropTypes.string,
     image: PropTypes.string,
     url: PropTypes.string,
     via: PropTypes.string,
