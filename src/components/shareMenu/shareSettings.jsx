@@ -99,8 +99,8 @@ class ShareSettings extends React.Component {
 
 ShareSettings.propTypes = {
   children: PropTypes.func.isRequired,
-  handleClipboardSuccess: PropTypes.func.isRequired,
-  handleClipboardError: PropTypes.func.isRequired,
+  handleClipboardSuccess: PropTypes.func,
+  handleClipboardError: PropTypes.func,
   shareContent: PropTypes.shape({
     text: PropTypes.string,
     description: PropTypes.string,
