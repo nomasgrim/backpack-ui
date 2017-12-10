@@ -45,11 +45,28 @@ class ShareSettings extends React.Component {
 
   static openShareWindow(url) {
     const { windowOptions, windowSize } = ShareSettings.windowSettings();
-    window.open(
-      url,
-      "share",
-      `${windowOptions},${windowSize}`,
-    );
+    const isFacebook = url.indexOf("facebook.com") !== -1;
+    const isPinterest = url.indexOf("pinterest.com") !== -1;
+    const isReddit = url.indexOf("reddit.com") !== -1;
+    const isTwitter = url.indexOf("twitter.com") !== -1;
+    const hasTwitterWidgets = typeof window !== "undefined" &&
+      typeof window.__twttr !== "undefined" &&
+      window.__twttr.widgets &&
+      window.__twttr.widgets.init;
+    const shouldOpenWindow = isFacebook ||
+      isPinterest ||
+      isReddit ||
+      (isTwitter && !hasTwitterWidgets);
+
+    if (shouldOpenWindow) {
+      window.open(
+        url,
+        "share",
+        `${windowOptions},${windowSize}`,
+      );
+    } else {
+      window.location = url;
+    }
   }
 
   componentDidMount() {
