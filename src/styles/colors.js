@@ -58,6 +58,7 @@ const socialGoogleYellow = "#f9bc15";
 const socialGoogleRed = "#ea4535";
 const socialReddit = "#fc4220";
 const socialTwitter = "#1da1f2";
+const socialWhatsapp = "#28eb76";
 
 export default {
   bgPrimary,
@@ -108,4 +109,5 @@ export default {
   socialPinterest,
   socialReddit,
   socialTwitter,
+  socialWhatsapp,
 };
