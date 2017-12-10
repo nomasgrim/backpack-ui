@@ -53,7 +53,13 @@ class ShareSettings extends React.Component {
   }
 
   componentDidMount() {
-    this.initiateClipboard();
+    const { handleClipboardSuccess, handleClipboardError } = this.props;
+    const shouldInitiateClipboard = typeof handleClipboardSuccess === "function" &&
+      typeof handleClipboardError === "function";
+
+    if (shouldInitiateClipboard) {
+      this.initiateClipboard();
+    }
   }
 
   initiateClipboard() {
