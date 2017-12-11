@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.56.0"></a>
+# [4.56.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.55.2...v4.56.0) (2017-12-11)
+
+
+### Bug Fixes
+
+* add gtm prefixes to class names ([6385171](https://github.com/lonelyplanet/backpack-ui/commit/6385171))
+* Add story for ShareSettings component ([815c6de](https://github.com/lonelyplanet/backpack-ui/commit/815c6de))
+* Change whatsapp color in SocialIconButton ([a49e62b](https://github.com/lonelyplanet/backpack-ui/commit/a49e62b))
+* Check for clipboard methods in ShareSettings componentDidMount ([c335f30](https://github.com/lonelyplanet/backpack-ui/commit/c335f30))
+* Don't make clipboard method props required in ShareSettings ([5963f1d](https://github.com/lonelyplanet/backpack-ui/commit/5963f1d))
+
+
+### Features
+
+* Add color socialWhatsapp ([0fc7521](https://github.com/lonelyplanet/backpack-ui/commit/0fc7521))
+* Add conditional for window.open in ShareSettings ([93f9d55](https://github.com/lonelyplanet/backpack-ui/commit/93f9d55))
+* Add facebookMessenger, reddit URLs to ShareSettings ([ceb6805](https://github.com/lonelyplanet/backpack-ui/commit/ceb6805))
+* Add hash prop to modal wrapper ([#581](https://github.com/lonelyplanet/backpack-ui/issues/581)) ([3c8da0f](https://github.com/lonelyplanet/backpack-ui/commit/3c8da0f))
+* Add twitterContent prop to ShareSettings; create conditional Twitter text ([db1c1f0](https://github.com/lonelyplanet/backpack-ui/commit/db1c1f0))
+* add url parameter to toast action location ([#575](https://github.com/lonelyplanet/backpack-ui/issues/575)) ([f416e2f](https://github.com/lonelyplanet/backpack-ui/commit/f416e2f))
+
+
+
 <a name="4.55.2"></a>
 ## [4.55.2](https://github.com/lonelyplanet/backpack-ui/compare/v4.55.1...v4.55.2) (2017-12-06)
 
