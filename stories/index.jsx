@@ -142,6 +142,7 @@ import SettingBlockInput from "../src/components/settingBlockInput";
 import FormTextArea from "../src/components/form/textarea";
 import ToggleController from "../src/utils/toggleController";
 import ShareMenu from "../src/components/shareMenu";
+import ShareSettings from "../src/components/shareMenu/shareSettings";
 import Slide from "../src/components/slide";
 import SocialIconButton from "../src/components/socialIconButton";
 import SocialLoginButton from "../src/components/socialLoginButton";
@@ -2421,7 +2422,7 @@ storiesOf("Social Login Button", module)
 
 storiesOf("Social share", module)
   .addDecorator(withKnobs)
-  .add("Default", () => (
+  .add("Using SocialShareContainer", () => (
     <SocialShareContainer
       text={text("Text", "Animal islands: seven places where creatures rule")}
       url={text("URL", "https://www.lonelyplanet.com/asia/travel-tips-and-articles/animal-islands-seven-places-where-creatures-rule")}
@@ -2429,6 +2430,94 @@ storiesOf("Social share", module)
     >
       {SocialShare}
     </SocialShareContainer>
+  ))
+  .add("Using ShareSettings", () => (
+    <Center backgroundColor="white">
+      <ShareSettings
+        shareContent={{
+          text: "Animal islands: seven places where creatures rule",
+          url: "https://www.lonelyplanet.com/asia/travel-tips-and-articles/animal-islands-seven-places-where-creatures-rule",
+          description: "Wildlife watching is a tricky business. Days can be spent fruitlessly scanning the savannah for lions or holed up in a hide hoping to catch a glimpse of a rare bird. But for travellers with limited time (or patience), there are places where animals are not just easy to spot, they are impossible to miss.",
+          twitterContent: "Wildlife watching is a tricky business @lonelyplanet http://lptravel.to",
+          image: "https://www.lonelyplanet.com/travel-blog/tip-article/wordpress_uploads/2016/01/GettyImages-467445351_medium-1.jpg",
+          via: "lonelyplanet",
+        }}
+      >
+        {(socialActions, socialUrls, ClipboardWrapper) => (
+          <div>
+            <SocialIconButton
+              network="twitter"
+              href={socialUrls.twitter}
+              onClick={(event) => {
+                socialActions.twitter();
+                event.preventDefault();
+              }}
+              style={{ margin: "0 8px" }}
+            />
+
+            <SocialIconButton
+              network="facebook"
+              href={socialUrls.facebook}
+              onClick={(event) => {
+                socialActions.facebook();
+                event.preventDefault();
+              }}
+              style={{ margin: "0 8px" }}
+            />
+
+            <SocialIconButton
+              network="pinterest"
+              href={socialUrls.pinterest}
+              onClick={(event) => {
+                socialActions.pinterest();
+                event.preventDefault();
+              }}
+              style={{ margin: "0 8px" }}
+            />
+
+            <SocialIconButton
+              network="reddit"
+              href={socialUrls.reddit}
+              onClick={(event) => {
+                socialActions.reddit();
+                event.preventDefault();
+              }}
+              style={{ margin: "0 8px" }}
+            />
+
+            <SocialIconButton
+              network="email"
+              href={socialUrls.email}
+              onClick={(event) => {
+                socialActions.email();
+                event.preventDefault();
+              }}
+              style={{ margin: "0 8px" }}
+            />
+
+            <SocialIconButton
+              network="facebookMessenger"
+              href={socialUrls.facebookMessenger}
+              onClick={(event) => {
+                socialActions.facebookMessenger();
+                event.preventDefault();
+              }}
+              style={{ margin: "0 8px" }}
+            />
+
+            <SocialIconButton
+              network="whatsapp"
+              href={socialUrls.whatsapp}
+              onClick={(event) => {
+                socialActions.whatsapp();
+                event.preventDefault();
+              }}
+              style={{ margin: "0 8px" }}
+            />
+          </div>
+        )}
+      </ShareSettings>
+    </Center>
   ));
 
 storiesOf("Sponsor label", module)

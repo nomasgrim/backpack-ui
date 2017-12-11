@@ -45,15 +45,38 @@ class ShareSettings extends React.Component {
 
   static openShareWindow(url) {
     const { windowOptions, windowSize } = ShareSettings.windowSettings();
-    window.open(
-      url,
-      "share",
-      `${windowOptions},${windowSize}`,
-    );
+    const isFacebook = url.indexOf("facebook.com") !== -1;
+    const isPinterest = url.indexOf("pinterest.com") !== -1;
+    const isReddit = url.indexOf("reddit.com") !== -1;
+    const isTwitter = url.indexOf("twitter.com") !== -1;
+    const hasTwitterWidgets = typeof window !== "undefined" &&
+      typeof window.__twttr !== "undefined" &&
+      window.__twttr.widgets &&
+      window.__twttr.widgets.init;
+    const shouldOpenWindow = isFacebook ||
+      isPinterest ||
+      isReddit ||
+      (isTwitter && !hasTwitterWidgets);
+
+    if (shouldOpenWindow) {
+      window.open(
+        url,
+        "share",
+        `${windowOptions},${windowSize}`,
+      );
+    } else {
+      window.location = url;
+    }
   }
 
   componentDidMount() {
-    this.initiateClipboard();
+    const { handleClipboardSuccess, handleClipboardError } = this.props;
+    const shouldInitiateClipboard = typeof handleClipboardSuccess === "function" &&
+      typeof handleClipboardError === "function";
+
+    if (shouldInitiateClipboard) {
+      this.initiateClipboard();
+    }
   }
 
   initiateClipboard() {
@@ -63,26 +86,31 @@ class ShareSettings extends React.Component {
   }
 
   formattedShareContent() {
-    const { url, text, image, description, via } = this.props.shareContent;
+    const { url, text, image, description, twitterContent, via } = this.props.shareContent;
 
     return {
       text: encodeURIComponent(text),
       image: encodeURIComponent(image),
       description: encodeURIComponent(description),
+      twitterContent: encodeURIComponent(twitterContent),
       url: encodeURIComponent(url),
       via,
     };
   }
 
   shareUrl() {
-    const { url, text, image, description, via } = this.formattedShareContent();
+    const { url, text, image, description, twitterContent, via } = this.formattedShareContent();
+
+    const twitterText = twitterContent || `${description}&url=${url}&via=${via}`;
 
     return {
-      twitter: `https://twitter.com/intent/tweet?text=${text}&url=${url}&via=${via}`,
+      twitter: `https://twitter.com/intent/tweet?text=${twitterText}`,
       facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
-      email: `mailto:?subject=${text}&body=${url}`,
-      pinterest: `http://pinterest.com/pin/create/button/?url=${url}&media=${image}&description=${description}`,
-      whatsapp: `whatsapp://send?text=${text}%0A%0A${url}`,
+      facebookMessenger: `fb-messenger://share/?link=${url}`,
+      email: `mailto:?subject=${text}&body=${description}%0A%0A${url}`,
+      pinterest: `https://www.pinterest.com/pin/create/button/?url=${url}&media=${image}&description=${description}`,
+      reddit: `https://www.reddit.com/submit/?url=${url}`,
+      whatsapp: `whatsapp://send?text=${description}%0A%0A${url}`,
     };
   }
 
@@ -99,11 +127,12 @@ class ShareSettings extends React.Component {
 
 ShareSettings.propTypes = {
   children: PropTypes.func.isRequired,
-  handleClipboardSuccess: PropTypes.func.isRequired,
-  handleClipboardError: PropTypes.func.isRequired,
+  handleClipboardSuccess: PropTypes.func,
+  handleClipboardError: PropTypes.func,
   shareContent: PropTypes.shape({
     text: PropTypes.string,
     description: PropTypes.string,
+    twitterContent: PropTypes.string,
     image: PropTypes.string,
     url: PropTypes.string,
     via: PropTypes.string,

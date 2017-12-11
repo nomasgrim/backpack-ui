@@ -14,7 +14,7 @@ const backgroundColors = {
   pinterest: colors.socialPinterest,
   reddit: colors.socialReddit,
   twitter: colors.socialTwitter,
-  whatsapp: colors.textPrimary,
+  whatsapp: colors.socialWhatsapp,
 };
 
 const iconNames = {
