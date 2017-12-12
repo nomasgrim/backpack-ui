@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.56.1"></a>
+## [4.56.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.56.0...v4.56.1) (2017-12-12)
+
+
+### Bug Fixes
+
+* Add container type ([5365489](https://github.com/lonelyplanet/backpack-ui/commit/5365489))
+* Fix module issues first ([6cec3f4](https://github.com/lonelyplanet/backpack-ui/commit/6cec3f4))
+* Update more types ([3a0c186](https://github.com/lonelyplanet/backpack-ui/commit/3a0c186))
+
+
+
 <a name="4.56.0"></a>
 # [4.56.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.55.2...v4.56.0) (2017-12-11)
 
