@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.56.2"></a>
+## [4.56.2](https://github.com/lonelyplanet/backpack-ui/compare/v4.56.1...v4.56.2) (2017-12-12)
+
+
+### Bug Fixes
+
+* Make container props optional ([34043b6](https://github.com/lonelyplanet/backpack-ui/commit/34043b6))
+
+
+
 <a name="4.56.1"></a>
 ## [4.56.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.56.0...v4.56.1) (2017-12-12)
 
