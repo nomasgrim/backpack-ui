@@ -104,9 +104,9 @@ export var Input: React.SFC<InputProps>;
 
 
 interface IContainerProps {
-  id: string;
-  className: string;
-  style: React.CSSProperties;
+  id?: string;
+  className?: string;
+  style?: React.CSSProperties;
 }
 
 export var Container: React.SFC<IContainerProps>;
