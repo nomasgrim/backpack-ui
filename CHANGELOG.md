@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.57.0"></a>
+# [4.57.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.56.4...v4.57.0) (2017-12-20)
+
+
+### Features
+
+* Add enableWindowScrolling prop to ModalWrapper ([#586](https://github.com/lonelyplanet/backpack-ui/issues/586)) ([8f5ac7e](https://github.com/lonelyplanet/backpack-ui/commit/8f5ac7e))
+
+
+
 <a name="4.56.4"></a>
 ## [4.56.4](https://github.com/lonelyplanet/backpack-ui/compare/v4.56.3...v4.56.4) (2017-12-15)
 

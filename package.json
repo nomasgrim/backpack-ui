@@ -1,6 +1,6 @@
 {
   "name": "backpack-ui",
-  "version": "4.56.4",
+  "version": "4.57.0",
   "description": "Lonely Planet's Components",
   "main": "dist/index.js",
   "scripts": {
@@ -50,7 +50,7 @@
     "no-scroll": "^2.0.0",
     "object-assign": "^4.1.0",
     "prop-types": "^15.5.10",
-    "radium": "^0.19.4",
+    "radium": "^0.19.6",
     "rc-slider": "^5.1.1",
     "react-addons-shallow-compare": "^15.3.2",
     "react-date-range": "^0.9.4",
