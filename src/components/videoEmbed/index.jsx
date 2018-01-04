@@ -18,6 +18,7 @@ const bcPlayerIds = {
   background: "BJputewob",
   bestintravel: "HkJcclwoZ",
   destination: "HkPdqeDiZ",
+  eed: "rJtMIpi7M",
 };
 
 const cueDuration = 15;
@@ -899,6 +900,7 @@ VideoEmbed.propTypes = {
     "background",
     "bestintravel",
     "destination",
+    "eed",
   ]),
   nextVideo: PropTypes.shape({
     title: PropTypes.string,
