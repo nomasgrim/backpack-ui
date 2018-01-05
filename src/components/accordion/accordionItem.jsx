@@ -1,19 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
 import radium from "radium";
+
+import colors from "../../styles/colors";
+import timing from "../../styles/timing";
+import mq from "../../styles/mq";
 import propTypes from "../../utils/propTypes";
-import { color, media, timing } from "../../../settings.json";
 import { Plus } from "../icon";
 
-const mq = `@media (min-width: ${media.min["768"]})`;
+const mediaQuery = `@media (min-width: ${mq.min[768]})`;
 
 const styles = {
   container: {
-    borderBottom: `1px solid ${color.gray}`,
+    borderBottom: `1px solid ${colors.borderPrimary}`,
   },
 
   heading: {
-    color: color.darkGray,
+    color: colors.textPrimary,
     backgroundColor: "transparent",
     display: "block",
     fontSize: "20px",
@@ -28,11 +31,11 @@ const styles = {
     transition: `color ${timing.fast} ease-in-out`,
     width: "100%",
 
-    ":hover": { color: color.blue },
-    ":active": { color: color.blue },
-    ":focus": { color: color.blue },
+    ":hover": { color: colors.linkPrimary },
+    ":active": { color: colors.linkPrimary },
+    ":focus": { color: colors.linkPrimary },
 
-    [mq]: {
+    [mediaQuery]: {
       fontSize: "28px",
       lineHeight: (34 / 28),
       paddingBottom: "39px",
@@ -46,7 +49,7 @@ const styles = {
     marginRight: "8px",
     marginTop: "4px",
 
-    [mq]: {
+    [mediaQuery]: {
       fontSize: "22px",
       marginRight: "30px",
       marginTop: "10px",
@@ -61,7 +64,7 @@ const styles = {
   contentPadding: {
     paddingBottom: "32px",
 
-    [mq]: {
+    [mediaQuery]: {
       paddingBottom: "48px",
     },
   },

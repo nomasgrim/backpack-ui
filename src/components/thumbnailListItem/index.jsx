@@ -1,17 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
 import radium, { Style } from "radium";
-import Link from "../link";
-import { color, timing, typography, zIndex } from "../../../settings.json";
-import font from "../../utils/font";
+
+import colors from "../../styles/colors";
+import timing from "../../styles/timing";
+import { fontWeightRegular } from "../../styles/typography";
+import zIndex from "../../styles/zIndex";
 import { rgba } from "../../utils/color";
-import duration from "../../utils/time";
+import font from "../../utils/font";
 import iconFromString from "../../utils/icon";
+import duration from "../../utils/time";
 import BulletDescription from "../bulletDescription";
-import TextBubble from "../textBubble";
+import CoverPhoto from "../coverPhoto";
 import Heading from "../heading";
 import Icon from "../icon";
-import CoverPhoto from "../coverPhoto";
+import Link from "../link";
+import TextBubble from "../textBubble";
 
 const hoverStyles = {
   ".CoverPhoto": {
@@ -30,7 +34,7 @@ const styles = {
   },
 
   imageAnchor: {
-    backgroundColor: color.black,
+    backgroundColor: colors.bgOverlay,
     display: "block",
     overflow: "hidden",
     position: "relative",
@@ -45,7 +49,7 @@ const styles = {
   imageText: {
     bottom: "3px",
     fontSize: "11px",
-    fontWeight: typography.fontWeightMedium,
+    fontWeight: fontWeightRegular,
     position: "absolute",
     right: "3px",
     zIndex: zIndex.default,
@@ -81,7 +85,7 @@ const styles = {
   },
 
   status: {
-    color: color.white,
+    color: colors.bgPrimary,
     fontFamily: font("miller"),
     fontSize: "12px",
     fontStyle: "italic",
@@ -91,22 +95,22 @@ const styles = {
   descriptionIcon: {
     backgroundColor: "transparent",
     border: 0,
-    color: color.detailHeaderSmall,
+    color: colors.accentGray,
     cursor: "pointer",
     fontSize: "16px",
     padding: 0,
     transition: `color ${timing.default} ease-in-out`,
 
     ":hover": {
-      color: rgba(color.detailHeaderSmall, 0.5),
+      color: rgba(colors.accentGray, 0.5),
     },
 
     ":active": {
-      color: rgba(color.detailHeaderSmall, 0.5),
+      color: rgba(colors.accentGray, 0.5),
     },
 
     ":focus": {
-      color: rgba(color.detailHeaderSmall, 0.5),
+      color: rgba(colors.accentGray, 0.5),
     },
   },
 };
@@ -181,7 +185,7 @@ const ThumbnailListItem = ({
             weight="thin"
             override={[
               styles.title,
-              (theme === "dark") && { color: color.white },
+              (theme === "dark") && { color: colors.bgPrimary },
             ]}
           >
             {title}

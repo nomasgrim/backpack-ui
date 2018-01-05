@@ -1,19 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
 import radium from "radium";
-import Avatar from "../avatar";
+
 import colors from "../../styles/colors";
-import { fontSizeHeading6 } from "../../styles/typography";
 import timing from "../../styles/timing";
+import { fontSizeHeading6 } from "../../styles/typography";
 import { outline } from "../../utils/mixins";
 import propTypes from "../../utils/propTypes";
+import Avatar from "../avatar";
 
 const styles = {
   anchor: {
     alignItems: "center",
     color: "inherit",
     display: "inline-flex",
-    fontSize: fontSizeHeading6,
+    fontSize: `${fontSizeHeading6}px`,
     lineHeight: 1,
     textDecoration: "none",
     transition: `color ${timing.fast} ease-in-out`,

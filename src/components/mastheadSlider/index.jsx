@@ -2,7 +2,10 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import radium, { Style } from "radium";
 import Slider from "react-slick";
-import { color, media, zIndex } from "../../../settings.json";
+
+import colors from "../../styles/colors";
+import mq from "../../styles/mq";
+import zIndex from "../../styles/zIndex";
 import { rgb } from "../../utils/color";
 
 export const rules = {
@@ -40,11 +43,11 @@ export const rules = {
   ".slick-dots button:before": {
     opacity: 1,
     fontSize: "10px",
-    color: `rgba(${rgb(color.white)}, 0.37)`,
+    color: `rgba(${rgb(colors.bgPrimary)}, 0.37)`,
   },
   ".slick-dots .slick-active button:before": {
     opacity: 1,
-    color: `rgba(${rgb(color.white)}, 1)`,
+    color: `rgba(${rgb(colors.bgPrimary)}, 1)`,
   },
   ".slick-prev": {
     left: "52px",
@@ -69,7 +72,7 @@ const styles = {
   slideContainer: {
     overflowY: "hidden",
     minHeight: "370px",
-    [`@media (min-width: ${media.min["720"]})`]: {
+    [`@media (min-width: ${mq.min[720]})`]: {
       minHeight: "650px",
     },
   },
@@ -77,14 +80,14 @@ const styles = {
     width: "100%",
     position: "absolute",
     minHeight: "370px",
-    [`@media (min-width: ${media.min["720"]})`]: {
+    [`@media (min-width: ${mq.min[720]})`]: {
       minHeight: "650px",
     },
   },
   // REM units being used to match what is currently in rizz-next
   isUnderGlobalHeader: {
     marginTop: "-5rem",
-    [`@media (min-width: ${media.min["720"]})`]: {
+    [`@media (min-width: ${mq.min[720]})`]: {
       marginTop: "-13rem",
     },
   },

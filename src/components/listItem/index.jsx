@@ -4,10 +4,16 @@ import radium from "radium";
 import truncate from "truncate";
 import moment from "moment";
 import { Link } from "react-router";
-import { color, media } from "../../../settings.json";
+
+import colors from "../../styles/colors";
+import mq from "../../styles/mq";
+import {
+  gutter,
+  percentage,
+  span,
+} from "../../utils/grid";
 import BookmarkButton from "../bookmarkButton";
 import MoreLink from "../moreLink";
-import { gutter, span, percentage } from "../../utils/grid";
 
 const containerWidth = span(8, "static");
 const imageWidth = span(2, "static");
@@ -19,12 +25,12 @@ const styles = {
       position: "relative",
       width: percentage("78px", "335px"),
 
-      [`@media (max-width: ${media.max["768"]})`]: {
+      [`@media (max-width: ${mq.max[768]})`]: {
         float: "right",
         marginTop: ".9rem",
       },
 
-      [`@media (min-width: ${media.min["768"]})`]: {
+      [`@media (min-width: ${mq.min[768]})`]: {
         position: "absolute",
         right: 0,
         top: 0,
@@ -54,7 +60,7 @@ const styles = {
     base: {
       overflow: "hidden",
 
-      [`@media (min-width: ${media.min["768"]})`]: {
+      [`@media (min-width: ${mq.min[768]})`]: {
         marginRight: percentage(gutter("static"), containerWidth),
         width: percentage(contentWidth, containerWidth),
       },
@@ -63,35 +69,35 @@ const styles = {
 
   category: {
     base: {
-      color: color.detailHeaderSmall,
+      color: colors.accentGray,
       fontSize: "1rem",
       lineHeight: 1,
       marginBottom: ".5rem",
       textTransform: "uppercase",
 
-      [`@media (max-width: ${media.max["768"]})`]: {
+      [`@media (max-width: ${mq.max[768]})`]: {
         letterSpacing: ".4px",
         marginTop: ".1rem",
       },
 
-      [`@media (min-width: ${media.min["768"]})`]: {
+      [`@media (min-width: ${mq.min[768]})`]: {
         fontSize: "1.2rem",
         marginBottom: "1rem",
       },
     },
 
     sponsored: {
-      color: color.orange,
+      color: colors.accentYellow,
       fontWeight: 600,
     },
 
     topChoice: {
-      color: color.red,
+      color: colors.accentRed,
       fontWeight: 600,
     },
 
     location: {
-      [`@media (max-width: ${media.max["768"]})`]: {
+      [`@media (max-width: ${mq.max[768]})`]: {
         display: "none",
       },
     },
@@ -99,7 +105,7 @@ const styles = {
 
   title: {
     base: {
-      color: color.darkGray,
+      color: colors.textPrimary,
       float: "left",
       fontSize: "2rem",
       fontWeight: 600,
@@ -108,7 +114,7 @@ const styles = {
       margin: 0,
       maxWidth: "76%",
 
-      [`@media (min-width: ${media.min["768"]})`]: {
+      [`@media (min-width: ${mq.min[768]})`]: {
         fontSize: "2.8rem",
         lineHeight: (34 / 28),
         maxWidth: "100%",
@@ -121,13 +127,13 @@ const styles = {
 
   bookmark: {
     base: {
-      [`@media (max-width: ${media.max["768"]})`]: {
+      [`@media (max-width: ${mq.max[768]})`]: {
         bottom: "-2rem",
         position: "absolute",
         right: "-.4rem",
       },
 
-      [`@media (min-width: ${media.min["768"]})`]: {
+      [`@media (min-width: ${mq.min[768]})`]: {
         display: "inline-block",
         marginLeft: ".5rem",
         marginTop: ".3rem",
@@ -137,7 +143,7 @@ const styles = {
 
   description: {
     base: {
-      color: color.titleGray,
+      color: colors.textPrimary,
       float: "left",
       fontSize: "1.4rem",
       lineHeight: (24 / 14),
@@ -145,7 +151,7 @@ const styles = {
       width: percentage("242px", "335px"),
       fontWeight: 300,
 
-      [`@media (min-width: ${media.min["768"]})`]: {
+      [`@media (min-width: ${mq.min[768]})`]: {
         fontSize: "1.8rem",
         lineHeight: (32 / 18),
         marginRight: percentage(gutter("static"), containerWidth),
@@ -165,25 +171,25 @@ const styles = {
 
   link: {
     image: {
-      [`@media (max-width: ${media.max["1024"]})`]: {
+      [`@media (max-width: ${mq.max[1024]})`]: {
         display: "none",
       },
 
-      [`@media (min-width: ${media.min["1024"]})`]: {
+      [`@media (min-width: ${mq.min[1024]})`]: {
         marginTop: "2rem",
       },
     },
 
     description: {
-      [`@media (max-width: ${media.max["768"]})`]: {
+      [`@media (max-width: ${mq.max[768]})`]: {
         marginTop: "1.2rem",
       },
 
-      [`@media (min-width: ${media.min["768"]}) and (max-width: ${media.max["1024"]})`]: {
+      [`@media (min-width: ${mq.min[768]}) and (max-width: ${mq.max[1024]})`]: {
         marginTop: "1.9rem",
       },
 
-      [`@media (min-width: ${media.min["1024"]})`]: {
+      [`@media (min-width: ${mq.min[1024]})`]: {
         display: "none",
       },
     },
@@ -411,33 +417,19 @@ ListItem.propTypes = {
 
 ListItem.defaultProps = {
   title: "",
-
   slug: "",
-
   type: "",
-
   subtype: "",
-
   place: {},
-
   image: {},
-
   link: {},
-
   description: "",
-
   sponsored: false,
-
   topChoice: false,
-
   bookmark: false,
-
   bookmarkSize: "small",
-
   ad: "",
-
   date: "",
-
   id: "",
 };
 

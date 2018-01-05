@@ -1,9 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import radium from "radium";
-import { color, media, timing, zIndex } from "../../../settings.json";
-import font from "../../utils/font";
+
+import colors from "../../styles/colors";
+import mq from "../../styles/mq";
+import timing from "../../styles/timing";
+import zIndex from "../../styles/zIndex";
 import { rgb } from "../../utils/color";
+import font from "../../utils/font";
 import CategoryLabel from "../categoryLabel";
 import Heading from "../heading";
 import { ArrowLeftAlternate, ArrowRightAlternate } from "../icon";
@@ -12,7 +16,7 @@ const styles = {
   anchor: {
     alignItems: "center",
     backgroundColor: "#1f1f1f",
-    color: color.white,
+    color: colors.bgPrimary,
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
@@ -24,7 +28,7 @@ const styles = {
     textAlign: "center",
     textDecoration: "none",
 
-    [`@media (min-width: ${media.min["960"]})`]: {
+    [`@media (min-width: ${mq.min[960]})`]: {
       minHeight: "420px",
     },
 
@@ -41,7 +45,7 @@ const styles = {
   },
 
   fauxButton: {
-    border: `1px solid rgba(${rgb(color.white)}, .3)`,
+    border: `1px solid rgba(${rgb(colors.bgPrimary)}, .3)`,
     borderRadius: "32px",
     display: "inline-block",
     fontFamily: font("benton"),
@@ -52,7 +56,7 @@ const styles = {
     padding: "10px 16px 9px",
     textTransform: "uppercase",
 
-    [`@media (min-width: ${media.min["480"]})`]: {
+    [`@media (min-width: ${mq.min[480]})`]: {
       marginTop: "23px",
     },
   },
@@ -84,7 +88,7 @@ const css = `
     font-size: 32px !important;
   }
 
-  @media (min-width: ${media.min["960"]}) {
+  @media (min-width: ${mq.min[960]}) {
     .ArticlePaginationItem .Heading {
       font-size: 40px !important;
       line-height: ${(46 / 40)} !important;
@@ -105,7 +109,7 @@ const ArticlePaginationItem = ({ title, href, image, imageAlt, category, page, s
 
     <div style={styles.container}>
       {category &&
-        <CategoryLabel style={{ color: color.white }}>
+        <CategoryLabel style={{ color: colors.bgPrimary }}>
           {category}
         </CategoryLabel>
       }
@@ -115,7 +119,7 @@ const ArticlePaginationItem = ({ title, href, image, imageAlt, category, page, s
         tracking="tight"
         weight="thick"
         override={{
-          color: color.white,
+          color: colors.bgPrimary,
           fontSize: "20px",
           lineHeight: (28 / 20),
           marginTop: "2px",

@@ -2,6 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import radium from "radium";
 import cn from "classnames";
+
+import colors from "../../styles/colors";
+import mq from "../../styles/mq";
+import iconFromString from "../../utils/icon";
+import propTypes from "../../utils/propTypes";
+import duration from "../../utils/time";
 import {
   Card,
   CardActionIcon,
@@ -13,22 +19,18 @@ import {
 } from "../card";
 import TextBubble from "../textBubble";
 import { Play as PlayIcon } from "../icon";
-import { color, media } from "../../../settings.json";
-import iconFromString from "../../utils/icon";
-import duration from "../../utils/time";
-import propTypes from "../../utils/propTypes";
 
-const mq = `@media (max-width: ${media.max["768"]})`;
+const mediaQuery = `@media (max-width: ${mq.max[768]})`;
 
 const styles = {
   playIcon: {
     bottom: "17px",
-    color: color.white,
+    color: colors.bgPrimary,
     fontSize: "20px",
     left: "24px",
     position: "absolute",
 
-    [mq]: {
+    [mediaQuery]: {
       bottom: "12px",
       fontSize: "12px",
       left: "11px",
@@ -45,7 +47,7 @@ const styles = {
     position: "absolute",
     right: "10px",
 
-    [mq]: {
+    [mediaQuery]: {
       bottom: "6px",
       fontSize: "9px",
       minWidth: "53px",
@@ -62,7 +64,7 @@ const styles = {
     right: "22px",
     top: "25px",
 
-    [mq]: {
+    [mediaQuery]: {
       fontSize: "12px",
       right: "9px",
       top: "12px",

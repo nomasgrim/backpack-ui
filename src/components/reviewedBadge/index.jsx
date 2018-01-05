@@ -1,7 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import radium from "radium";
-import { color, media } from "../../../settings.json";
+
+import colors from "../../styles/colors";
+import mq from "../../styles/mq";
 import Icon from "../icon";
 
 const styles = {
@@ -28,15 +30,15 @@ const styles = {
     parent: {
       listItem: {
         bottom: "10px",
-        color: color.white,
+        color: colors.bgPrimary,
         position: "absolute",
 
-        [`@media (max-width: ${media.max["768"]})`]: {
+        [`@media (max-width: ${mq.max[768]})`]: {
           textAlign: "center",
           width: "100%",
         },
 
-        [`@media (min-width: ${media.min["768"]})`]: {
+        [`@media (min-width: ${mq.min[768]})`]: {
           left: "10px",
         },
       },
@@ -53,7 +55,7 @@ const styles = {
 
     parent: {
       listItem: {
-        [`@media (max-width: ${media.max["768"]})`]: {
+        [`@media (max-width: ${mq.max[768]})`]: {
           display: "none",
         },
       },
@@ -99,7 +101,6 @@ ReviewedBadge.propTypes = {
 
 ReviewedBadge.defaultProps = {
   size: "small",
-
   parent: "",
 };
 

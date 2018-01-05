@@ -1,31 +1,33 @@
 import React from "react";
 import PropTypes from "prop-types";
 import radium from "radium";
-import settings from "../../../settings.json";
-import Icon from "../icon";
+
+import colors from "../../styles/colors";
+import timing from "../../styles/timing";
 import { rgb } from "../../utils/color";
 import font from "../../utils/font";
+import Icon from "../icon";
 
 const baseFontSize = 14;
 
 const hoverStyles = {
-  backgroundColor: `rgba(${rgb(settings.color.black)}, .9)`,
+  backgroundColor: `rgba(${rgb(colors.bgOverlay)}, .9)`,
 };
 
 const styles = {
   container: {
     base: {
-      backgroundColor: `rgba(${rgb(settings.color.black)}, .6)`,
+      backgroundColor: `rgba(${rgb(colors.bgOverlay)}, .6)`,
       border: 0,
       borderRadius: `${4 / baseFontSize}em`,
-      color: settings.color.white,
+      color: colors.bgPrimary,
       cursor: "pointer",
       display: "block",
       fontFamily: font("benton"),
       fontSize: `${baseFontSize}px`,
       lineHeight: 1,
       padding: `${5 / baseFontSize}em ${4 / baseFontSize}em ${4 / baseFontSize}em ${7 / baseFontSize}em`,
-      transition: `background-color ${settings.timing.default}`,
+      transition: `background-color ${timing.default}`,
       verticalAlign: "baseline",
       width: "auto",
 
@@ -86,7 +88,6 @@ ExpandButton.propTypes = {
 
 ExpandButton.defaultProps = {
   label: "",
-
   onClick: null,
 };
 

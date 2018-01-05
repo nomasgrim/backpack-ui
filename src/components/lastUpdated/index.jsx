@@ -1,11 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-import settings from "../../../settings.json";
+
+import colors from "../../styles/colors";
+import { miller } from "../../styles/fonts";
 
 const styles = {
   base: {
-    color: settings.color.lightText,
-    fontFamily: settings.font.family.miller,
+    color: colors.textSecondary,
+    fontFamily: miller,
     fontSize: "1.6rem",
     fontStyle: "italic",
     lineHeight: 1,

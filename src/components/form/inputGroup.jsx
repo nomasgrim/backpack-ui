@@ -1,18 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
 import radium, { Style } from "radium";
-import { color, media } from "../../../settings.json";
+
+import colors from "../../styles/colors";
+import mq from "../../styles/mq";
 import { darken, rgb } from "../../utils/color";
 import Label from "../form/label";
 
 const styles = {
   container: {
     base: {
-      backgroundColor: color.white,
-      borderColor: darken(color.white, 17),
+      backgroundColor: colors.bgPrimary,
+      borderColor: darken(colors.bgPrimary, 17),
       borderStyle: "solid",
       borderWidth: ".1rem",
-      color: `rgba(${rgb(color.titleGray)}, .72)`,
+      color: `rgba(${rgb(colors.textPrimary)}, .72)`,
       position: "relative",
     },
 
@@ -67,7 +69,7 @@ function InputGroup({
           },
 
           mediaQueries: {
-            [`(min-width: ${media.min["768"]})`]: {
+            [`(min-width: ${mq.min[768]})`]: {
               label: {
                 left: "1.5rem",
                 top: "1.4rem",
@@ -123,25 +125,15 @@ InputGroup.propTypes = {
 
 InputGroup.defaultProps = {
   label: "",
-
   type: "text",
-
   id: "",
-
   name: "",
-
   defaultValue: "",
-
   min: "",
-
   max: "",
-
   placeholder: "",
-
   required: false,
-
   size: "full",
-
   removeBorder: false,
 };
 

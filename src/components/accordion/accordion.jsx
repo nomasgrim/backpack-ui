@@ -1,14 +1,16 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import radium from "radium";
-import AccordionItem from "./accordionItem";
+
+import colors from "../../styles/colors";
+import dimensions from "../../styles/dimensions";
 import propTypes from "../../utils/propTypes";
-import { color, grid } from "../../../settings.json";
+import AccordionItem from "./accordionItem";
 
 const styles = {
   container: {
-    borderTop: `1px solid ${color.gray}`,
-    maxWidth: grid.container,
+    borderTop: `1px solid ${colors.borderPrimary}`,
+    maxWidth: `${dimensions.maxWidth}px`,
   },
 };
 

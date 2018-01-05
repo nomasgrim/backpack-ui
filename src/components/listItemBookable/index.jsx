@@ -4,17 +4,19 @@ import radium from "radium";
 import truncate from "truncate";
 import upperFirst from "lodash/upperFirst";
 import { Link } from "react-router";
-import { color, media } from "../../../settings.json";
-import Button from "../button";
-import Price from "../price";
+
+import colors from "../../styles/colors";
+import mq from "../../styles/mq";
+import font from "../../utils/font";
+import { add, subtract, gutter, span, percentage } from "../../utils/grid";
+import svgDataUri from "../../utils/svgDataUri";
 import BookmarkButton from "../bookmarkButton";
 import Bullet from "../bullet";
+import Button from "../button";
 import Icon from "../icon";
-import Tooltip from "../tooltip";
 import ListItemImage from "../listItemImage";
-import { add, subtract, gutter, span, percentage } from "../../utils/grid";
-import font from "../../utils/font";
-import svgDataUri from "../../utils/svgDataUri";
+import Price from "../price";
+import Tooltip from "../tooltip";
 
 const _ = { upperFirst };
 
@@ -26,7 +28,7 @@ const infoWidth = subtract([span(6, "static"), gutter("static"), "1.8rem"], "sta
 const priceWidth = add([span(1, "static"), gutter("static")], "static");
 
 const icons = {
-  checkmark: `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="${color.featureCopy}"><path d="M32,4L12,32L0,20l4-4l8,8L28,0L32,4z"></path></svg>`,
+  checkmark: `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="${colors.textSecondary}"><path d="M32,4L12,32L0,20l4-4l8,8L28,0L32,4z"></path></svg>`,
 };
 
 const styles = {
@@ -44,7 +46,7 @@ const styles = {
       position: "relative",
       width: percentage("78px", "335px"),
 
-      [`@media (min-width: ${media.min["768"]})`]: {
+      [`@media (min-width: ${mq.min[768]})`]: {
         marginRight: gutter("fluid", 8),
         width: percentage(imageWidth, containerWidth),
       },
@@ -62,11 +64,11 @@ const styles = {
       position: "relative",
       width: percentage("242px", "335px"),
 
-      [`@media (min-width: ${media.min["768"]})`]: {
+      [`@media (min-width: ${mq.min[768]})`]: {
         width: percentage(contentWidth, containerWidth),
       },
 
-      [`@media (min-width: ${media.min["1024"]})`]: {
+      [`@media (min-width: ${mq.min[1024]})`]: {
         display: "flex",
       },
     },
@@ -74,7 +76,7 @@ const styles = {
 
   info: {
     base: {
-      [`@media (min-width: ${media.min["1024"]})`]: {
+      [`@media (min-width: ${mq.min[1024]})`]: {
         float: "left",
         paddingRight: percentage(span(1, "static"), contentWidth),
         width: percentage(infoWidth, contentWidth),
@@ -82,7 +84,7 @@ const styles = {
     },
 
     noFlexbox: {
-      [`@media (min-width: ${media.min["1024"]}) and (max-width: ${1365 * 0.0625}em)`]: {
+      [`@media (min-width: ${mq.min[1024]}) and (max-width: ${1365 * 0.0625}em)`]: {
         float: "none",
         paddingRight: 0,
         width: "100%",
@@ -98,34 +100,34 @@ const styles = {
 
   category: {
     base: {
-      color: color.detailHeaderSmall,
+      color: colors.accentGray,
       fontSize: "1rem",
       lineHeight: 1,
       marginBottom: ".5rem",
       textTransform: "uppercase",
 
-      [`@media (max-width: ${media.max["768"]})`]: {
+      [`@media (max-width: ${mq.max[768]})`]: {
         letterSpacing: ".4px",
         marginTop: ".1rem",
       },
 
-      [`@media (min-width: ${media.min["768"]})`]: {
+      [`@media (min-width: ${mq.min[768]})`]: {
         fontSize: "1.2rem",
         marginBottom: "1.3rem",
       },
     },
 
     sponsored: {
-      color: color.orange,
+      color: colors.accentYellow,
     },
 
     topChoice: {
-      color: color.red,
+      color: colors.accentRed,
       fontWeight: 600,
     },
 
     location: {
-      [`@media (max-width: ${media.max["768"]})`]: {
+      [`@media (max-width: ${mq.max[768]})`]: {
         display: "none",
       },
     },
@@ -133,7 +135,7 @@ const styles = {
 
   title: {
     base: {
-      color: color.darkGray,
+      color: colors.textPrimary,
       float: "left",
       fontSize: "2rem",
       fontWeight: 600,
@@ -142,7 +144,7 @@ const styles = {
       margin: 0,
       maxWidth: "90%",
 
-      [`@media (min-width: ${media.min["768"]})`]: {
+      [`@media (min-width: ${mq.min[768]})`]: {
         fontSize: "2.8rem",
         lineHeight: (34 / 28),
       },
@@ -151,13 +153,13 @@ const styles = {
 
   bookmark: {
     base: {
-      [`@media (max-width: ${media.max["768"]})`]: {
+      [`@media (max-width: ${mq.max[768]})`]: {
         bottom: "-2rem",
         position: "absolute",
         right: "-.4rem",
       },
 
-      [`@media (min-width: ${media.min["768"]})`]: {
+      [`@media (min-width: ${mq.min[768]})`]: {
         display: "inline-block",
         marginLeft: ".5rem",
         marginTop: ".3rem",
@@ -167,12 +169,12 @@ const styles = {
 
   largeText: {
     base: {
-      color: color.featureCopy,
+      color: colors.textSecondary,
       fontSize: "12px",
       lineHeight: (15.6 / 12),
       marginTop: `${9 / 12}em`,
 
-      [`@media (min-width: ${media.min["768"]})`]: {
+      [`@media (min-width: ${mq.min[768]})`]: {
         fontSize: "18px",
         marginTop: `${9 / 18}em`,
       },
@@ -185,16 +187,16 @@ const styles = {
 
   reviewedText: {
     base: {
-      [`@media (max-width: ${media.max["768"]})`]: {
+      [`@media (max-width: ${mq.max[768]})`]: {
         display: "none",
       },
 
-      [`@media (min-width: ${media.min["768"]})`]: {
+      [`@media (min-width: ${mq.min[768]})`]: {
         backgroundImage: `url("${svgDataUri(icons.checkmark)}")`,
         backgroundPosition: "0 2px",
         backgroundRepeat: "no-repeat",
         backgroundSize: "8px 8px",
-        color: color.featureCopy,
+        color: colors.textSecondary,
         fontFamily: font("miller"),
         fontSize: "1.2rem",
         fontStyle: "italic",
@@ -208,13 +210,13 @@ const styles = {
 
   description: {
     base: {
-      color: color.titleGray,
+      color: colors.textPrimary,
       fontSize: "1.4rem",
       lineHeight: (24 / 14),
       marginBottom: "2.7rem",
       marginTop: ".9rem",
 
-      [`@media (min-width: ${media.min["768"]})`]: {
+      [`@media (min-width: ${mq.min[768]})`]: {
         fontSize: "1.8rem",
         lineHeight: (32 / 18),
         marginTop: "1.4rem",
@@ -234,15 +236,15 @@ const styles = {
     base: {
       marginTop: "1.1rem",
 
-      [`@media (max-width: ${media.max["768"]})`]: {
+      [`@media (max-width: ${mq.max[768]})`]: {
         display: "inline-block",
       },
 
-      [`@media (min-width: ${media.min["768"]})`]: {
+      [`@media (min-width: ${mq.min[768]})`]: {
         marginTop: "2.5rem",
       },
 
-      [`@media (min-width: ${media.min["1024"]})`]: {
+      [`@media (min-width: ${mq.min[1024]})`]: {
         float: "left",
         textAlign: "right",
         width: priceWidth,
@@ -250,7 +252,7 @@ const styles = {
     },
 
     noFlexbox: {
-      [`@media (min-width: ${media.min["1024"]}) and (max-width: ${1365 * 0.0625}em)`]: {
+      [`@media (min-width: ${mq.min[1024]}) and (max-width: ${1365 * 0.0625}em)`]: {
         float: "none",
         textAlign: "left",
         width: "100%",
@@ -406,7 +408,7 @@ function ListItemBookable({
                 <li style={styles.largeText.item} key={i}>
                   {_.upperFirst(item)}
                   {i !== features.length - 1 &&
-                    <Bullet space="both" color={color.detailHeaderSmall} />
+                    <Bullet space="both" color={colors.accentGray} />
                   }
                 </li>
               ))}
@@ -674,59 +676,32 @@ ListItemBookable.propTypes = {
 
 ListItemBookable.defaultProps = {
   title: "",
-
   slug: "",
-
   type: "",
-
   subtype: "",
-
   place: {},
-
   price: {},
-
   features: [],
-
   image: {},
-
   description: "",
-
   sponsored: false,
-
   topChoice: false,
-
   reviewed: false,
-
   bookmark: false,
-
   bookmarkSize: "small",
-
   id: "",
-
   duration: "",
-
   difficulty: "",
-
   groupSize: {},
-
   showTourDestinations: false,
-
   tourStart: "",
-
   tourEnd: "",
-
   tourMap: "",
-
   bookingUrl: "",
-
   activityType: "",
-
   durationInfo: "",
-
   mobile: false,
-
   hidePrice: false,
-
   onShowPrices: null,
 };
 

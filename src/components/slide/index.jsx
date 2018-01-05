@@ -1,17 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
 import radium from "radium";
-import Link from "../link";
-import Container from "../container";
-import Heading from "../heading";
-import HeroImageContainer from "../heroImageContainer";
-import GradientOverlay from "../gradientOverlay";
+
+import colors from "../../styles/colors";
+import mq from "../../styles/mq";
+import { fontWeightMedium } from "../../styles/typography";
+import zIndex from "../../styles/zIndex";
+import { rgb } from "../../utils/color";
+import iconFromString from "../../utils/icon";
+import propTypes from "../../utils/propTypes";
 import BulletDescription from "../bulletDescription";
 import Button from "../button";
-import iconFromString from "../../utils/icon";
-import { rgb } from "../../utils/color";
-import propTypes from "../../utils/propTypes";
-import { color, media, typography, zIndex } from "../../../settings.json";
+import Container from "../container";
+import GradientOverlay from "../gradientOverlay";
+import Heading from "../heading";
+import HeroImageContainer from "../heroImageContainer";
+import Link from "../link";
 
 const styles = {
   base: {
@@ -20,15 +24,15 @@ const styles = {
     transform: "translateZ(0)",
   },
   link: {
-    color: color.white,
+    color: colors.bgPrimary,
     cursor: "pointer",
   },
   bullets: {
-    color: color.white,
+    color: colors.bgPrimary,
     fontSize: "14px",
     marginBottom: "24px",
-    fontWeight: typography.fontWeightBold,
-    [`@media (min-width: ${media.min["720"]})`]: {
+    fontWeight: fontWeightMedium,
+    [`@media (min-width: ${mq.min[720]})`]: {
       marginBottom: "32px",
     },
   },
@@ -36,19 +40,19 @@ const styles = {
     marginBottom: "20px",
   },
   heading: {
-    color: color.white,
+    color: colors.bgPrimary,
     fontSize: "32px",
     letterSpacing: "0",
     marginBottom: "16px",
-    [`@media (min-width: ${media.min["600"]})`]: {
+    [`@media (min-width: ${mq.min[600]})`]: {
       letterSpacing: "-0.56px",
       fontSize: "calc(11px + 5vw)",
     },
-    [`@media (min-width: ${media.min["720"]})`]: {
+    [`@media (min-width: ${mq.min[720]})`]: {
       fontSize: "60px",
       marginBottom: "20px",
     },
-    [`@media (min-width: ${media.min["840"]})`]: {
+    [`@media (min-width: ${mq.min[840]})`]: {
       fontSize: "68px",
     },
   },
@@ -64,7 +68,7 @@ const styles = {
       fontSize: "18px",
       marginRight: "16px",
     },
-    [`@media (min-width: ${media.min["720"]})`]: {
+    [`@media (min-width: ${mq.min[720]})`]: {
       paddingRight: "46px",
       paddingLeft: "46px",
       marginTop: "20px",
@@ -76,7 +80,7 @@ const styles = {
     right: 0,
     top: 0,
     bottom: 0,
-    backgroundColor: `rgba(${rgb(color.black)}, 0.3)`,
+    backgroundColor: `rgba(${rgb(colors.bgOverlay)}, 0.3)`,
   },
   position: {
     center: {
@@ -90,17 +94,17 @@ const styles = {
       flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
-      [`@media (min-width: ${media.min["720"]})`]: {
+      [`@media (min-width: ${mq.min[720]})`]: {
         width: "68%",
       },
-      [`@media (min-width: ${media.min["1290"]})`]: {
+      [`@media (min-width: ${mq.min[1290]})`]: {
         width: "50%",
       },
     },
     leftBottom: {
       bottom: "5.5em",
       zIndex: zIndex.slideshowSlide,
-      [`@media (min-width: ${media.min["720"]})`]: {
+      [`@media (min-width: ${mq.min[720]})`]: {
         bottom: "11em",
       },
     },
@@ -111,19 +115,19 @@ const styles = {
       right: 0,
       zIndex: zIndex.slideshowSlide,
 
-      [`@media (max-width: ${media.max["480"]})`]: {
+      [`@media (max-width: ${mq.max[480]})`]: {
         right: "-33px",
       },
 
-      [`@media (min-width: ${media.min["480"]}) and (max-width: ${media.max["768"]})`]: {
+      [`@media (min-width: ${mq.min[480]}) and (max-width: ${mq.max[768]})`]: {
         right: "-48px",
       },
 
-      [`@media (max-width: ${media.max["768"]})`]: {
+      [`@media (max-width: ${mq.max[768]})`]: {
         transform: "scale(.7)",
       },
 
-      [`@media (min-width: ${media.min["720"]})`]: {
+      [`@media (min-width: ${mq.min[720]})`]: {
         bottom: "8.2em",
       },
     },
@@ -230,7 +234,7 @@ Slide.propTypes = {
 
 Slide.defaultProps = {
   description: [],
-  gradientColor: color.black,
+  gradientColor: colors.bgOverlay,
   position: "center",
 };
 

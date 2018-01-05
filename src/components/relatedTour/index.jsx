@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import radium, { Style } from "radium";
-import { media } from "../../../settings.json";
-import color from "../../styles/colors";
+
+import colors from "../../styles/colors";
+import mq from "../../styles/mq";
+import { span } from "../../utils/grid";
+import Bullet from "../bullet";
 import Heading from "../heading";
 import Price from "../price";
-import Bullet from "../bullet";
-import { span } from "../../utils/grid";
 
 const styles = {
   base: {},
@@ -33,25 +34,25 @@ const styles = {
 
     details: {
       base: {
-        color: color.textPrimary,
+        color: colors.textPrimary,
         fontSize: "1.1rem",
         lineHeight: 1,
         textTransform: "uppercase",
 
-        [`@media (max-width: ${media.max["480"]})`]: {
+        [`@media (max-width: ${mq.max[480]})`]: {
           display: "inline-block",
-          color: color.accentGray,
+          color: colors.accentGray,
           marginTop: "14px",
           fontWeight: 600,
         },
 
-        [`@media (min-width: ${media.min["480"]})`]: {
+        [`@media (min-width: ${mq.min[480]})`]: {
           marginTop: "1.4rem",
         },
       },
 
       list: {
-        [`@media (max-width: ${media.max["480"]})`]: {
+        [`@media (max-width: ${mq.max[480]})`]: {
           display: "inline-block",
         },
       },
@@ -63,7 +64,7 @@ const styles = {
       bullet: {
         display: "inline-block",
 
-        [`@media (min-width: ${media.min["480"]})`]: {
+        [`@media (min-width: ${mq.min[480]})`]: {
           display: "none",
         },
       },
@@ -126,12 +127,12 @@ function RelatedTour({
           },
 
           ".Price-amount": {
-            color: color.textPrimary,
+            color: colors.textPrimary,
             fontSize: "2.4rem !important",
           },
 
           mediaQueries: {
-            [`(max-width: ${media.max["480"]})`]: {
+            [`(max-width: ${mq.max[480]})`]: {
               ".Price": {
                 display: "block",
                 marginTop: "20px",
@@ -140,11 +141,11 @@ function RelatedTour({
 
               ".Price-amount": {
                 fontWeight: "300 !important",
-                color: color.accentRed,
+                color: colors.accentRed,
               },
             },
 
-            [`(min-width: ${media.min["480"]})`]: {
+            [`(min-width: ${mq.min[480]})`]: {
               ".Heading": {
                 maxWidth: "50rem",
                 width: "80%",
@@ -157,7 +158,7 @@ function RelatedTour({
               },
 
               ".Price-amount": {
-                color: color.textPrimary,
+                color: colors.textPrimary,
                 fontSize: "2.4rem",
               },
             },
@@ -254,17 +255,11 @@ RelatedTour.propTypes = {
 
 RelatedTour.defaultProps = {
   title: "",
-
   slug: "",
-
   image: "",
-
   price: {},
-
   tripLength: "",
-
   destination: "",
-
   reviews: 0,
 };
 

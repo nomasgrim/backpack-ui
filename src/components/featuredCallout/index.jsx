@@ -1,23 +1,27 @@
 import React from "react";
 import PropTypes from "prop-types";
 import radium from "radium";
-import { color, timing, media, zIndex } from "../../../settings.json";
+
+import colors from "../../styles/colors";
+import mq from "../../styles/mq";
+import timing from "../../styles/timing";
+import zIndex from "../../styles/zIndex";
 import { rgb } from "../../utils/color";
 import font from "../../utils/font";
-import Heading from "../heading";
 import CalloutLink from "../calloutLink";
-import HideAtBreakpoint from "../hideAtBreakpoint";
 import CategoryLabel from "../categoryLabel";
+import Heading from "../heading";
+import HideAtBreakpoint from "../hideAtBreakpoint";
 
 const styles = {
   container: {
-    color: color.white,
+    color: colors.bgPrimary,
     fontFamily: font("benton"),
     position: "relative",
     width: "70%",
     zIndex: zIndex.slideshowSlide,
 
-    [`@media (min-width: ${media.min["720"]})`]: {
+    [`@media (min-width: ${mq.min[720]})`]: {
       width: "65%",
     },
   },
@@ -33,26 +37,26 @@ const styles = {
     paddingBottom: "8px",
     transition: `padding-bottom ${timing.fast} ease-in-out`,
 
-    [`@media (min-width: ${media.min["480"]})`]: {
+    [`@media (min-width: ${mq.min[480]})`]: {
       paddingBottom: "16px",
     },
   },
 
   title: {
-    color: color.white,
+    color: colors.bgPrimary,
     fontSize: "28px",
     fontWeight: 600,
     letterSpacing: "-0.75px",
     lineHeight: (34 / 28),
     marginTop: "5px",
-    textShadow: `0 0 130px rgba(${rgb(color.black)}, 0.5)`,
+    textShadow: `0 0 130px rgba(${rgb(colors.shadowPrimary)}, 0.5)`,
 
-    [`@media (min-width: ${media.min["720"]})`]: {
+    [`@media (min-width: ${mq.min[720]})`]: {
       fontSize: "calc(11px + 3vw)",
       marginBottom: "42px",
     },
 
-    [`@media (min-width: ${media.min["1200"]})`]: {
+    [`@media (min-width: ${mq.min[1200]})`]: {
       fontSize: "56px",
       lineHeight: (64 / 56),
     },
@@ -68,7 +72,7 @@ const styles = {
       bottom: "56px",
       width: "90%",
 
-      [`@media (min-width: ${media.min["720"]})`]: {
+      [`@media (min-width: ${mq.min[720]})`]: {
         width: "70%",
       },
     },
@@ -79,12 +83,12 @@ const styles = {
       lineHeight: (36 / 24),
       paddingBottom: 0,
 
-      [`@media (min-width: ${media.min["480"]})`]: {
+      [`@media (min-width: ${mq.min[480]})`]: {
         fontSize: "calc(20px + 1vw)",
         lineHeight: 1.2,
       },
 
-      [`@media (min-width: ${media.min["1200"]})`]: {
+      [`@media (min-width: ${mq.min[1200]})`]: {
         fontSize: "32px",
         lineHeight: (40 / 32),
       },
@@ -111,7 +115,7 @@ const FeaturedCallout = ({
     ]}
   >
     {category &&
-      <CategoryLabel style={{ color: color.white }}>{category}</CategoryLabel>
+      <CategoryLabel style={{ color: colors.bgPrimary }}>{category}</CategoryLabel>
     }
 
     <Heading

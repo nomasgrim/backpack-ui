@@ -1,14 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 import radium from "radium";
-import { color, spacing } from "../../../settings.json";
+
+import colors from "../../styles/colors";
 import Icon from "../icon";
 
 const styles = {
   container: {
     base: {
-      backgroundColor: color.white,
-      borderTop: `1px solid ${color.gray}`,
+      backgroundColor: colors.bgPrimary,
+      borderTop: `1px solid ${colors.borderPrimary}`,
       fontSize: "11px",
       overflow: "hidden",
     },
@@ -44,7 +45,7 @@ const styles = {
     },
 
     lastChild: {
-      paddingRight: spacing.mobile,
+      paddingRight: "16px",
     },
   },
 
@@ -52,7 +53,7 @@ const styles = {
     base: {
       display: "block",
       overflow: "hidden",
-      padding: `23px ${spacing.mobile} 20px`,
+      padding: "23px 16px 20px",
       textOverflow: "ellipsis",
       whiteSpace: "nowrap",
       width: "100%",
@@ -61,7 +62,7 @@ const styles = {
 
   divider: {
     base: {
-      backgroundColor: color.gray,
+      backgroundColor: colors.borderPrimary,
       display: "block",
       height: "10px",
       right: "-1px",

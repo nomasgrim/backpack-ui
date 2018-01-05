@@ -3,11 +3,15 @@ import PropTypes from "prop-types";
 import Portal from "react-portal";
 import radium from "radium";
 import noScroll from "no-scroll";
-import { color, components, spacing, timing, zIndex } from "../../../settings.json";
-import Icon from "../icon";
-import Overlay from "../overlay";
+
+import colors from "../../styles/colors";
+import dimensions from "../../styles/dimensions";
+import timing from "../../styles/timing";
+import zIndex from "../../styles/zIndex";
 import { rgb } from "../../utils/color";
 import { gutter } from "../../utils/grid";
+import Icon from "../icon";
+import Overlay from "../overlay";
 
 class Takeover extends Component {
   constructor(props) {
@@ -112,8 +116,8 @@ class Takeover extends Component {
       takeover: {
         container: {
           base: {
-            backgroundColor: color.white,
-            boxShadow: `0 5px 50px rgba(${rgb(color.black)}, 0.5)`,
+            backgroundColor: colors.bgPrimary,
+            boxShadow: `0 5px 50px rgba(${rgb(colors.shadowPrimary)}, 0.5)`,
             left: 0,
             opacity: 0,
             position: "fixed",
@@ -144,25 +148,25 @@ class Takeover extends Component {
 
         header: {
           base: {
-            backgroundColor: color.white,
-            height: components.header.heightMobile,
+            backgroundColor: colors.bgPrimary,
+            height:`${dimensions.headerHeightMobile}px`,
             position: "relative",
             textAlign: "center",
             zIndex: zIndex.modal,
           },
 
           shadow: {
-            boxShadow: `40px 2px 20px rgba(${rgb(color.black)}, 0.05),
-              -40px 2px 20px rgba(${rgb(color.black)}, 0.05)`,
+            boxShadow: `40px 2px 20px rgba(${rgb(colors.shadowPrimary)}, 0.05),
+              -40px 2px 20px rgba(${rgb(colors.shadowPrimary)}, 0.05)`,
           },
 
           border: {
-            borderBottom: `1px solid ${color.gray}`,
+            borderBottom: `1px solid ${colors.borderPrimary}`,
           },
 
           mobile: {
-            paddingLeft: spacing.mobile,
-            paddingRight: spacing.mobile,
+            paddingLeft: "16px",
+            paddingRight: "16px",
           },
         },
 
@@ -183,10 +187,10 @@ class Takeover extends Component {
         close: {
           base: {
             backgroundColor: "transparent",
-            color: color.darkGray,
+            color: colors.textPrimary,
             fontSize: "16px",
-            height: components.header.heightMobile,
-            width: components.header.heightMobile,
+            height: "50px",
+            width: "50px",
             position: "absolute",
             right: `${3 / 16}em`,
             top: 0,
@@ -198,7 +202,7 @@ class Takeover extends Component {
           },
 
           cover: {
-            height: `calc(100vh - ${components.header.heightMobile})`,
+            height: `calc(100vh - ${dimensions.headerHeightMobile}px)`,
           },
         },
       },
@@ -259,7 +263,7 @@ class Takeover extends Component {
             >
               <div
                 style={[
-                  mobile && !contentFill && { padding: `40px ${spacing.mobile}` },
+                  mobile && !contentFill && { padding: "40px 16px" },
                   !mobile && !contentFill && { padding: gutter() },
                   cover && !scroll && { height: "100%" },
                 ]}

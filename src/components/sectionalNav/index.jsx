@@ -3,17 +3,23 @@ import PropTypes from "prop-types";
 import radium, { Style } from "radium";
 import Sticky from "react-stickynode";
 import { Link } from "react-scroll";
-import settings, { color, media, zIndex, timing } from "../../../settings.json";
-import font from "../../utils/font";
+
+import colors from "../../styles/colors";
+import dimensions from "../../styles/dimensions";
+import mq from "../../styles/mq";
+import spacing from "../../styles/spacing";
+import timing from "../../styles/timing";
+import zIndex from "../../styles/zIndex";
 import { rgb } from "../../utils/color";
+import font from "../../utils/font";
 
 const navigationSubHeight = "80px";
-const navigationSubHeightMobile = settings.components.header.heightMobile;
+const navigationSubHeightMobile = `${dimensions.headerHeightMobile}px`;
 
 const styles = {
   container: {
-    backgroundColor: color.white,
-    borderTop: `1px solid rgba(${rgb(color.lightBlue)}, 0.45)`,
+    backgroundColor: colors.bgPrimary,
+    borderTop: `1px solid rgba(${rgb(colors.accentGray)}, 0.45)`,
     fontFamily: font("benton"),
     fontSize: 0,
     height: navigationSubHeightMobile,
@@ -25,7 +31,7 @@ const styles = {
     transition: `opacity ${timing.default}, visibility ${timing.default}`,
     zIndex: zIndex.globalHeader,
 
-    [`@media (min-width: ${media.min["768"]})`]: {
+    [`@media (min-width: ${mq.min[768]})`]: {
       height: navigationSubHeight,
     },
   },
@@ -34,13 +40,13 @@ const styles = {
     height: navigationSubHeightMobile,
     overflow: "hidden",
 
-    [`@media (min-width: ${media.min["768"]})`]: {
+    [`@media (min-width: ${mq.min[768]})`]: {
       height: navigationSubHeight,
     },
   },
 
   list: {
-    animation: `fly-in ${settings.timing.default}`,
+    animation: `fly-in ${timing.default}`,
     height: (navigationSubHeightMobile + 2), // to push horizontal scrollbar out of view
     margin: 0,
     "-webkit-overflow-scrolling": "touch",
@@ -48,15 +54,15 @@ const styles = {
     overflowY: "hidden",
     padding: 0,
     textAlign: "center",
-    transition: `opacity ${settings.timing.default}`,
+    transition: `opacity ${timing.default}`,
     whiteSpace: "nowrap",
     width: "100%",
 
-    [`@media (min-width: ${media.min["480"]})`]: {
+    [`@media (min-width: ${mq.min[480]})`]: {
       animation: "none",
     },
 
-    [`@media (min-width: ${media.min["768"]})`]: {
+    [`@media (min-width: ${mq.min[768]})`]: {
       height: navigationSubHeight,
     },
   },
@@ -67,13 +73,13 @@ const styles = {
     margin: 0,
     padding: 0,
 
-    [`@media (min-width: ${media.min["768"]})`]: {
+    [`@media (min-width: ${mq.min[768]})`]: {
       height: "100%",
       lineHeight: navigationSubHeight,
     },
 
     active: {
-      borderBottom: `5px solid ${color.lpBlue}`,
+      borderBottom: `5px solid ${colors.linkPrimary}`,
     },
   },
 
@@ -85,20 +91,20 @@ const styles = {
       width: "100% !important",
     },
     ".active nav ul": {
-      borderBottom: `1px solid rgba(${rgb(color.lightBlue)}, 0.45)`,
+      borderBottom: `1px solid rgba(${rgb(colors.accentGray)}, 0.45)`,
     },
     a: {
-      color: color.titleGray,
+      color: colors.textPrimary,
       display: "block",
       fontSize: "11px",
       fontWeight: 600,
-      padding: `2px calc(${settings.default.gutter} / 2) 0`,
+      padding: `2px calc(${spacing.gutter}px / 2) 0`,
       textTransform: "uppercase",
       transition: "300ms color ease-in",
       cursor: "pointer",
     },
     mediaQueries: {
-      [`(min-width: ${media.min["768"]})`]: {
+      [`(min-width: ${mq.min[768]})`]: {
         a: {
           fontSize: "12px",
           height: "100%",

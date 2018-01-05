@@ -1,11 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import radium from "radium";
-import { color, media } from "../../../settings.json";
+
+import colors from "../../styles/colors";
+import mq from "../../styles/mq";
 import { rgb } from "../../utils/color";
 import Heading from "../heading";
-import Price from "../price";
 import MoreLink from "../moreLink";
+import Price from "../price";
 
 function calculateContentWidth(imageWidth) {
   return `${((630 - 60 - imageWidth - 30) / (630 - 60)) * 100}%`;
@@ -14,11 +16,11 @@ function calculateContentWidth(imageWidth) {
 const styles = {
   container: {
     base: {
-      backgroundColor: color.white,
-      boxShadow: `0 0 20px rgba(${rgb(color.black)}, .05)`,
+      backgroundColor: colors.bgPrimary,
+      boxShadow: `0 0 20px rgba(${rgb(colors.shadowPrimary)}, .05)`,
       overflow: "hidden",
 
-      [`@media (min-width: ${media.min["600"]})`]: {
+      [`@media (min-width: ${mq.min[600]})`]: {
         padding: `${(30 / 630) * 100}%`,
       },
     },
@@ -26,11 +28,11 @@ const styles = {
 
   content: {
     base: {
-      [`@media (max-width: ${media.max["600"]})`]: {
+      [`@media (max-width: ${mq.max[600]})`]: {
         padding: "25px",
       },
 
-      [`@media (min-width: ${media.min["600"]})`]: {
+      [`@media (min-width: ${mq.min[600]})`]: {
         float: "right",
       },
     },
@@ -43,12 +45,12 @@ const styles = {
 
     type: {
       activity: {
-        [`@media (min-width: ${media.min["600"]})`]: {
+        [`@media (min-width: ${mq.min[600]})`]: {
           width: calculateContentWidth(300),
         },
       },
       book: {
-        [`@media (min-width: ${media.min["600"]})`]: {
+        [`@media (min-width: ${mq.min[600]})`]: {
           width: calculateContentWidth(80),
         },
       },
@@ -64,7 +66,7 @@ const styles = {
 
   description: {
     base: {
-      color: color.text,
+      color: colors.textPrimary,
       fontSize: "14px",
       lineHeight: 1.5,
       marginTop: "1em",
@@ -74,7 +76,7 @@ const styles = {
 
   image: {
     base: {
-      [`@media (min-width: ${media.min["600"]})`]: {
+      [`@media (min-width: ${mq.min[600]})`]: {
         float: "left",
         marginRight: `${(30 / 630) * 100}%`,
       },
@@ -82,13 +84,13 @@ const styles = {
 
     type: {
       activity: {
-        [`@media (min-width: ${media.min["600"]})`]: {
+        [`@media (min-width: ${mq.min[600]})`]: {
           width: `${(300 / (630 - 60)) * 100}%`,
         },
       },
 
       book: {
-        [`@media (min-width: ${media.min["600"]})`]: {
+        [`@media (min-width: ${mq.min[600]})`]: {
           width: `${(80 / (630 - 60)) * 100}%`,
         },
       },
@@ -105,7 +107,7 @@ const styles = {
 
   category: {
     base: {
-      color: color.lightText,
+      color: colors.textSecondary,
       fontSize: "11px",
       lineHeight: 1,
       marginBottom: `${4 / 11}em`,
@@ -235,19 +237,12 @@ Callout.propTypes = {
 
 Callout.defaultProps = {
   type: "",
-
   heading: "",
-
   slug: "",
-
   image: "",
-
   price: {},
-
   description: "",
-
   category: "",
-
   align: "",
 };
 

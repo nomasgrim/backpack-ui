@@ -1,6 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import radium from "radium";
+
+import mq from "../../styles/mq";
+import timing from "../../styles/timing";
+import propTypes from "../../utils/propTypes";
 import {
   Card,
   CardAnchor,
@@ -9,10 +13,8 @@ import {
   CardText,
 } from "../card";
 import Heading from "../heading";
-import { media, timing } from "../../../settings.json";
-import propTypes from "../../utils/propTypes";
 
-const mq = `@media (max-width: ${media.max["768"]})`;
+const mediaQuery = `@media (max-width: ${mq.max[768]})`;
 
 const styles = {
   container: {
@@ -23,7 +25,7 @@ const styles = {
     paddingBottom: "4px",
     paddingTop: "27px",
 
-    [mq]: {
+    [mediaQuery]: {
       paddingBottom: "4px",
       paddingTop: "19px",
     },
@@ -40,7 +42,7 @@ const styles = {
     WebkitBoxOrient: "vertical",
     WebkitLineClamp: 2,
 
-    [mq]: {
+    [mediaQuery]: {
       fontSize: "14px",
       lineHeight: (18 / 14),
       maxHeight: "36px",

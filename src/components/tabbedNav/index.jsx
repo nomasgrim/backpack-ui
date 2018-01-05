@@ -2,16 +2,21 @@ import React from "react";
 import PropTypes from "prop-types";
 import radium, { Style } from "radium";
 import Sticky from "react-stickynode";
-import settings, { color, media, zIndex, timing } from "../../../settings.json";
-import font from "../../utils/font";
+
+import colors from "../../styles/colors";
+import mq from "../../styles/mq";
+import spacing from "../../styles/spacing";
+import timing from "../../styles/timing";
+import zIndex from "../../styles/zIndex";
 import { rgb } from "../../utils/color";
+import font from "../../utils/font";
 
 const navigationSubHeight = "80px";
 
 const styles = {
   container: {
-    backgroundColor: color.white,
-    borderTop: `1px solid rgba(${rgb(color.lightBlue)}, 0.45)`,
+    backgroundColor: colors.bgPrimary,
+    borderTop: `1px solid rgba(${rgb(colors.accentGray)}, 0.45)`,
     fontFamily: font("benton"),
     fontSize: 0,
     height: navigationSubHeight,
@@ -30,7 +35,7 @@ const styles = {
   },
 
   list: {
-    animation: `fly-in ${settings.timing.default}`,
+    animation: `fly-in ${timing.default}`,
     height: navigationSubHeight, // to push horizontal scrollbar out of view
     margin: 0,
     WebkitOverflowScrolling: "touch",
@@ -38,12 +43,12 @@ const styles = {
     overflowY: "hidden",
     padding: 0,
     textAlign: "center",
-    transition: `opacity ${settings.timing.default}`,
+    transition: `opacity ${timing.default}`,
     whiteSpace: "nowrap",
     width: "100%",
-    borderBottom: `1px solid ${color.detailHeaderSmall}`,
+    borderBottom: `1px solid ${colors.accentGray}`,
 
-    [`@media (min-width: ${media.min["480"]})`]: {
+    [`@media (min-width: ${mq.min[480]})`]: {
       animation: "none",
     },
   },
@@ -56,7 +61,7 @@ const styles = {
     height: "calc(100% - 2px)",
 
     active: {
-      borderBottom: `5px solid ${color.red}`,
+      borderBottom: `5px solid ${colors.accentRed}`,
     },
   },
 
@@ -68,16 +73,16 @@ const styles = {
       width: "100% !important",
     },
     ".active nav ul": {
-      borderBottom: `1px solid rgba(${rgb(color.lightBlue)}, 0.45)`,
+      borderBottom: `1px solid rgba(${rgb(colors.accentGray)}, 0.45)`,
     },
     button: {
       backgroundColor: "transparent",
       border: 0,
-      color: color.darkGray,
+      color: colors.textPrimary,
       display: "block",
       fontSize: "16px",
       fontWeight: 500,
-      padding: `2px calc(${settings.default.gutter} / 2) 0`,
+      padding: `2px calc(${spacing.gutter}px / 2) 0`,
       transition: "300ms color ease-in",
       cursor: "pointer",
       height: "100%",
