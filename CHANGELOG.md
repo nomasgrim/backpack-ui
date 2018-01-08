@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.57.1"></a>
+## [4.57.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.57.0...v4.57.1) (2018-01-08)
+
+
+### Bug Fixes
+
+* replace settings.json imports with new styles ([#588](https://github.com/lonelyplanet/backpack-ui/issues/588)) ([6d4bc86](https://github.com/lonelyplanet/backpack-ui/commit/6d4bc86))
+* Resolve lint violation in takeover component styles ([#593](https://github.com/lonelyplanet/backpack-ui/issues/593)) ([c81eb55](https://github.com/lonelyplanet/backpack-ui/commit/c81eb55))
+
+
+
 <a name="4.57.0"></a>
 # [4.57.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.56.4...v4.57.0) (2017-12-20)
 
