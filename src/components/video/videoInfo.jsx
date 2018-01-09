@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import radium, { Style } from "radium";
+import { defer } from "lodash";
 import Heading from "../heading";
 import Link from "../link";
 import SocialIconButton from "../socialIconButton";
@@ -29,13 +30,11 @@ const styles = {
   container: {
     default: {
       opacity: 0,
-      height: 0,
       transition: `opacity ${timing.default} linear`,
     },
 
     visible: {
       opacity: 1,
-      height: "auto",
     },
   },
 
@@ -242,6 +241,18 @@ const styles = {
 const facebookAppId = "111537044496";
 
 class VideoInfo extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      visible: !props.fadeIn,
+    };
+  }
+
+  componentDidMount() {
+    defer(() => this.setState({ visible: true }));
+  }
+
   onClickFacebook = () => {
     const { video } = this.props;
     const videoUrl = video.url.startsWith("http") ? video.url : `https://www.lonelyplanet.com${video.url}`;
@@ -280,7 +291,8 @@ class VideoInfo extends React.Component {
   }
 
   render() {
-    const { video, theme, mobile, headingLevel, visible } = this.props;
+    const { video, theme, mobile, headingLevel } = this.props;
+    const { visible } = this.state;
 
     return (
       <div
@@ -480,13 +492,13 @@ VideoInfo.propTypes = {
   theme: PropTypes.oneOf(["light", "dark"]).isRequired,
   mobile: PropTypes.bool,
   headingLevel: PropTypes.number,
-  visible: PropTypes.bool,
+  fadeIn: PropTypes.bool,
 };
 
 VideoInfo.defaultProps = {
   theme: "light",
   headingLevel: 2,
-  visible: true,
+  fadeIn: false,
 };
 
 export default radium(VideoInfo);
