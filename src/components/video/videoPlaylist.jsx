@@ -140,6 +140,19 @@ class VideoPlaylist extends Component {
     if (typeof window !== "undefined") {
       window.addEventListener("resize", this.onWindowResize);
     }
+
+    if (this.state.video && this.props.onLoadVideo) {
+      this.props.onLoadVideo(this.state.video);
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const videoId = this.props.video && this.props.video.id;
+    const nextVideoId = nextProps.video && nextProps.video.id;
+
+    if (nextVideoId && videoId !== nextVideoId) {
+      this.loadVideo(nextProps.video);
+    }
   }
 
   componentWillUnmount() {
@@ -173,6 +186,10 @@ class VideoPlaylist extends Component {
   onClickFeaturedVideo = () => {
     this.hideFeaturedVideo();
     this.videoPopout.play();
+
+    this.setState({
+      play: true,
+    });
   }
 
   getInitialVideo() {
@@ -233,16 +250,15 @@ class VideoPlaylist extends Component {
     }, 400);
   }
 
-  loadVideo = (newVideo) => {
+  loadVideo = (video) => {
     this.hideFeaturedVideo();
 
     this.setState({
-      video: newVideo,
-      play: true,
+      video,
     });
 
     if (this.props.onLoadVideo) {
-      this.props.onLoadVideo(newVideo);
+      this.props.onLoadVideo(video);
     }
   }
 
