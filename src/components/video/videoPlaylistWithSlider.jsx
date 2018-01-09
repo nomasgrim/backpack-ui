@@ -15,9 +15,9 @@ import propTypes from "../../utils/propTypes";
 const styles = {
   playlistContainer: {
     [`@media (max-width: ${media.max["720"]})`]: {
-      marginTop: 0,
-      marginRight: 0,
       marginLeft: 0,
+      marginRight: 0,
+      marginTop: 0,
       paddingLeft: 0,
       paddingRight: 0,
     },
@@ -33,33 +33,32 @@ const styles = {
   },
 
   listContainer: {
-    display: "none",
+    display: "block",
     marginTop: spacing.gutter,
 
-    [`@media (max-width: ${media.max["560"]})`]: {
-      display: "block",
+    [`@media (min-width: ${media.min["560"]})`]: {
+      display: "none",
     },
   },
 };
 
 class VideoPlaylistWithSlider extends React.Component {
-
   constructor(props) {
     super(props);
 
     this.state = {
-      /*
-        Initial video is not set as "active" so that the VideoInfo component
-        doesn't initially render -- this is as designed.
-      */
+      /**
+       * Initial video is not set as "active" so that the VideoInfo component
+       * doesn't initially render -- this is as designed.
+       */
       activeVideo: null,
     };
-
-    this.onPlaylistLoadVideo = this.onPlaylistLoadVideo.bind(this);
   }
 
-  onPlaylistLoadVideo(video) {
-    this.setState({ activeVideo: video });
+  onPlaylistLoadVideo = (video) => {
+    this.setState({
+      activeVideo: video,
+    });
   }
 
   render() {
@@ -93,6 +92,7 @@ class VideoPlaylistWithSlider extends React.Component {
                 videoEmbed={videoEmbed}
               />
             </Container>
+
             {showVideoInfo &&
               <Container>
                 <VideoInfo
@@ -101,6 +101,7 @@ class VideoPlaylistWithSlider extends React.Component {
                 />
               </Container>
             }
+
             <div style={styles.sliderContainer}>
               <Container>
                 <CardShelfVideoSlider
@@ -125,6 +126,7 @@ class VideoPlaylistWithSlider extends React.Component {
                 </CardShelfVideoSlider>
               </Container>
             </div>
+
             <div style={styles.listContainer}>
               <Container>
                 <ThumbnailList heading={sliderHeading || heading}>
@@ -157,16 +159,9 @@ const videoShape = {
   host: PropTypes.string,
   director: PropTypes.string,
   year: PropTypes.string,
-
-  /* recommended dimensions: 915x515 */
-  image: PropTypes.string,
-
-  /* recommended dimensions: 430x250 */
-  cardImage: PropTypes.string,
-
-  /* recommended dimensions: 160x90 */
-  thumbnailImage: PropTypes.string,
-
+  image: PropTypes.string, // recommended dimensions: 915x515
+  cardImage: PropTypes.string, // recommended dimensions: 430x250
+  thumbnailImage: PropTypes.string, // recommended dimensions: 160x90
   cardActionIcon: PropTypes.string,
   cardOnClick: PropTypes.func,
 };
