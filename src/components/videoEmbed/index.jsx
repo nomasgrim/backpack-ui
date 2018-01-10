@@ -808,14 +808,20 @@ class VideoEmbed extends Component {
   }
 
   enableAdOverlay() {
-    const adOverlay = document.getElementById(this.getAdOverlayId());
+    const adOverlay = typeof document !== "undefined" ?
+      document.getElementById(this.getAdOverlayId()) :
+      null;
+
     if (adOverlay) {
       adOverlay.style.display = "inline-block";
     }
   }
 
   disableAdOverlay() {
-    const adOverlay = document.getElementById(this.getAdOverlayId());
+    const adOverlay = typeof document !== "undefined" ?
+      document.getElementById(this.getAdOverlayId()) :
+      null;
+
     if (adOverlay) {
       adOverlay.style.display = "none";
     }
