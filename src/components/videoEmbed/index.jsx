@@ -528,7 +528,7 @@ class VideoEmbed extends Component {
       return;
     }
 
-    this.cueEndTime = this.player.currentTime() + cueDuration;
+    this.cueEndTime = (this.player.currentTime() + cueDuration);
 
     if (this.props.hideNextVideoOnCuePoint) {
       this.setState({
@@ -827,7 +827,8 @@ class VideoEmbed extends Component {
     }
 
     const bounds = this.container.getBoundingClientRect();
-    const halfContainerHeight = bounds.height / 2;
+    const halfContainerHeight = (bounds.height / 2);
+
     return bounds.top < -(halfContainerHeight);
   }
 
@@ -837,7 +838,7 @@ class VideoEmbed extends Component {
     }
 
     const bounds = this.container.getBoundingClientRect();
-    const halfContainerHeight = bounds.height / 2;
+    const halfContainerHeight = (bounds.height / 2);
     const windowHeight = window.innerHeight;
 
     return bounds.top > (windowHeight - halfContainerHeight);
