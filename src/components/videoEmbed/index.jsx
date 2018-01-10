@@ -258,9 +258,11 @@ class VideoEmbed extends Component {
 
   onWindowScroll() {
     const inView = this.isInView();
+
     if (!this.inView && inView) {
       this.onInView();
     }
+
     this.inView = inView;
   }
 
@@ -276,6 +278,7 @@ class VideoEmbed extends Component {
 
   onLoadSetupScript() {
     const videoElement = document.getElementsByClassName(this.getPlayerVideoClassName())[0];
+
     if (!videoElement) {
       return;
     }
@@ -497,11 +500,12 @@ class VideoEmbed extends Component {
 
   onPlayerCueChange() {
     const activeCues = this.getActiveCues();
-
     const cuePointCue = activeCues.find(c => c.text === "CODE" && c.originalCuePoint);
+
     if (cuePointCue) {
       const cue = cuePointCue.originalCuePoint;
       const x = this.activeCues.find(c => c.originalCuePoint && c.originalCuePoint.id === cue.id);
+
       if (!x) {
         this.onPlayerCuePoint(cue);
       }
@@ -512,13 +516,14 @@ class VideoEmbed extends Component {
 
   onPlayerCuePoint(cue) {
     const overlayElementId = `ad-lowerthird-${this.id}-${cue.id}`;
-
     const element = document.getElementById(overlayElementId);
+
     if (!element) {
       return;
     }
 
     const cueIndex = this.player.mediainfo.cuePoints.findIndex(c => c.id === cue.id);
+
     if (cueIndex === -1) {
       return;
     }
@@ -559,6 +564,7 @@ class VideoEmbed extends Component {
     if (!this.player) {
       return;
     }
+
     this.showCaptions = false;
     this.showMutedOverlay = false;
     this.disableCaptions();
@@ -569,11 +575,13 @@ class VideoEmbed extends Component {
 
   getActiveCues() {
     const activeCues = [];
+
     this.player.textTracks().tracks_.forEach((tt) => {
       tt.activeCues_.forEach((c) => {
         activeCues.push(c);
       });
     });
+
     return activeCues;
   }
 
@@ -728,6 +736,7 @@ class VideoEmbed extends Component {
     });
 
     this.player.controls(false);
+
     if (this.props.onMutedOverlayVisible) {
       this.props.onMutedOverlayVisible();
     }
@@ -743,6 +752,7 @@ class VideoEmbed extends Component {
     });
 
     this.player.controls(true);
+
     if (this.props.onMutedOverlayHidden) {
       this.props.onMutedOverlayHidden();
     }
@@ -761,7 +771,9 @@ class VideoEmbed extends Component {
       if (controls) {
         this.player.controls(false);
       }
+
       enableCaptionsButton.click();
+
       if (controls) {
         this.player.controls(true);
       }
@@ -780,11 +792,14 @@ class VideoEmbed extends Component {
 
     if (enableCaptionsButton.length) {
       const disableCaptionsButton = enableCaptionsButton.prev();
+
       if (disableCaptionsButton.length) {
         if (controls) {
           this.player.controls(false);
         }
+
         disableCaptionsButton.click();
+
         if (controls) {
           this.player.controls(true);
         }
@@ -810,6 +825,7 @@ class VideoEmbed extends Component {
     if (!this.container) {
       return false;
     }
+
     const bounds = this.container.getBoundingClientRect();
     const halfContainerHeight = bounds.height / 2;
     return bounds.top < -(halfContainerHeight);
@@ -819,9 +835,11 @@ class VideoEmbed extends Component {
     if (!this.container) {
       return false;
     }
+
     const bounds = this.container.getBoundingClientRect();
     const halfContainerHeight = bounds.height / 2;
     const windowHeight = window.innerHeight;
+
     return bounds.top > (windowHeight - halfContainerHeight);
   }
 
