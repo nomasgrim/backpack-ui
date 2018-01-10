@@ -326,11 +326,15 @@ class VideoEmbed extends Component {
   }
 
   onPlayerWaiting() {
-    this.setState({ playing: false });
+    this.setState({
+      playing: false,
+    });
   }
 
   onPlayerError() {
-    this.setState({ playing: false });
+    this.setState({
+      playing: false,
+    });
 
     /**
      * If the current video errors (ex. a timeout), we can recover by
@@ -340,7 +344,9 @@ class VideoEmbed extends Component {
   }
 
   onPlayerPlaying() {
-    this.setState({ playing: true });
+    this.setState({
+      playing: true,
+    });
 
     if (this.showCaptions) {
       this.enableCaptions();
@@ -358,7 +364,9 @@ class VideoEmbed extends Component {
     this.disableAdOverlay();
 
     if (!this.props.hideNextVideoOnCuePoint || !this.cueEndTime) {
-      this.setState({ nextVideoVisible: true });
+      this.setState({
+        nextVideoVisible: true,
+      });
     }
 
     /**
@@ -374,7 +382,10 @@ class VideoEmbed extends Component {
   }
 
   onPlayerPause() {
-    this.setState({ playing: false });
+    this.setState({
+      playing: false,
+    });
+
     if (this.props.onPause) {
       this.props.onPause();
     }
@@ -413,7 +424,9 @@ class VideoEmbed extends Component {
   }
 
   onAdStarted() {
-    this.setState({ playing: true });
+    this.setState({
+      playing: true,
+    });
 
     if (this.showCaptions) {
       this.enableCaptions();
@@ -434,7 +447,10 @@ class VideoEmbed extends Component {
   }
 
   onAdEnded() {
-    this.setState({ playing: false });
+    this.setState({
+      playing: false,
+    });
+
     /**
      * When an ad ends, the "playing" event or the "ads-ad-ended" event
      * may be fired, so we make sure to disable the "ad overlay" when
@@ -450,21 +466,30 @@ class VideoEmbed extends Component {
   }
 
   onPlayerEnded() {
-    this.setState({ playing: false });
+    this.setState({
+      playing: false,
+    });
+
     if (this.props.onEnded) {
       this.props.onEnded();
     }
   }
 
   onAdPlay() {
-    this.setState({ playing: true });
+    this.setState({
+      playing: true,
+    });
+
     if (this.props.onAdPlay) {
       this.props.onAdPlay();
     }
   }
 
   onAdPause() {
-    this.setState({ playing: false });
+    this.setState({
+      playing: false,
+    });
+
     if (this.props.onAdPause) {
       this.props.onAdPause();
     }
@@ -501,7 +526,9 @@ class VideoEmbed extends Component {
     this.cueEndTime = this.player.currentTime() + cueDuration;
 
     if (this.props.hideNextVideoOnCuePoint) {
-      this.setState({ nextVideoVisible: false });
+      this.setState({
+        nextVideoVisible: false,
+      });
     }
 
     if (this.props.onCuePoint) {
@@ -510,7 +537,9 @@ class VideoEmbed extends Component {
   }
 
   onPlayerCueEnd() {
-    this.setState({ nextVideoVisible: true });
+    this.setState({
+      nextVideoVisible: true,
+    });
   }
 
   onMouseEnter() {
@@ -521,7 +550,9 @@ class VideoEmbed extends Component {
   }
 
   onMouseLeave() {
-    this.setState({ hover: false });
+    this.setState({
+      hover: false,
+    });
   }
 
   onClickMutedOverlay() {
@@ -602,7 +633,9 @@ class VideoEmbed extends Component {
        * Hide the "next video" preview whenever we tell the player to
        * load a new video. Basically just to reset things.
        */
-      this.setState({ nextVideoVisible: false });
+      this.setState({
+        nextVideoVisible: false,
+      });
 
       this.player.catalog.getVideo(videoId, (error, video) => {
         if (!error) {
@@ -689,7 +722,11 @@ class VideoEmbed extends Component {
     if (!this.player || this.props.mobile) {
       return;
     }
-    this.setState({ showMutedOverlay: true });
+
+    this.setState({
+      showMutedOverlay: true,
+    });
+
     this.player.controls(false);
     if (this.props.onMutedOverlayVisible) {
       this.props.onMutedOverlayVisible();
@@ -700,7 +737,11 @@ class VideoEmbed extends Component {
     if (!this.player) {
       return;
     }
-    this.setState({ showMutedOverlay: false });
+
+    this.setState({
+      showMutedOverlay: false,
+    });
+
     this.player.controls(true);
     if (this.props.onMutedOverlayHidden) {
       this.props.onMutedOverlayHidden();
