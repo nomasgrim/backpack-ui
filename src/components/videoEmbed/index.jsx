@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import radium, { Style } from "radium";
 import { get, uniqueId } from "lodash";
-import $ from "jquery";
 import VideoUpNext from "../videoUpNext";
 import mq from "../../styles/mq";
 import timing from "../../styles/timing";
@@ -764,10 +763,9 @@ class VideoEmbed extends Component {
     }
 
     const controls = this.player.controls();
+    const enableCaptionsButton = this.container.querySelector(".vjs-captions-menu-item");
 
-    // TODO: Remove jQuery
-    const enableCaptionsButton = $(this.container).find(".vjs-captions-menu-item");
-    if (enableCaptionsButton.length) {
+    if (enableCaptionsButton) {
       if (controls) {
         this.player.controls(false);
       }
@@ -786,9 +784,7 @@ class VideoEmbed extends Component {
     }
 
     const controls = this.player.controls();
-
-    // TODO: Remove jQuery
-    const enableCaptionsButton = $(this.container).find(".vjs-captions-menu-item");
+    const enableCaptionsButton = this.container.querySelector(".vjs-captions-menu-item");
 
     if (enableCaptionsButton.length) {
       const disableCaptionsButton = enableCaptionsButton.prev();
