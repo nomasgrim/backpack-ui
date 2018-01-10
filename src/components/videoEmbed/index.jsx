@@ -332,8 +332,10 @@ class VideoEmbed extends Component {
   onPlayerError() {
     this.setState({ playing: false });
 
-    // If the current video errors (ex. a timeout), we can recover by just attempting
-    // to load/play the video again.
+    /**
+     * If the current video errors (ex. a timeout), we can recover by
+     * just attempting to load/play the video again.
+     */
     this.loadVideo(this.props.videoId);
   }
 
@@ -348,16 +350,22 @@ class VideoEmbed extends Component {
       this.enableMutedOverlay();
     }
 
-    // When an ad ends, the "playing" event or the "ads-ad-ended" event may be fired.
-    // so we make sure to disable the "ad overlay" when any of these events fire.
+    /**
+     * When an ad ends, the "playing" event or the "ads-ad-ended" event
+     * may be fired. so we make sure to disable the "ad overlay" when
+     * any of these events fire.
+     */
     this.disableAdOverlay();
 
     if (!this.props.hideNextVideoOnCuePoint || !this.cueEndTime) {
       this.setState({ nextVideoVisible: true });
     }
 
-    // If videoId was set while an ad was playing, and the user skips the ad,
-    // the onAdEnded() handler will not be run.  This makes sure we load the new video.
+    /**
+     * If videoId was set while an ad was playing, and the user skips
+     * the ad, the onAdEnded() handler will not be run.  This makes sure
+     * we load the new video.
+     */
     this.loadVideo(this.props.videoId);
 
     if (this.props.onPlaying) {
@@ -380,9 +388,11 @@ class VideoEmbed extends Component {
       this.onPlayerCueEnd();
     }
 
-    // If we're in "preview mode" and video playback has progressed
-    // to a point outside of the preview time window, rewind the
-    // video to the preview start time.
+    /**
+     * If we're in "preview mode" and video playback has progressed to a
+     * point outside of the preview time window, rewind the video to the
+     * preview start time.
+     */
     if (this.props.previewMode) {
       const beforeStartTime = (
         this.previewStartTime !== null &&
@@ -409,10 +419,10 @@ class VideoEmbed extends Component {
       this.enableCaptions();
     }
 
-    /*
-      Ads aren't programmatically unmutable in most cases
-      so don't cover the ad and don't make the user think
-      they can unmute it using our overlay.
+   /**
+    * Ads aren't programmatically unmutable in most cases so don't cover
+    * the ad and don't make the user think they can unmute it using our
+    * overlay.
     */
     this.disableMutedOverlay();
 
@@ -425,12 +435,17 @@ class VideoEmbed extends Component {
 
   onAdEnded() {
     this.setState({ playing: false });
-    // When an ad ends, the "playing" event or the "ads-ad-ended" event may be fired.
-    // so we make sure to disable the "ad overlay" when any of these events fire.
+    /**
+     * When an ad ends, the "playing" event or the "ads-ad-ended" event
+     * may be fired, so we make sure to disable the "ad overlay" when
+     * any of these events fire.
+     */
     this.disableAdOverlay();
 
-    // If videoId was set while an ad was playing, and the
-    // ad ends (without being skipped), make sure to load the new video.
+    /**
+     * If videoId was set while an ad was playing, and the ad ends
+     * (without being skipped), make sure to load the new video.
+     */
     this.loadVideo(this.props.videoId);
   }
 
@@ -583,15 +598,16 @@ class VideoEmbed extends Component {
         this.play();
       }
     } else {
-      // Hide the "next video" preview whenever we
-      // tell the player to load a new video.
-      // Basically just to reset things.
+      /**
+       * Hide the "next video" preview whenever we tell the player to
+       * load a new video. Basically just to reset things.
+       */
       this.setState({ nextVideoVisible: false });
 
       this.player.catalog.getVideo(videoId, (error, video) => {
         if (!error) {
           this.player.catalog.load(video);
-          // wait for 'loadstart' event
+          // Wait for 'loadstart' event
         }
       });
     }
