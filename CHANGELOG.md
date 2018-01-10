@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.58.1"></a>
+## [4.58.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.58.0...v4.58.1) (2018-01-10)
+
+
+### Bug Fixes
+
+* Let video playlist container height be auto ([#600](https://github.com/lonelyplanet/backpack-ui/issues/600)) ([76d932c](https://github.com/lonelyplanet/backpack-ui/commit/76d932c))
+
+
+
 <a name="4.58.0"></a>
 # [4.58.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.57.1...v4.58.0) (2018-01-10)
 
