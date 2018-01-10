@@ -2,6 +2,48 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.58.0"></a>
+# [4.58.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.57.1...v4.58.0) (2018-01-10)
+
+
+### Bug Fixes
+
+* Add eed value to player IDs ([23341fc](https://github.com/lonelyplanet/backpack-ui/commit/23341fc))
+* Allow current video in VideoPlaylistWithSlider to change with prop ([09c187b](https://github.com/lonelyplanet/backpack-ui/commit/09c187b))
+* Check typeof document before using in VideoEmbed ([0b2c6c6](https://github.com/lonelyplanet/backpack-ui/commit/0b2c6c6))
+* Delete jQuery from VideoEmbed ([326bf89](https://github.com/lonelyplanet/backpack-ui/commit/326bf89))
+* Fix path to VideoUpNext in video/videoEmbed ([#599](https://github.com/lonelyplanet/backpack-ui/issues/599)) ([9220642](https://github.com/lonelyplanet/backpack-ui/commit/9220642))
+* Make VideoPlaylist onLoadVideo event fire on every video load now ([00fad30](https://github.com/lonelyplanet/backpack-ui/commit/00fad30))
+* Remove visible prop from VideoInfo in favor of conditional mounting ([95c095d](https://github.com/lonelyplanet/backpack-ui/commit/95c095d))
+* Update path to VideoUpNext in VideoEmbed ([9b1dfe0](https://github.com/lonelyplanet/backpack-ui/commit/9b1dfe0))
+* Update stories ([#598](https://github.com/lonelyplanet/backpack-ui/issues/598)) ([5e82668](https://github.com/lonelyplanet/backpack-ui/commit/5e82668))
+* Update video/videoEmbed to match videoEmbed ([9641a06](https://github.com/lonelyplanet/backpack-ui/commit/9641a06))
+
+
+### Features
+
+* Add spacing prop to CardAnchor component ([1248f9f](https://github.com/lonelyplanet/backpack-ui/commit/1248f9f))
+* Add spacing, theme props to CardHeading component ([02e7702](https://github.com/lonelyplanet/backpack-ui/commit/02e7702))
+* Add theme prop to Card component ([5af97fa](https://github.com/lonelyplanet/backpack-ui/commit/5af97fa))
+* Create CardShelfVideoSlider component ([c15fc7f](https://github.com/lonelyplanet/backpack-ui/commit/c15fc7f))
+* Create exports for video components ([0f1ce80](https://github.com/lonelyplanet/backpack-ui/commit/0f1ce80))
+* Create ThumbnailList component ([11e04bf](https://github.com/lonelyplanet/backpack-ui/commit/11e04bf))
+* Create VideoFeatured component ([1804de2](https://github.com/lonelyplanet/backpack-ui/commit/1804de2))
+* Create VideoInfo component ([8a60d20](https://github.com/lonelyplanet/backpack-ui/commit/8a60d20))
+* Create VideoPlaylist component ([dbece35](https://github.com/lonelyplanet/backpack-ui/commit/dbece35))
+* Create VideoPlaylistWithSlider component ([599e126](https://github.com/lonelyplanet/backpack-ui/commit/599e126))
+* Create VideoPopout component ([384570e](https://github.com/lonelyplanet/backpack-ui/commit/384570e))
+* Create VideoSlider component ([9ec0e19](https://github.com/lonelyplanet/backpack-ui/commit/9ec0e19))
+* Create VideoUpNext component ([fac12be](https://github.com/lonelyplanet/backpack-ui/commit/fac12be))
+* Move VideoEmbed component into video directory ([e1c9c7f](https://github.com/lonelyplanet/backpack-ui/commit/e1c9c7f))
+* Update CardVideo component ([#591](https://github.com/lonelyplanet/backpack-ui/issues/591)) ([898e2b1](https://github.com/lonelyplanet/backpack-ui/commit/898e2b1))
+* Update IconButton component ([#592](https://github.com/lonelyplanet/backpack-ui/issues/592)) ([56a3213](https://github.com/lonelyplanet/backpack-ui/commit/56a3213))
+* Update SpotlightZone component ([#597](https://github.com/lonelyplanet/backpack-ui/issues/597)) ([06660bc](https://github.com/lonelyplanet/backpack-ui/commit/06660bc))
+* Update ThumbnailListItem component ([#596](https://github.com/lonelyplanet/backpack-ui/issues/596)) ([967b2e2](https://github.com/lonelyplanet/backpack-ui/commit/967b2e2))
+* Update VideoEmbed component ([a8f649b](https://github.com/lonelyplanet/backpack-ui/commit/a8f649b))
+
+
+
 <a name="4.57.1"></a>
 ## [4.57.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.57.0...v4.57.1) (2018-01-08)
 
