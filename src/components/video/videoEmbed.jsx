@@ -13,11 +13,15 @@ import propTypes from "../../utils/propTypes";
 const _ = { get, uniqueId };
 
 const bcPlayerIds = {
+  adventuretravel: "ryW7OZBEM",
+  artandculture: "B1oEOZH4M",
   default: "default",
   background: "BJputewob",
   bestintravel: "HkJcclwoZ",
   destination: "HkPdqeDiZ",
   eed: "rJtMIpi7M",
+  foodanddrink: "H1pZdWHNG",
+  home: "HJe5vuWSVG",
 };
 
 const cueDuration = 15;
@@ -974,11 +978,15 @@ class VideoEmbed extends Component {
 VideoEmbed.propTypes = {
   videoId: PropTypes.string.isRequired,
   playerName: PropTypes.oneOf([
+    "adventuretravel",
+    "artandculture",
     "default",
     "background",
     "bestintravel",
     "destination",
     "eed",
+    "foodanddrink",
+    "home",
   ]),
   nextVideo: PropTypes.shape({
     title: PropTypes.string,
