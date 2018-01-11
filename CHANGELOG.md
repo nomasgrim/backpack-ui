@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.58.2"></a>
+## [4.58.2](https://github.com/lonelyplanet/backpack-ui/compare/v4.58.1...v4.58.2) (2018-01-11)
+
+
+### Bug Fixes
+
+* Fixed typo in styling on feature video description ([#601](https://github.com/lonelyplanet/backpack-ui/issues/601)) ([a7e973e](https://github.com/lonelyplanet/backpack-ui/commit/a7e973e))
+
+
+
 <a name="4.58.1"></a>
 ## [4.58.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.58.0...v4.58.1) (2018-01-10)
 
