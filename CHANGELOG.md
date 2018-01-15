@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.60.1"></a>
+## [4.60.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.60.0...v4.60.1) (2018-01-15)
+
+
+### Bug Fixes
+
+* Video thumbnails changing player source but not initiating playback ([#605](https://github.com/lonelyplanet/backpack-ui/issues/605)) ([436b287](https://github.com/lonelyplanet/backpack-ui/commit/436b287))
+
+
+
 <a name="4.60.0"></a>
 # [4.60.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.59.0...v4.60.0) (2018-01-12)
 
