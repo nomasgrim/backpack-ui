@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.60.2"></a>
+## [4.60.2](https://github.com/lonelyplanet/backpack-ui/compare/v4.60.1...v4.60.2) (2018-01-19)
+
+
+### Bug Fixes
+
+* Cue points break on mobile safari ([#609](https://github.com/lonelyplanet/backpack-ui/issues/609)) ([bf32e9d](https://github.com/lonelyplanet/backpack-ui/commit/bf32e9d))
+* popout video player will always show close button on mobile devices ([#608](https://github.com/lonelyplanet/backpack-ui/issues/608)) ([2cca045](https://github.com/lonelyplanet/backpack-ui/commit/2cca045))
+* Removed coverUp from VideoSlider ([#607](https://github.com/lonelyplanet/backpack-ui/issues/607)) ([dd6a59c](https://github.com/lonelyplanet/backpack-ui/commit/dd6a59c))
+
+
+
 <a name="4.60.1"></a>
 ## [4.60.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.60.0...v4.60.1) (2018-01-15)
 
