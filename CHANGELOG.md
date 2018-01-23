@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.60.4"></a>
+## [4.60.4](https://github.com/lonelyplanet/backpack-ui/compare/v4.60.3...v4.60.4) (2018-01-23)
+
+
+### Bug Fixes
+
+* Transform Object.assign with Babel ([#610](https://github.com/lonelyplanet/backpack-ui/issues/610)) ([f53a394](https://github.com/lonelyplanet/backpack-ui/commit/f53a394))
+
+
+
 <a name="4.60.3"></a>
 ## [4.60.3](https://github.com/lonelyplanet/backpack-ui/compare/v4.60.2...v4.60.3) (2018-01-19)
 
