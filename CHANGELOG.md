@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.60.5"></a>
+## [4.60.5](https://github.com/lonelyplanet/backpack-ui/compare/v4.60.4...v4.60.5) (2018-01-25)
+
+
+### Bug Fixes
+
+* Allow any valid HTML attribute as props on CategoryLabelLink ([#612](https://github.com/lonelyplanet/backpack-ui/issues/612)) ([7b44ed7](https://github.com/lonelyplanet/backpack-ui/commit/7b44ed7))
+
+
+
 <a name="4.60.4"></a>
 ## [4.60.4](https://github.com/lonelyplanet/backpack-ui/compare/v4.60.3...v4.60.4) (2018-01-23)
 
