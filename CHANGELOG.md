@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.60.6"></a>
+## [4.60.6](https://github.com/lonelyplanet/backpack-ui/compare/v4.60.5...v4.60.6) (2018-01-31)
+
+
+### Bug Fixes
+
+* Make Radium a peer dependency ([#166](https://github.com/lonelyplanet/backpack-ui/issues/166)) ([4dd123e](https://github.com/lonelyplanet/backpack-ui/commit/4dd123e))
+* Rename storybook head.html to preview-head.html ([72ce0af](https://github.com/lonelyplanet/backpack-ui/commit/72ce0af))
+* Set options in storybook config with addon-options ([dfdd79e](https://github.com/lonelyplanet/backpack-ui/commit/dfdd79e))
+* toast with onClick action storyboard ([#611](https://github.com/lonelyplanet/backpack-ui/issues/611)) ([42a791e](https://github.com/lonelyplanet/backpack-ui/commit/42a791e))
+
+
+
 <a name="4.60.5"></a>
 ## [4.60.5](https://github.com/lonelyplanet/backpack-ui/compare/v4.60.4...v4.60.5) (2018-01-25)
 
