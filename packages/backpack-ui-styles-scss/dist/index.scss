@@ -1,0 +1,172 @@
+// ---------------------------------------------------------------------
+// Colors
+// ---------------------------------------------------------------------
+
+// Background colors
+$bgPrimary: #fff;
+$bgSecondary: #f4fbfe;
+$bgOverlay: #000;
+$bgDark: rgba(0, 0, 0, 0.96);
+
+// Link colors
+$linkPrimary: #297cbb;
+$linkPrimaryHover: rgba(41, 124, 187, 0.7);
+
+// Border colors
+$borderPrimary: #e4e4e4;
+
+// Text colors
+$textPrimary: #2c3643;
+$textSecondary: rgba(44, 54, 67, 0.7);
+$textOverlay: #fff;
+
+// Shadow colors
+$shadowPrimary: #000;
+
+// Accent colors
+$accentBlue: #88bde7;
+$accentGray: #b6c3ca;
+$accentGreen: #16c98d;
+$accentOrange: #ff882e;
+$accentPink: #ff6e8d;
+$accentPurple: #9d69c9;
+$accentRed: #da0909;
+$accentYellow: #ffc83f;
+
+// UI colors
+$uiGreen: #44db5e;
+
+// Social colors
+$socialFacebook: #3a5999;
+$socialFacebookMessenger: #1472fb;
+$socialPinterest: #cb2027;
+$socialGoogleBlue: #557ebf;
+$socialGoogleGreen: #36a852;
+$socialGoogleYellow: #f9bc15;
+$socialGoogleRed: #ea4535;
+$socialReddit: #fc4220;
+$socialTwitter: #1da1f2;
+$socialWhatsapp: #28eb76;
+
+
+
+// ---------------------------------------------------------------------
+// Fonts
+// ---------------------------------------------------------------------
+
+$benton: "Benton Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$miller: "Miller Daily", Georgia, Times, "Times New Roman", serif;
+
+
+
+// ---------------------------------------------------------------------
+// Media queries
+// ---------------------------------------------------------------------
+
+// min-width
+$mqMin1430: 89.375em;
+$mqMin1410: 88.125em;
+$mqMin1350: 84.375em;
+$mqMin1290: 80.625em;
+$mqMin1200: 75em;
+$mqMin1080: 67.5em;
+$mqMin1024: 64em;
+$mqMin960: 60em;
+$mqMin840: 52.5em;
+$mqMin768: 48em;
+$mqMin720: 45em;
+$mqMin600: 37.5em;
+$mqMin560: 35em;
+$mqMin480: 30em;
+$mqMin360: 22.5em;
+$mqMin320: 20em;
+
+// max-width
+$mqMax1530: 95.5625em;
+$mqMax1430: 89.3125em;
+$mqMax1410: 88.0625em;
+$mqMax1350: 84.3125em;
+$mqMax1290: 80.5625em;
+$mqMax1200: 74.9375em;
+$mqMax1080: 67.4375em;
+$mqMax1024: 63.9375em;
+$mqMax960: 59.9375em;
+$mqMax840: 52.4375em;
+$mqMax768: 47.9375em;
+$mqMax720: 44.9375em;
+$mqMax600: 37.4375em;
+$mqMax560: 34.9375em;
+$mqMax480: 29.9375em;
+$mqMax360: 22.4375em;
+$mqMax320: 19.9375em;
+
+
+
+// ---------------------------------------------------------------------
+// Timing
+// ---------------------------------------------------------------------
+
+$timingFast: 200ms;
+$timingDefault: 400ms;
+$timingSlow: 800ms;
+
+
+
+// ---------------------------------------------------------------------
+// Typography
+// ---------------------------------------------------------------------
+
+// Font weight
+$fontWeightLight: 300;
+$fontWeightRegular: 500;
+$fontWeightMedium: 600;
+
+// Font size
+$fontSizeSuper: 88px;
+$fontSizeHeading1: 64px;
+$fontSizeHeading2: 48px;
+$fontSizeHeading3: 40px;
+$fontSizeHeading4: 32px;
+$fontSizeHeading5: 24px;
+$fontSizeHeading6: 20px;
+$fontSizeHeading7: 16px;
+$fontSizeHeading8: 11px;
+$fontSizeBodyArticle: 20px;
+$fontSizeBodyArticleSmall: 16px;
+$fontSizeBodySmall: 14px;
+$fontSizeAccent: 16px;
+$fontSizeUppercase: 11px;
+
+// Line height
+$lineHeightSuper: 1.0909090909090908;
+$lineHeightHeading1: 1.125;
+$lineHeightHeading2: 1.1666666666666667;
+$lineHeightHeading3: 1.2;
+$lineHeightHeading4: 1.25;
+$lineHeightHeading5: 1.3333333333333333;
+$lineHeightHeading6: 1.4;
+$lineHeightHeading7: 1.5;
+$lineHeightHeading8: 1.4545454545454546;
+$lineHeightBodyArticle: 1.8;
+$lineHeightBodyArticleSmall: 2;
+$lineHeightBodySmall: 1.4285714285714286;
+$lineHeightAccent: 1.5;
+$lineHeightUppercase: 1;
+$lineHeightReset: 1;
+
+
+
+// ---------------------------------------------------------------------
+// z-index
+// ---------------------------------------------------------------------
+
+$zIndexAuto: auto;
+$zIndexBelow: -1;
+$zIndexDefault: 1;
+$zIndexPopup: 4000;
+$zIndexDialog: 5000;
+$zIndexDropdown: 6000;
+$zIndexOverlay: 7000;
+$zIndexMenu: 8000;
+$zIndexModal: 9000;
+$zIndexToast: 10000;

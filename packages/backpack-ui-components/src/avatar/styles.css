@@ -1,0 +1,42 @@
+.avatar {
+  border-radius: 100%;
+  display: inline-block;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+.avatar24 {
+  height: 24px;
+  width: 24px;
+}
+
+.avatar40 {
+  height: 40px;
+  width: 40px;
+}
+
+.avatar48 {
+  height: 48px;
+  width: 48px;
+}
+
+.avatar80 {
+  height: 80px;
+  width: 80px;
+}
+
+.avatar104 {
+  height: 104px;
+  width: 104px;
+}
+
+  /* anchorImage: {
+    display: "block",
+    height: "100%",
+    width: "100%",
+  },
+
+  anchor: {
+    ":focus": outline(),
+  },
+} */

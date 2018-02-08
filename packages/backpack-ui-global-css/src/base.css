@@ -1,0 +1,30 @@
+html {
+  font-size: 62.5%; /* 10px */
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  text-rendering: optimizeLegibility;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  color: map(colors, textPrimary);
+  background-color: map(colors, bgPrimary);
+  font-family: map(fonts, benton);
+  font-size: calc(map(typography, fontSizeBodyArticle) * 1px);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  line-height: map(typography, lineHeightBodyArticle);
+  position: relative;
+}
+
+.no-scroll > body {
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}

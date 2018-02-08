@@ -1,0 +1,5 @@
+.divider {
+  background-color: map(colors, borderPrimary);
+  border: 0;
+  height: 1px;
+}

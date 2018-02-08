@@ -1,0 +1,55 @@
+/**
+ * typography.css
+ *
+ * Provides typography styles
+ */
+
+h1 {
+  font-size: calc(map(typography, fontSizeHeading1) * 1px);
+  font-weight: map(typography, fontWeightMedium);
+  line-height: map(typography, lineHeightHeading1);
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: calc(map(typography, fontSizeHeading2) * 1px);
+  line-height: map(typography, lineHeightHeading2);
+}
+
+h3 {
+  font-size: calc(map(typography, fontSizeHeading3) * 1px);
+  line-height: map(typography, lineHeightHeading3);
+}
+
+h4 {
+  font-size: calc(map(typography, fontSizeHeading4) * 1px);
+  line-height: map(typography, lineHeightHeading4);
+}
+
+h5 {
+  font-size: calc(map(typography, fontSizeHeading5) * 1px);
+  line-height: map(typography, lineHeightHeading5);
+}
+
+h6 {
+  font-size: calc(map(typography, fontSizeHeading6) * 1px);
+  line-height: map(typography, lineHeightHeading6);
+}
+
+p {}
+
+ul,
+ol {}
+
+a {
+  color: map(colors, linkPrimary);
+  text-decoration: none;
+  transition: color map(timing, default) ease;
+}
+
+a:hover,
+a:active,
+a:focus {
+  color: map(colors, linkPrimaryHover);
+}

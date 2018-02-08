@@ -1,0 +1,41 @@
+{
+  "name": "@lonelyplanet/backpack-ui-styles",
+  "version": "1.0.0",
+  "description": "backpack-ui-styles contains the design tokens used across lonelyplanet.com",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "tsc --watch",
+    "build": "npm run clean && tsc && npm run copy",
+    "clean": "rm -rf dist",
+    "eslint": "eslint ./ --ext .js",
+    "test": "npm run eslint && jest",
+    "pre-commit": [
+      "test"
+    ]
+  },
+  "author": "Lonely Planet",
+  "license": "MIT",
+  "repository": "https://github.com/lonelyplanet/backpack-ui/tree/master/packages/backpack-ui-styles",
+  "keywords": [
+    "javascript",
+    "typescript",
+    "design-tokens",
+    "backpack-ui"
+  ],
+  "dependencies": {
+    "color": "^3.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.16.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "jest": "^22.1.4",
+    "pre-commit": "^1.2.2",
+    "typescript": "^2.7.1"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.(js|ts)$": "<rootDir>/preprocessor.js"
+    }
+  }
+}
