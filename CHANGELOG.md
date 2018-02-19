@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.60.7"></a>
+## [4.60.7](https://github.com/lonelyplanet/backpack-ui/compare/v4.60.6...v4.60.7) (2018-02-19)
+
+
+### Bug Fixes
+
+* add new color option for button ([#620](https://github.com/lonelyplanet/backpack-ui/issues/620)) ([985b4e3](https://github.com/lonelyplanet/backpack-ui/commit/985b4e3))
+
+
+
 <a name="4.60.6"></a>
 ## [4.60.6](https://github.com/lonelyplanet/backpack-ui/compare/v4.60.5...v4.60.6) (2018-01-31)
 
