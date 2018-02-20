@@ -5,6 +5,7 @@ import "leaflet/dist/leaflet.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "react-photoswipe/lib/photoswipe.css";
+import "rc-slider/assets/index.css";
 import { storiesOf } from "@storybook/react";
 import {
   withKnobs,
@@ -128,6 +129,7 @@ import ProfileHeader from "../src/components/profileHeader";
 import PromotedGuidebook from "../src/components/promotedGuidebook";
 import ProviderLogo from "../src/components/providerLogo";
 import Rating from "../src/components/rating";
+import Range from "../src/components/form/range";
 import RecommendedArticles from "../src/components/recommendedArticles";
 import RelatedTour from "../src/components/relatedTour";
 import ReviewedBadge from "../src/components/reviewedBadge";
@@ -752,6 +754,41 @@ storiesOf("Controls", module)
   .add("Input", () => (
     <Center backgroundColor="white">
       <Input />
+    </Center>
+  ))
+  .add("Range", () => (
+    <Center backgroundColor="white" grow>
+      <Range
+        onAfterChange={action(event)}
+        min={0}
+        max={10}
+        defaultValue={[0, 10]}
+        label="Range control"
+      />
+    </Center>
+  ))
+  .add("Range - price", () => (
+    <Center backgroundColor="white" grow>
+      <Range
+        onAfterChange={action(event)}
+        min={0}
+        max={10}
+        defaultValue={[0, 10]}
+        label="Range control"
+        price
+      />
+    </Center>
+  ))
+  .add("Range - time", () => (
+    <Center backgroundColor="white" grow>
+      <Range
+        onAfterChange={action(event)}
+        min={0}
+        max={10}
+        defaultValue={[0, 10]}
+        label="Range control"
+        time
+      />
     </Center>
   ))
   .add("Select", () => (
