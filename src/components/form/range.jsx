@@ -1,8 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import radium, { Style } from "radium";
-import Slider from "rc-slider";
-
+import { Range as RcSliderRange } from "rc-slider";
 import colors from "../../styles/colors";
 import { rgb } from "../../utils/color";
 import createUnitLabel from "../../utils/createUnitLabel";
@@ -139,7 +138,7 @@ class Range extends React.Component {
           rules={scopedStyles}
         />
 
-        <Slider
+        <RcSliderRange
           className="Range-slider"
           allowCross={false}
           defaultValue={value}
@@ -150,7 +149,6 @@ class Range extends React.Component {
           max={max}
           marks={marks}
           tipFormatter={null}
-          range
         />
       </div>
     );
