@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.61.0"></a>
+# [4.61.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.60.7...v4.61.0) (2018-02-21)
+
+
+### Bug Fixes
+
+* Add range component to stories ([0747fa7](https://github.com/lonelyplanet/backpack-ui/commit/0747fa7))
+* Add story for DateRange component ([34125a4](https://github.com/lonelyplanet/backpack-ui/commit/34125a4))
+* Add style to DateRange ([d800c23](https://github.com/lonelyplanet/backpack-ui/commit/d800c23))
+
+
+### Features
+
+* Add style prop to range component ([073e055](https://github.com/lonelyplanet/backpack-ui/commit/073e055))
+* Update range component to work with rc-slider 8.6.0 ([a9b0ffc](https://github.com/lonelyplanet/backpack-ui/commit/a9b0ffc))
+* Update to React 16 ([e248413](https://github.com/lonelyplanet/backpack-ui/commit/e248413))
+
+
+
 <a name="4.60.7"></a>
 ## [4.60.7](https://github.com/lonelyplanet/backpack-ui/compare/v4.60.6...v4.60.7) (2018-02-19)
 
