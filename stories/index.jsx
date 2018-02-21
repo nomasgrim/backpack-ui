@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "react-photoswipe/lib/photoswipe.css";
 import "rc-slider/assets/index.css";
+import "react-dates/lib/css/_datepicker.css";
 import { storiesOf } from "@storybook/react";
 import {
   withKnobs,
@@ -63,6 +64,7 @@ import CategoryLabelLink from "../src/components/categoryLabelLink";
 import Checkbox from "../src/components/checkbox";
 import Container from "../src/components/container";
 import ContentHeader from "../src/components/contentHeader";
+import DateRange from "../src/components/form/daterange";
 import Dialog from "../src/components/dialog";
 import DisclaimerText from "../src/components/disclaimerText";
 import DotLoader from "../src/components/dotLoader";
@@ -743,6 +745,9 @@ storiesOf("Controls", module)
       size={select("Size", [16, 24, 32], 16)}
       onClick={action(event)}
     />
+  ))
+  .add("Date range", () => (
+    <DateRange />
   ))
   .add("Dropdown", () => (
     <Dropdown
