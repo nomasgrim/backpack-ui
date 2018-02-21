@@ -178,6 +178,10 @@ class DateRange extends React.Component {
               backgroundColor: colors.bgPrimary,
               color: colors.linkPrimary,
             },
+
+            ".DayPickerKeyboardShortcuts__show--bottom-right": {
+              borderRightColor: colors.linkPrimary,
+            },
           }}
         />
 

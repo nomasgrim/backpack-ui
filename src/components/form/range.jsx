@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import radium, { Style } from "radium";
-import Slider from "rc-slider";
-
+import { Range as RcSliderRange } from "rc-slider";
 import colors from "../../styles/colors";
 import { rgb } from "../../utils/color";
 import createUnitLabel from "../../utils/createUnitLabel";
+import propTypes from "../../utils/propTypes";
 
 const styles = {
   container: {
@@ -100,7 +100,7 @@ class Range extends React.Component {
   }
 
   render() {
-    const { onAfterChange, defaultValue, min, max, label, price, time } = this.props;
+    const { onAfterChange, defaultValue, min, max, label, price, time, style } = this.props;
 
     const value = defaultValue.length === 2 ? defaultValue : [min, max];
 
@@ -130,7 +130,7 @@ class Range extends React.Component {
     return (
       <div
         className="Range"
-        style={styles.container.base}
+        style={[styles.container.base, style]}
         aria-label={label}
         title={label}
       >
@@ -139,7 +139,7 @@ class Range extends React.Component {
           rules={scopedStyles}
         />
 
-        <Slider
+        <RcSliderRange
           className="Range-slider"
           allowCross={false}
           defaultValue={value}
@@ -150,7 +150,6 @@ class Range extends React.Component {
           max={max}
           marks={marks}
           tipFormatter={null}
-          range
         />
       </div>
     );
@@ -192,6 +191,11 @@ Range.propTypes = {
    * Is this a time slider? Format the marks with hours/days
    */
   time: PropTypes.bool,
+
+  /**
+   * Additional layout styles
+   */
+  style: propTypes.style,
 };
 
 Range.defaultProps = {
@@ -202,6 +206,7 @@ Range.defaultProps = {
   label: "",
   price: false,
   time: false,
+  style: null,
 };
 
 export default radium(Range);
