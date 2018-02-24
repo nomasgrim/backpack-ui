@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import radium, { Style } from "radium";
-import { upperFirst, uniqueId } from "lodash";
+import upperFirst from "lodash/upperFirst";
+import uniqueId from "lodash/uniqueId";
 import cn from "classnames";
 import colors from "../../styles/colors";
 import timing from "../../styles/timing";
