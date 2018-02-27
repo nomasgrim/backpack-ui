@@ -4,7 +4,7 @@ import radium from "radium";
 
 import colors from "../../styles/colors";
 import timing from "../../styles/timing";
-import { fontSizeBodySmall, fontWeightMedium } from "../../styles/typography";
+import { fontSizeBodySmall, fontWeightLight } from "../../styles/typography";
 import { rgba } from "../../utils/color";
 import { outline } from "../../utils/mixins";
 import propTypes from "../../utils/propTypes";
@@ -18,7 +18,8 @@ const hoverStyles = {
   },
 
   selected: {
-    backgroundColor: colors.textPrimary,
+    backgroundColor: "#F3F6F7",
+    border: "none",
   },
 };
 
@@ -38,7 +39,7 @@ const styles = {
     transition: `background-color ${timing.fast}`,
     whiteSpace: "nowrap",
   }, textBodySmall(), {
-    fontWeight: fontWeightMedium,
+    fontWeight: fontWeightLight,
     lineHeight: 1,
   }),
 
@@ -49,9 +50,10 @@ const styles = {
   },
 
   selected: {
-    backgroundColor: colors.textPrimary,
+    backgroundColor: hoverStyles.selected.backgroundColor,
+    border: "none",
     borderColor: colors.textPrimary,
-    color: colors.textOverlay,
+    fontWeight: fontWeightLight,
 
     ":hover": hoverStyles.selected,
     ":active": hoverStyles.selected,
