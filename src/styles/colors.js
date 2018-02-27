@@ -5,6 +5,7 @@ const bgPrimary = "#fff";
 const bgSecondary = "#f4fbfe";
 const bgOverlay = "#000";
 const bgDark = rgba("#000", 0.96);
+const bgSelected = "#F3F6F7";
 
 // Link colors
 const linkPrimary = "#297cbb";
@@ -12,11 +13,13 @@ const linkPrimaryHover = rgba(linkPrimary, 0.7);
 
 // Border colors
 const borderPrimary = "#e4e4e4";
+const borderLight = "#BFD0D8";
 
 // Text colors
 const textPrimary = "#2c3643";
 const textSecondary = rgba(textPrimary, 0.7);
 const textOverlay = "#fff";
+const textLight = "#576576";
 
 // Shadow colors
 const shadowPrimary = "#000";
@@ -65,15 +68,18 @@ export default {
   bgSecondary,
   bgOverlay,
   bgDark,
+  bgSelected,
 
   linkPrimary,
   linkPrimaryHover,
 
   borderPrimary,
+  borderLight,
 
   textPrimary,
   textSecondary,
   textOverlay,
+  textLight,
 
   shadowPrimary,
 
