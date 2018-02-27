@@ -4,7 +4,7 @@ import radium from "radium";
 
 import colors from "../../styles/colors";
 import timing from "../../styles/timing";
-import { fontSizeBodySmall, fontWeightLight } from "../../styles/typography";
+import { fontSizeBodySmall, fontWeightRegular } from "../../styles/typography";
 import { rgba } from "../../utils/color";
 import { outline } from "../../utils/mixins";
 import propTypes from "../../utils/propTypes";
@@ -19,28 +19,30 @@ const hoverStyles = {
 
   selected: {
     backgroundColor: "#F3F6F7",
-    border: "none",
+    borderColor: "#F3F6F7",
   },
 };
 
 const styles = {
   default: Object.assign({}, {
     backgroundColor: colors.bgPrimary,
-    borderColor: colors.borderPrimary,
+    borderColor: "#BFD0D8",
     borderStyle: "solid",
     borderWidth: `${1 / fontSize}em`,
     borderRadius: `${32 / fontSize}em`,
-    color: colors.textPrimary,
+    color: "#576576",
+    fontSize: "20px",
     display: "inline-block",
-    maxHeight: "32px",
-    padding: `${9 / fontSize}em ${25 / fontSize}em ${7 / fontSize}em`,
+    letterSpacing: 0,
+    maxHeight: "30px",
+    padding: `${8 / fontSize}em ${20 / fontSize}em`,
     textDecoration: "none",
     textOverflow: "ellipsis",
     transition: `background-color ${timing.fast}`,
     whiteSpace: "nowrap",
   }, textBodySmall(), {
-    fontWeight: fontWeightLight,
-    lineHeight: 1,
+    lineHeight: "15px",
+    fontWeight: fontWeightRegular,
   }),
 
   defaultHover: {
@@ -51,9 +53,7 @@ const styles = {
 
   selected: {
     backgroundColor: hoverStyles.selected.backgroundColor,
-    border: "none",
-    borderColor: colors.textPrimary,
-    fontWeight: fontWeightLight,
+    borderColor: hoverStyles.selected.backgroundColor,
 
     ":hover": hoverStyles.selected,
     ":active": hoverStyles.selected,
