@@ -18,19 +18,19 @@ const hoverStyles = {
   },
 
   selected: {
-    backgroundColor: "#F3F6F7",
-    borderColor: "#F3F6F7",
+    backgroundColor: colors.bgSelected,
+    borderColor: colors.bgSelected,
   },
 };
 
 const styles = {
   default: Object.assign({}, {
     backgroundColor: colors.bgPrimary,
-    borderColor: "#BFD0D8",
+    borderColor: colors.borderLight,
     borderStyle: "solid",
     borderWidth: `${1 / fontSize}em`,
     borderRadius: `${32 / fontSize}em`,
-    color: "#576576",
+    color: colors.textLight,
     fontSize: "20px",
     display: "inline-block",
     letterSpacing: 0,
