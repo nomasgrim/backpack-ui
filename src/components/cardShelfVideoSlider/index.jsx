@@ -210,7 +210,6 @@ class CardShelfVideoSlider extends React.Component {
 
         <div style={styles.slider}>
           <VideoSlider
-            slidesToShow={4}
             infinite={false}
             arrows={!mobile}
             arrowProps={{
