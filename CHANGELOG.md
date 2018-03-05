@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.63.0"></a>
+# [4.63.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.62.0...v4.63.0) (2018-03-05)
+
+
+### Features
+
+* Add media query values for layout ([#629](https://github.com/lonelyplanet/backpack-ui/issues/629)) ([1c2c268](https://github.com/lonelyplanet/backpack-ui/commit/1c2c268))
+* Added icons for video player UI ([#628](https://github.com/lonelyplanet/backpack-ui/issues/628)) ([60dd47f](https://github.com/lonelyplanet/backpack-ui/commit/60dd47f)), closes [#627](https://github.com/lonelyplanet/backpack-ui/issues/627)
+
+
+
 <a name="4.62.0"></a>
 # [4.62.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.61.1...v4.62.0) (2018-02-28)
 
