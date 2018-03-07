@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.64.0"></a>
+# [4.64.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.63.0...v4.64.0) (2018-03-07)
+
+
+### Features
+
+* Add className prop to Button component ([#631](https://github.com/lonelyplanet/backpack-ui/issues/631)) ([c978b1c](https://github.com/lonelyplanet/backpack-ui/commit/c978b1c))
+
+
+
 <a name="4.63.0"></a>
 # [4.63.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.62.0...v4.63.0) (2018-03-05)
 
