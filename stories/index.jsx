@@ -2330,6 +2330,12 @@ storiesOf("Video components", module)
           }
           autoplay={boolean("Autoplay", false)}
           cover={boolean("Cover", false)}
+          centerVideoDetail={boolean("Center video detail", false)}
+          showVideoDetail={boolean("Show video detail", true)}
+          showShareButton={boolean("Show share button", true)}
+          showRelatedVideos={boolean("Show related videos", true)}
+          poppedOut={boolean("Popped out", false)}
+          onClosePopout={() => {}}
           controls={boolean("Controls", true)}
           muted={boolean("Muted", false)}
           loop={boolean("Loop", false)}

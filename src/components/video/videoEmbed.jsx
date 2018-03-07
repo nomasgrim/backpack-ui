@@ -14,14 +14,24 @@ import propTypes from "../../utils/propTypes";
 const _ = { get, uniqueId };
 
 const bcPlayerIds = {
-  default: "default",
-  background: "BJputewob",
-  bestintravel: "HkJcclwoZ",
-  destination: "HkPdqeDiZ",
-  eed: "rJtMIpi7M",
-  home: "HJe5vuWSVG",
-  interest: "S1gCMqoEG",
+  default: "H1SwHfqIM",
+  background: "H1SwHfqIM",
+  bestintravel: "H1SwHfqIM",
+  destination: "H1SwHfqIM",
+  eed: "H1SwHfqIM",
+  home: "H1SwHfqIM",
+  interest: "H1SwHfqIM",
 };
+
+// const bcPlayerIds = {
+//   default: "default",
+//   background: "BJputewob",
+//   bestintravel: "HkJcclwoZ",
+//   destination: "HkPdqeDiZ",
+//   eed: "rJtMIpi7M",
+//   home: "HJe5vuWSVG",
+//   interest: "S1gCMqoEG",
+// };
 
 const cueDuration = 15;
 
@@ -243,6 +253,9 @@ class VideoEmbed extends Component {
   }
 
   componentDidUpdate(prevProps) {
+
+    this.updatePlayerProps();
+
     if (
       ((prevProps.videoId !== this.props.videoId) ||
       (!prevProps.autoplay && this.props.autoplay)) &&
@@ -258,6 +271,42 @@ class VideoEmbed extends Component {
     if (typeof window !== "undefined") {
       window.removeEventListener("scroll", this.onWindowScroll);
     }
+  }
+
+  updatePlayerProps() {
+    if (!this.player) {
+      return;
+    }
+
+    const {
+      nextVideo,
+      centerVideoDetail,
+      showVideoDetail,
+      showShareButton,
+      showRelatedVideos,
+      poppedOut,
+      onClosePopout,
+      controls,
+      muted,
+      loop,
+    } = this.props;
+
+    if (this.player.lp && this.player.lp()) {
+      this.player.lp().nextVideoTitle(nextVideo && nextVideo.title);
+      this.player.lp().nextVideoImage(nextVideo && nextVideo.image);
+      this.player.lp().nextVideoHandler(nextVideo && nextVideo.onClick);
+      this.player.lp().showNextVideo(nextVideo && nextVideo.visible);
+      this.player.lp().centered(centerVideoDetail);
+      this.player.lp().showShareButton(showShareButton);
+      this.player.lp().showDetail(showVideoDetail);
+      this.player.lp().popout(poppedOut);
+      this.player.lp().popoutHandler(onClosePopout);
+      this.player.lp().showRelatedVideos(showRelatedVideos);
+    }
+
+    this.player.controls(controls);
+    this.player.muted(muted);
+    this.player.loop(loop);
   }
 
   onWindowScroll() {
@@ -308,6 +357,8 @@ class VideoEmbed extends Component {
   }
 
   onPlayerReady() {
+    this.updatePlayerProps();
+
     // We load our video as soon as the player is instantiated and ready
     this.loadVideo(this.props.videoId);
   }
@@ -997,8 +1048,15 @@ VideoEmbed.propTypes = {
   nextVideo: PropTypes.shape({
     title: PropTypes.string,
     image: PropTypes.string,
-    href: PropTypes.string,
+    onClick: PropTypes.func,
+    visible: PropTypes.bool,
   }),
+  centerVideoDetail: PropTypes.bool,
+  showVideoDetail: PropTypes.bool,
+  showShareButton: PropTypes.bool,
+  showRelatedVideos: PropTypes.bool,
+  poppedOut: PropTypes.bool,
+  onClosePopout: PropTypes.func,
   hideNextVideoOnCuePoint: PropTypes.bool,
   autoplay: PropTypes.bool,
   cover: PropTypes.bool,
@@ -1028,6 +1086,11 @@ VideoEmbed.propTypes = {
 
 VideoEmbed.defaultProps = {
   playerName: "default",
+  centerVideoDetail: false,
+  showVideoDetail: true,
+  showShareButton: true,
+  showRelatedVideos: true,
+  poppedOut: false,
   controls: true,
   visible: true,
   visibleWhileNotPlaying: true,
