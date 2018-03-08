@@ -217,6 +217,8 @@ class VideoEmbed extends Component {
 
     this.activeCues = [];
 
+    this.originalOverlays = [];
+
     this.showCaptions = false;
     this.showMutedOverlay = false;
 
@@ -309,7 +311,7 @@ class VideoEmbed extends Component {
   }
 
   onPlayerReady() {
-    // We load our video as soon as the player is instantiated and ready
+    this.originalOverlays = (this.player.overlays_ || []).map(overlay => overlay.options_);
     this.loadVideo(this.props.videoId);
   }
 
@@ -872,7 +874,7 @@ class VideoEmbed extends Component {
       .filter((cuePoint) => cuePoint.type === "CODE")
       .filter((cuePoint) => cuePoint.name !== "preview start" && cuePoint.name !== "preview end");
 
-    const overlays = overlayCuePoints.map((cuePoint) => {
+    const overlays = this.originalOverlays.concat(overlayCuePoints.map((cuePoint) => {
       const defaultEnd = cuePoint.startTime + cueDuration;
       const end = defaultEnd < cuePoint.endTime ? defaultEnd : cuePoint.endTime;
 
@@ -882,7 +884,7 @@ class VideoEmbed extends Component {
         start: cuePoint.startTime,
         end,
       };
-    });
+    }));
 
     overlays.push({
       content: `<div id="${this.getAdOverlayId()}" class="VideoEmbed-ad-overlay">Advertisement</div>`,
