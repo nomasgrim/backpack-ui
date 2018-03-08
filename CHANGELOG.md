@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.67.0"></a>
+# [4.67.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.66.0...v4.67.0) (2018-03-08)
+
+
+### Bug Fixes
+
+* remove shorthand padding to be consistently explicit ([#637](https://github.com/lonelyplanet/backpack-ui/issues/637)) ([606f263](https://github.com/lonelyplanet/backpack-ui/commit/606f263))
+
+
+### Features
+
+* add child icon to bookmark button ([#635](https://github.com/lonelyplanet/backpack-ui/issues/635)) ([8d2e27c](https://github.com/lonelyplanet/backpack-ui/commit/8d2e27c))
+
+
+
 <a name="4.66.0"></a>
 # [4.66.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.65.0...v4.66.0) (2018-03-08)
 
