@@ -101,6 +101,7 @@ class VideoPlaylistWithSlider extends React.Component {
       videoEmbed,
       heading,
       sliderHeading,
+      hideList,
       mobile,
       showVideoInfo,
       followVideoUrls,
@@ -119,6 +120,7 @@ class VideoPlaylistWithSlider extends React.Component {
                 mobile={mobile}
                 video={video}
                 videos={videos}
+                hideList={hideList}
                 visibleVideos={visibleVideosDesktop}
                 autoplay={autoplay}
                 onLoadVideo={this.onLoadVideo}
@@ -136,49 +138,54 @@ class VideoPlaylistWithSlider extends React.Component {
               </Container>
             }
 
-            <div style={styles.sliderContainer}>
-              <Container>
-                <CardShelfVideoSlider
-                  heading={sliderHeading || heading}
-                  mobile={mobile}
-                  spacing="compact"
-                >
-                  {videos.slice(0, visibleVideosDesktop).map((v) => (
-                    <CardVideo
-                      key={v.id}
-                      heading={v.name}
-                      runtime={v.duration}
-                      imageSrc={v.cardImage}
-                      href={followVideoUrls && v.url}
-                      onClick={!followVideoUrls && (() => this.onClickVideo(v))}
-                      layout="tile"
-                      spacing="compact"
+            {!hideList && (
+              <div>
+                <div style={styles.sliderContainer}>
+                  <Container>
+                    <CardShelfVideoSlider
+                      heading={sliderHeading || heading}
                       mobile={mobile}
-                      actionIcon={v.cardActionIcon}
-                      onClickActionIcon={v.cardOnClickActionIcon}
-                    />
-                  ))}
-                </CardShelfVideoSlider>
-              </Container>
-            </div>
+                      spacing="compact"
+                    >
+                      {videos.slice(0, visibleVideosDesktop).map((v) => (
+                        <CardVideo
+                          key={v.id}
+                          heading={v.name}
+                          runtime={v.duration}
+                          imageSrc={v.cardImage}
+                          href={followVideoUrls && v.url}
+                          onClick={!followVideoUrls && (() => this.onClickVideo(v))}
+                          layout="tile"
+                          spacing="compact"
+                          mobile={mobile}
+                          actionIcon={v.cardActionIcon}
+                          onClickActionIcon={v.cardOnClickActionIcon}
+                        />
+                      ))}
+                    </CardShelfVideoSlider>
+                  </Container>
+                </div>
 
-            <div style={styles.listContainer}>
-              <Container>
-                <ThumbnailList heading={sliderHeading || heading}>
-                  {videos.slice(0, visibleVideosMobile).map((v) => (
-                    <ThumbnailListItem
-                      key={v.id}
-                      title={v.name}
-                      href={followVideoUrls && v.url}
-                      onClick={!followVideoUrls && (() => this.onClickVideo(v))}
-                      imagePath={v.thumbnailImage}
-                      subtitle={[duration(v.duration)]}
-                      lineClamp={false}
-                    />
-                  ))}
-                </ThumbnailList>
-              </Container>
-            </div>
+                <div style={styles.listContainer}>
+                  <Container>
+                    <ThumbnailList heading={sliderHeading || heading}>
+                      {videos.slice(0, visibleVideosMobile).map((v) => (
+                        <ThumbnailListItem
+                          key={v.id}
+                          title={v.name}
+                          href={followVideoUrls && v.url}
+                          onClick={!followVideoUrls && (() => this.onClickVideo(v))}
+                          imagePath={v.thumbnailImage}
+                          subtitle={[duration(v.duration)]}
+                          lineClamp={false}
+                        />
+                      ))}
+                    </ThumbnailList>
+                  </Container>
+                </div>
+              </div>
+            )}
+
           </div>
         }
       </div>
@@ -209,6 +216,7 @@ VideoPlaylistWithSlider.propTypes = {
   sliderHeading: PropTypes.string,
   visibleVideosDesktop: PropTypes.number.isRequired,
   visibleVideosMobile: PropTypes.number.isRequired,
+  hideList: PropTypes.bool,
   autoplay: PropTypes.bool,
   videoPopout: PropTypes.shape(VideoPopout.propTypes),
   videoEmbed: PropTypes.shape({

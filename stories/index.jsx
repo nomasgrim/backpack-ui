@@ -2437,6 +2437,7 @@ storiesOf("Video components", module)
       <VideoPlaylist
         heading={text("Heading", "Featured videos")}
         autoplay={boolean("Autoplay", false)}
+        hideList={boolean("Hide list", false)}
         mobile={boolean("Mobile", false)}
         videos={[
           {
@@ -2448,7 +2449,7 @@ storiesOf("Video components", module)
             duration: 10000,
           },
           {
-            id: "5615400604001",
+            id: "5743221896001",
             name: "Video name 2",
             description: "Video description 2",
             image: "https://lonelyplanetstatic.imgix.net/op-video-sync/images/production/p-5615400608001-brightcove-lonely-planets-best-destinations-to-visit-in-2018-20171028-052139.jpg?sharp=10&q=40&w=915&h=515",
@@ -2456,7 +2457,7 @@ storiesOf("Video components", module)
             duration: 20000,
           },
           {
-            id: "5615377178001",
+            id: "5615400608002",
             name: "Video name 3",
             description: "Video description 3",
             image: "https://lonelyplanetstatic.imgix.net/op-video-sync/images/production/p-5615400608001-brightcove-lonely-planets-best-destinations-to-visit-in-2018-20171028-052139.jpg?sharp=10&q=40&w=915&h=515",
@@ -2464,7 +2465,7 @@ storiesOf("Video components", module)
             duration: 30000,
           },
           {
-            id: "5615348695001",
+            id: "5743221896003",
             name: "Video name 4",
             description: "Video description 4",
             image: "https://lonelyplanetstatic.imgix.net/op-video-sync/images/production/p-5615400608001-brightcove-lonely-planets-best-destinations-to-visit-in-2018-20171028-052139.jpg?sharp=10&q=40&w=915&h=515",
@@ -2472,7 +2473,7 @@ storiesOf("Video components", module)
             duration: 40000,
           },
           {
-            id: "5615400596001",
+            id: "5615400608004",
             name: "Video name 5",
             description: "Video description 5",
             image: "https://lonelyplanetstatic.imgix.net/op-video-sync/images/production/p-5615400608001-brightcove-lonely-planets-best-destinations-to-visit-in-2018-20171028-052139.jpg?sharp=10&q=40&w=915&h=515",
@@ -2480,7 +2481,7 @@ storiesOf("Video components", module)
             duration: 50000,
           },
           {
-            id: "5615409475001",
+            id: "5743221896005",
             name: "Video name 6",
             description: "Video description 6",
             image: "https://lonelyplanetstatic.imgix.net/op-video-sync/images/production/p-5615400608001-brightcove-lonely-planets-best-destinations-to-visit-in-2018-20171028-052139.jpg?sharp=10&q=40&w=915&h=515",
@@ -2498,6 +2499,7 @@ storiesOf("Video components", module)
         sliderHeading={text("Slider heading", "Featured")}
         visibleVideosDesktop={number("Visible videos (desktop)", 6)}
         visibleVideosMobile={number("Visible videos (mobile)", 4)}
+        hideList={boolean("Hide list", false)}
         autoplay={boolean("Autoplay", false)}
         showVideoInfo={boolean("Show video info", true)}
         mobile={boolean("Mobile", false)}
@@ -2517,7 +2519,7 @@ storiesOf("Video components", module)
             cardActionIcon: "ClockOutline",
           },
           {
-            id: "5615400604001",
+            id: "5743221896001",
             name: "Video name 2",
             description: "Video description 2",
             image: "https://lonelyplanetstatic.imgix.net/op-video-sync/images/production/p-5615400608001-brightcove-lonely-planets-best-destinations-to-visit-in-2018-20171028-052139.jpg?sharp=10&q=40&w=915&h=515",
@@ -2531,7 +2533,7 @@ storiesOf("Video components", module)
             cardActionIcon: "ClockOutline",
           },
           {
-            id: "5615377178001",
+            id: "5615400608002",
             name: "Video name 3",
             description: "Video description 3",
             image: "https://lonelyplanetstatic.imgix.net/op-video-sync/images/production/p-5615400608001-brightcove-lonely-planets-best-destinations-to-visit-in-2018-20171028-052139.jpg?sharp=10&q=40&w=915&h=515",
@@ -2545,7 +2547,7 @@ storiesOf("Video components", module)
             cardActionIcon: "ClockOutline",
           },
           {
-            id: "5615348695001",
+            id: "5743221896003",
             name: "Video name 4",
             description: "Video description 4",
             image: "https://lonelyplanetstatic.imgix.net/op-video-sync/images/production/p-5615400608001-brightcove-lonely-planets-best-destinations-to-visit-in-2018-20171028-052139.jpg?sharp=10&q=40&w=915&h=515",
@@ -2559,7 +2561,7 @@ storiesOf("Video components", module)
             cardActionIcon: "ClockOutline",
           },
           {
-            id: "5615400596001",
+            id: "5615400608004",
             name: "Video name 5",
             description: "Video description 5",
             image: "https://lonelyplanetstatic.imgix.net/op-video-sync/images/production/p-5615400608001-brightcove-lonely-planets-best-destinations-to-visit-in-2018-20171028-052139.jpg?sharp=10&q=40&w=915&h=515",
@@ -2573,7 +2575,7 @@ storiesOf("Video components", module)
             cardActionIcon: "ClockOutline",
           },
           {
-            id: "5615409475001",
+            id: "5743221896005",
             name: "Video name 6",
             description: "Video description 6",
             image: "https://lonelyplanetstatic.imgix.net/op-video-sync/images/production/p-5615400608001-brightcove-lonely-planets-best-destinations-to-visit-in-2018-20171028-052139.jpg?sharp=10&q=40&w=915&h=515",
