@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.66.0"></a>
+# [4.66.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.65.0...v4.66.0) (2018-03-08)
+
+
+### Bug Fixes
+
+* Updated VideoEmbed overlay logic to not overwrite pre-existing overlays ([#636](https://github.com/lonelyplanet/backpack-ui/issues/636)) ([a083780](https://github.com/lonelyplanet/backpack-ui/commit/a083780))
+
+
+### Features
+
+* Added hideList prop to VideoPlaylist and VideoPlaylistWithSlider ([#633](https://github.com/lonelyplanet/backpack-ui/issues/633)) ([633ff70](https://github.com/lonelyplanet/backpack-ui/commit/633ff70))
+* Added whenAboveViewport and whenBelowViewport props to VideoPopout ([#634](https://github.com/lonelyplanet/backpack-ui/issues/634)) ([0e78806](https://github.com/lonelyplanet/backpack-ui/commit/0e78806))
+
+
+
 <a name="4.65.0"></a>
 # [4.65.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.64.0...v4.65.0) (2018-03-07)
 
