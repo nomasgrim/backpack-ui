@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.68.0"></a>
+# [4.68.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.67.0...v4.68.0) (2018-03-09)
+
+
+### Bug Fixes
+
+* Revert tag styles ([bce131f](https://github.com/lonelyplanet/backpack-ui/commit/bce131f))
+
+
+### Features
+
+* Updated video playlist components to reshow featured video cover after playlist completes ([#638](https://github.com/lonelyplanet/backpack-ui/issues/638)) ([0ea9749](https://github.com/lonelyplanet/backpack-ui/commit/0ea9749))
+
+
+
 <a name="4.67.0"></a>
 # [4.67.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.66.0...v4.67.0) (2018-03-08)
 
