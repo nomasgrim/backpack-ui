@@ -18,8 +18,8 @@ const hoverStyles = {
   },
 
   selected: {
-    backgroundColor: colors.bgSelected,
-    borderColor: colors.bgSelected,
+    backgroundColor: colors.textPrimary,
+    borderColor: colors.borderPrimary,
   },
 };
 
@@ -54,6 +54,7 @@ const styles = {
   selected: {
     backgroundColor: hoverStyles.selected.backgroundColor,
     borderColor: hoverStyles.selected.backgroundColor,
+    color: colors.textOverlay,
 
     ":hover": hoverStyles.selected,
     ":active": hoverStyles.selected,
