@@ -5,7 +5,6 @@ const bgPrimary = "#fff";
 const bgSecondary = "#f4fbfe";
 const bgOverlay = "#000";
 const bgDark = rgba("#000", 0.96);
-const bgSelected = "#F3F6F7";
 
 // Link colors
 const linkPrimary = "#297cbb";
@@ -68,7 +67,6 @@ export default {
   bgSecondary,
   bgOverlay,
   bgDark,
-  bgSelected,
 
   linkPrimary,
   linkPrimaryHover,
