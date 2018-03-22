@@ -5,6 +5,7 @@ const bgPrimary = "#fff";
 const bgSecondary = "#f4fbfe";
 const bgOverlay = "#000";
 const bgDark = rgba("#000", 0.96);
+const bgMap = "#f1f4f6";
 
 // Link colors
 const linkPrimary = "#297cbb";
@@ -12,7 +13,7 @@ const linkPrimaryHover = rgba(linkPrimary, 0.7);
 
 // Border colors
 const borderPrimary = "#e4e4e4";
-const borderLight = "#BFD0D8";
+const borderLight = "#bfd0d8";
 
 // Text colors
 const textPrimary = "#2c3643";
@@ -67,6 +68,7 @@ export default {
   bgSecondary,
   bgOverlay,
   bgDark,
+  bgMap,
 
   linkPrimary,
   linkPrimaryHover,
