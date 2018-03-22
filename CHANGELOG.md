@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.69.0"></a>
+# [4.69.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.68.0...v4.69.0) (2018-03-22)
+
+
+### Bug Fixes
+
+* Remove bgSelected color ([56c8673](https://github.com/lonelyplanet/backpack-ui/commit/56c8673))
+
+
+### Features
+
+* Add bgMap color ([0b86afe](https://github.com/lonelyplanet/backpack-ui/commit/0b86afe))
+
+
+
 <a name="4.68.0"></a>
 # [4.68.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.67.0...v4.68.0) (2018-03-09)
 
