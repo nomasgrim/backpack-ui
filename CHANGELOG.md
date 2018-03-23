@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.70.0"></a>
+# [4.70.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.69.0...v4.70.0) (2018-03-23)
+
+
+### Features
+
+* Added VideoPlaylistWithSlider.onLoadVideo prop ([#641](https://github.com/lonelyplanet/backpack-ui/issues/641)) ([29a3959](https://github.com/lonelyplanet/backpack-ui/commit/29a3959))
+
+
+
 <a name="4.69.0"></a>
 # [4.69.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.68.0...v4.69.0) (2018-03-22)
 
