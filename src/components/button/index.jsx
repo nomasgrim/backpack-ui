@@ -44,6 +44,7 @@ const hoverStyles = {
 const styles = {
   base: {
     appearance: "none",
+    WebkitAppearance: "none",
     backfaceVisibility: "hidden",
     border: 0,
     borderRadius: 0,

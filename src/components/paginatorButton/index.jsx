@@ -24,6 +24,7 @@ const hoverStyles = {
 const styles = {
   base: {
     appearance: "none",
+    WebkitAppearance: "none",
     backgroundColor: colors.bgPrimary,
     border: 0,
     borderRadius: "50%",

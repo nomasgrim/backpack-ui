@@ -15,6 +15,7 @@ const icons = {
 const styles = {
   base: {
     appearance: "none",
+    WebkitAppearance: "none",
     fontWeight: fontWeightLight,
     borderRadius: 0,
     borderStyle: "solid",
