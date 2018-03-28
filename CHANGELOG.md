@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.70.1"></a>
+## [4.70.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.70.0...v4.70.1) (2018-03-28)
+
+
+### Bug Fixes
+
+* Update date range component and dependencies ([#644](https://github.com/lonelyplanet/backpack-ui/issues/644)) ([defca3a](https://github.com/lonelyplanet/backpack-ui/commit/defca3a))
+
+
+
 <a name="4.70.0"></a>
 # [4.70.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.69.0...v4.70.0) (2018-03-23)
 
