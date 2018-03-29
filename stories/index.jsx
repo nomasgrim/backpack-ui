@@ -320,35 +320,39 @@ storiesOf("Buttons", module)
 
   // Button
   .add("Button - primary", () => (
-    <Button
-      color={select("Color", ["blue", "white", "gray", "red", "transparent"], "blue")}
-      size={select("Size", ["tiny", "small", "medium", "large", "huge"], "medium")}
-      border={boolean("Border", true)}
-      disabled={boolean("Disabled", false)}
-      full={boolean("Full width", false)}
-      rounded={boolean("Rounded", false)}
-      onClick={action("clicked")}
-    >
-      {text("Text", "Hello Button")}
-    </Button>
+    <Center backgroundColor="white">
+      <Button
+        color={select("Color", ["blue", "white", "gray", "red", "transparent"], "blue")}
+        size={select("Size", ["tiny", "small", "medium", "large", "huge"], "medium")}
+        border={boolean("Border", true)}
+        disabled={boolean("Disabled", false)}
+        full={boolean("Full width", false)}
+        rounded={boolean("Rounded", false)}
+        onClick={action("clicked")}
+      >
+        {text("Text", "Hello Button")}
+      </Button>
+    </Center>
   ))
   .add("Button - secondary", () => (
-    <Button
-      color="white"
-      size={select("Size", ["tiny", "small", "medium", "large", "huge"], "medium")}
-      border={boolean("Border", true)}
-      disabled={boolean("Disabled", false)}
-      full={boolean("Full width", false)}
-      rounded={boolean("Rounded", false)}
-      onClick={action("clicked")}
-    >
-      {text("Text", "Hello Button")}
-    </Button>
+    <Center backgroundColor="white">
+      <Button
+        color="white"
+        size={select("Size", ["tiny", "small", "medium", "large", "huge"], "medium")}
+        border={boolean("Border", true)}
+        disabled={boolean("Disabled", false)}
+        full={boolean("Full width", false)}
+        rounded={boolean("Rounded", false)}
+        onClick={action("clicked")}
+      >
+        {text("Text", "Hello Button")}
+      </Button>
+    </Center>
   ))
 
   // Bookmark button
   .add("Bookmark button - default", () => (
-    <Center>
+    <Center backgroundColor="white">
       <BookmarkButton
         id={text("ID", null)}
         className={text("Classname", null)}
@@ -358,7 +362,7 @@ storiesOf("Buttons", module)
     </Center>
   ))
   .add("Bookmark button - alternate", () => (
-    <Center>
+    <Center backgroundColor="white">
       <BookmarkButtonAlt
         id={text("ID", null)}
         className={text("Classname", null)}
@@ -368,7 +372,7 @@ storiesOf("Buttons", module)
     </Center>
   ))
   .add("Bookmark button - custom button", () => (
-    <Center>
+    <Center backgroundColor="white">
       <BookmarkButton
         id={text("ID", null)}
         className={text("Classname", null)}
@@ -853,7 +857,21 @@ storiesOf("Controls", module)
     </Center>
   ))
   .add("Select", () => (
-    <Select options={array("Options", ["USA", "France", "Spain"])} />
+    <Center backgroundColor="white">
+      <Select
+        id={text("ID", "select-control")}
+        options={array("Options", ["USA", "France", "Spain"])}
+        label={text("Label", "Select label")}
+        name={text("Name", "select-control")}
+        defaultValue={text("Value", "")}
+        required={boolean("Required", false)}
+        size={select("Size", ["tiny", "small", "medium", "large", "huge"], "medium")}
+        theme={select("Theme", ["base", "light", "dark", "inputGroup"], "base")}
+        noBorder={boolean("No border?", false)}
+        style={{}}
+        onChange={action(event)}
+      />
+    </Center>
   ))
   .add("Switch", () => (
     <Center backgroundColor="white">

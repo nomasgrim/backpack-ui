@@ -15,6 +15,7 @@ const icons = {
 const styles = {
   base: {
     appearance: "none",
+    WebkitAppearance: "none",
     fontWeight: fontWeightLight,
     borderRadius: 0,
     borderStyle: "solid",
@@ -45,7 +46,7 @@ const styles = {
       paddingTop: `${15 / 13}em`,
       paddingLeft: `${15 / 13}em`,
       paddingRight: `${15 / 13}em`,
-      paddingBottom: `${1 / 13}em`,
+      paddingBottom: `${11 / 13}em`,
     },
     large: {
       fontSize: "15px",
