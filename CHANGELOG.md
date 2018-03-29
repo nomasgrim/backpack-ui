@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.70.2"></a>
+## [4.70.2](https://github.com/lonelyplanet/backpack-ui/compare/v4.70.1...v4.70.2) (2018-03-29)
+
+
+### Bug Fixes
+
+* Add WebkitAppearance because radium is not applying appearance ([27cfdbb](https://github.com/lonelyplanet/backpack-ui/commit/27cfdbb))
+* Change paddingBottom for medium sized input controls ([b31e216](https://github.com/lonelyplanet/backpack-ui/commit/b31e216))
+
+
+
 <a name="4.70.1"></a>
 ## [4.70.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.70.0...v4.70.1) (2018-03-28)
 
