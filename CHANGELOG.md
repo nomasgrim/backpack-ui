@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.71.0"></a>
+# [4.71.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.70.3...v4.71.0) (2018-03-30)
+
+
+### Features
+
+* Added playsInline prop to VideoEmbed ([#648](https://github.com/lonelyplanet/backpack-ui/issues/648)) ([32a4aa8](https://github.com/lonelyplanet/backpack-ui/commit/32a4aa8))
+
+
+
 <a name="4.70.3"></a>
 ## [4.70.3](https://github.com/lonelyplanet/backpack-ui/compare/v4.70.2...v4.70.3) (2018-03-29)
 
