@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.71.1"></a>
+## [4.71.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.71.0...v4.71.1) (2018-03-30)
+
+
+### Bug Fixes
+
+* Updated VideoEmbed.renderPixel to replace all instances of [timestamp] instead of only the first found ([#649](https://github.com/lonelyplanet/backpack-ui/issues/649)) ([3614c7c](https://github.com/lonelyplanet/backpack-ui/commit/3614c7c))
+
+
+
 <a name="4.71.0"></a>
 # [4.71.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.70.3...v4.71.0) (2018-03-30)
 
