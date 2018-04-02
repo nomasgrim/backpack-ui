@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import radium, { Style } from "radium";
-import get from "lodash/get";
 import uniqueId from "lodash/uniqueId";
 import VideoUpNext from "./videoUpNext";
 import mq from "../../styles/mq";
@@ -11,7 +10,7 @@ import { fontSizeHeading8, fontWeightRegular } from "../../styles/typography";
 import { rgba } from "../../utils/color";
 import propTypes from "../../utils/propTypes";
 
-const _ = { get, uniqueId };
+const _ = { uniqueId };
 
 const bcPlayerIds = {
   default: "default",
