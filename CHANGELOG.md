@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.71.3"></a>
+## [4.71.3](https://github.com/lonelyplanet/backpack-ui/compare/v4.71.2...v4.71.3) (2018-04-02)
+
+
+### Bug Fixes
+
+* One more lodash import to fix ([581c1de](https://github.com/lonelyplanet/backpack-ui/commit/581c1de))
+
+
+
 <a name="4.71.2"></a>
 ## [4.71.2](https://github.com/lonelyplanet/backpack-ui/compare/v4.71.1...v4.71.2) (2018-04-02)
 
