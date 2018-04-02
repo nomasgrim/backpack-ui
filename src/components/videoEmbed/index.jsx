@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import radium, { Style } from "radium";
-import { get, uniqueId } from "lodash";
+import { uniqueId } from "lodash";
 import { VideoUpNext } from "../video";
 import mq from "../../styles/mq";
 import timing from "../../styles/timing";
@@ -10,7 +10,7 @@ import { fontSizeHeading8, fontWeightRegular } from "../../styles/typography";
 import { rgba } from "../../utils/color";
 import propTypes from "../../utils/propTypes";
 
-const _ = { get, uniqueId };
+const _ = { uniqueId };
 
 const bcPlayerIds = {
   default: "default",

@@ -37,6 +37,9 @@ storiesOf("Some component name", module)
   ));
 ```
 
+### Notes
+* Don't do `import foo from "lodash";`. Makes the bundles asplode.
+
 ### Contributing
 
 Please read the [guidelines](https://github.com/lonelyplanet/backpack-ui/blob/master/CONTRIBUTING.md) for contributing before making a pull request.

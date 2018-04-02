@@ -10,6 +10,7 @@ import { fontSizeHeading8, fontWeightRegular } from "../../styles/typography";
 import { rgba } from "../../utils/color";
 import propTypes from "../../utils/propTypes";
 
+// Setup lodash
 const _ = { uniqueId };
 
 const bcPlayerIds = {
