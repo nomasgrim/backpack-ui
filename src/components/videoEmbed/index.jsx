@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import radium, { Style } from "radium";
-import { uniqueId } from "lodash";
+import uniqueId from "lodash/uniqueId";
 import { VideoUpNext } from "../video";
 import mq from "../../styles/mq";
 import timing from "../../styles/timing";
