@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.71.5"></a>
+## [4.71.5](https://github.com/lonelyplanet/backpack-ui/compare/v4.71.4...v4.71.5) (2018-04-02)
+
+
+### Bug Fixes
+
+* Import uniqueId correctly ([966e3f1](https://github.com/lonelyplanet/backpack-ui/commit/966e3f1))
+
+
+
 <a name="4.71.4"></a>
 ## [4.71.4](https://github.com/lonelyplanet/backpack-ui/compare/v4.71.3...v4.71.4) (2018-04-02)
 
