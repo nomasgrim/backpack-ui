@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.71.4"></a>
+## [4.71.4](https://github.com/lonelyplanet/backpack-ui/compare/v4.71.3...v4.71.4) (2018-04-02)
+
+
+### Bug Fixes
+
+* Change the CORRECT video embed ([44a9943](https://github.com/lonelyplanet/backpack-ui/commit/44a9943))
+
+
+
 <a name="4.71.3"></a>
 ## [4.71.3](https://github.com/lonelyplanet/backpack-ui/compare/v4.71.2...v4.71.3) (2018-04-02)
 
