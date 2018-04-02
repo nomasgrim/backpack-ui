@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import radium, { Style } from "radium";
-import { defer } from "lodash";
+import defer from "lodash/defer";
 import Heading from "../heading";
 import Link from "../link";
 import SocialIconButton from "../socialIconButton";
