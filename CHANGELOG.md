@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.72.0"></a>
+# [4.72.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.71.6...v4.72.0) (2018-04-06)
+
+
+### Features
+
+* add global header shopping cart icon ([#652](https://github.com/lonelyplanet/backpack-ui/issues/652)) ([1d2fdfc](https://github.com/lonelyplanet/backpack-ui/commit/1d2fdfc))
+
+
+
 <a name="4.71.6"></a>
 ## [4.71.6](https://github.com/lonelyplanet/backpack-ui/compare/v4.71.5...v4.71.6) (2018-04-03)
 
