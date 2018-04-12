@@ -1599,11 +1599,13 @@ storiesOf("Lockups", module)
 storiesOf("Logos", module)
   .addDecorator(withKnobs)
   .add("Logo", () => (
-    <div style={{ display: "inline-block", padding: "20px" }}>
+    <Center backgroundColor="white">
       <Logo
-        color={select("Color", ["blue", "gray", "white"], "blue")}
+        className={text("className", "")}
+        color={select("color", ["blue", "gray", "white"], "blue")}
+        href={text("href", "/")}
       />
-    </div>
+    </Center>
   ))
   .add("Provider logo", () => (
     <ProviderLogo
