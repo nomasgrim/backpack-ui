@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.73.0"></a>
+# [4.73.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.72.0...v4.73.0) (2018-04-16)
+
+
+### Features
+
+* Allow select component to accept array of objects ([#655](https://github.com/lonelyplanet/backpack-ui/issues/655)) ([ab931ef](https://github.com/lonelyplanet/backpack-ui/commit/ab931ef))
+
+
+
 <a name="4.72.0"></a>
 # [4.72.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.71.6...v4.72.0) (2018-04-06)
 
