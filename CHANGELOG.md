@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.73.1"></a>
+## [4.73.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.73.0...v4.73.1) (2018-04-16)
+
+
+### Bug Fixes
+
+* pass through rest of props to moreLink ([#657](https://github.com/lonelyplanet/backpack-ui/issues/657)) ([9e5079d](https://github.com/lonelyplanet/backpack-ui/commit/9e5079d))
+
+
+
 <a name="4.73.0"></a>
 # [4.73.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.72.0...v4.73.0) (2018-04-16)
 
