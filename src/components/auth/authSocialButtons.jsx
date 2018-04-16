@@ -16,28 +16,29 @@ const AuthSocialButtons = ({ actions, style, className }) => (
     className={cn("AuthSocialButtons", className)}
     style={[styles.spacing, style]}
   >
-    <SocialLoginButton
+    {actions.facebook && <SocialLoginButton
       style={styles.spacing}
       iconName="FacebookBlockColor"
       onClick={actions.facebook}
     >
       Continue with Facebook
-    </SocialLoginButton>
+    </SocialLoginButton>}
 
-    <SocialLoginButton
+    {actions.twitter && <SocialLoginButton
       style={styles.spacing}
       iconName="TwitterColor"
       onClick={actions.twitter}
     >
       Continue with Twitter
-    </SocialLoginButton>
+    </SocialLoginButton>}
 
-    <SocialLoginButton
+
+    {actions.google && <SocialLoginButton
       iconName="GoogleColor"
       onClick={actions.google}
     >
       Continue with Google
-    </SocialLoginButton>
+    </SocialLoginButton>}
   </div>
 );
 
