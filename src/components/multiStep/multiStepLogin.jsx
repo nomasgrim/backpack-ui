@@ -38,7 +38,7 @@ const MultiStepLogin = ({
 }) => {
   const SocialDisclaimer = (
     <AuthDisclaimer style={styles.disclaimerBelowButton}>
-      <p>
+      {authActions.password && <p>
         <span style={styles.legacyText}>Or sign in with a legacy </span>
         <a
           href="https://auth.lonelyplanet.com/users/sign_in"
@@ -49,7 +49,7 @@ const MultiStepLogin = ({
         >
           username and password
         </a>.
-      </p>
+      </p>}
       Lonely Planet uses cookies to improve your
       experience, see our <a href="https://www.lonelyplanet.com/legal/cookies/">Cookie Policy</a>.
       Having trouble signing in?
@@ -84,11 +84,11 @@ const MultiStepLogin = ({
           className="js-gtm-auth-social-buttons"
         />
 
-        <AuthEmailLink
+        {authActions.passwordless && <AuthEmailLink
           onClick={() => {
             setStep(2);
           }}
-        />
+        />}
 
         {SocialDisclaimer}
       </AuthContainer>
