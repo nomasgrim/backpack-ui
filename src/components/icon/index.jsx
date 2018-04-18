@@ -56,6 +56,7 @@ function Icon(props) {
       className={classNames("Icon", className)}
       style={props && props.style ? assign({}, style, props.style) : style}
       viewBox={viewBox}
+      role={label ? "img" : null}
       {...aria}
     >
       {children}
