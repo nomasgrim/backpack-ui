@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
+import cn from "classnames";
 
-function ProviderLogo({ provider, style }) {
+function ProviderLogo({ provider, className, style }) {
   const providers = {
     bdc: {
       name: "booking.com",
@@ -27,6 +28,7 @@ function ProviderLogo({ provider, style }) {
 
   return (
     <img
+      className={cn(className)}
       src={`https://s3.amazonaws.com/static-asset/assets/${providers[provider].image}`}
       style={style}
       alt={providers[provider].name}
@@ -43,7 +45,7 @@ ProviderLogo.propTypes = {
     "gadventures",
     "viator",
   ]).isRequired,
-
+  className: PropTypes.string,
   style: PropTypes.objectOf(
     PropTypes.string,
     PropTypes.number,
@@ -52,7 +54,7 @@ ProviderLogo.propTypes = {
 
 ProviderLogo.defaultProps = {
   provider: "",
-
+  className: "",
   style: {},
 };
 
