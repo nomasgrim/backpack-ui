@@ -1,12 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 import cn from "classnames";
+import assign from "object-assign";
+import ProviderLogoBookingDotcom from "./providerLogoBookingDotcom";
+import ProviderLogoGAdventures from "./providerLogoGAdventures";
+import ProviderLogoViator from "./providerLogoViator";
 
 function ProviderLogo({ provider, className, style }) {
   const providers = {
     bdc: {
       name: "booking.com",
       image: "vendorLogo-bdc.png",
+      icon: <ProviderLogoBookingDotcom />,
     },
     hostelworld: {
       name: "Hostelworld",
@@ -19,12 +24,27 @@ function ProviderLogo({ provider, className, style }) {
     gadventures: {
       name: "G Adventures",
       image: "vendorLogo-gAdventures.png",
+      icon: <ProviderLogoGAdventures />,
     },
     viator: {
       name: "Viator",
       image: "vendorLogo-viator.png",
+      icon: <ProviderLogoViator />,
     },
   };
+
+  if (providers[provider].icon) {
+    return (
+      React.cloneElement(providers[provider].icon, {
+        className: cn(className),
+        style: assign({}, {
+          display: "block",
+          height: "42px",
+          width: "auto",
+        }, style),
+      })
+    );
+  }
 
   return (
     <img
