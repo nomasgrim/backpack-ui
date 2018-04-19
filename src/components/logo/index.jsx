@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import radium from "radium";
-
+import cn from "classnames";
 import colors from "../../styles/colors";
 import { darken } from "../../utils/color";
 import { Logo as Icon } from "../icon";
@@ -31,9 +31,9 @@ const styles = {
   },
 };
 
-const Logo = ({ href, color, style }) => (
+const Logo = ({ href, color, className, style }) => (
   <a
-    className="Logo"
+    className={cn("Logo", className)}
     style={[styles.anchor, { color: colours[color] }, style]}
     href={href}
   >
@@ -44,6 +44,7 @@ const Logo = ({ href, color, style }) => (
 Logo.propTypes = {
   href: PropTypes.string,
   color: PropTypes.oneOf(["blue", "gray", "grey", "white"]),
+  className: PropTypes.string,
   style: PropTypes.objectOf(PropTypes.object),
 };
 
