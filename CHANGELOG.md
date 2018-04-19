@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.75.0"></a>
+# [4.75.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.74.0...v4.75.0) (2018-04-19)
+
+
+### Bug Fixes
+
+* Add role=img to icon if there is a label ([f7fd5d0](https://github.com/lonelyplanet/backpack-ui/commit/f7fd5d0))
+* Add xmlns attribute to icon SVG ([ea6a172](https://github.com/lonelyplanet/backpack-ui/commit/ea6a172))
+
+
+### Features
+
+* Add className prop to Logo component ([0cd3b41](https://github.com/lonelyplanet/backpack-ui/commit/0cd3b41))
+* Add className prop to ProviderLogo ([f9358a8](https://github.com/lonelyplanet/backpack-ui/commit/f9358a8))
+* Add partner logo icons ([8b7363e](https://github.com/lonelyplanet/backpack-ui/commit/8b7363e))
+* Create provider logo components for each provider ([7d5a982](https://github.com/lonelyplanet/backpack-ui/commit/7d5a982))
+* Updated video components to support integration with videojs-lp plugin ([#656](https://github.com/lonelyplanet/backpack-ui/issues/656)) ([21afb20](https://github.com/lonelyplanet/backpack-ui/commit/21afb20))
+
+
+
 <a name="4.74.0"></a>
 # [4.74.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.73.1...v4.74.0) (2018-04-17)
 
