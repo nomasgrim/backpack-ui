@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.76.0"></a>
+# [4.76.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.75.1...v4.76.0) (2018-04-20)
+
+
+### Features
+
+* VideoPlaylist will show related videos in-player if hideList=true ([#660](https://github.com/lonelyplanet/backpack-ui/issues/660)) ([f847cc3](https://github.com/lonelyplanet/backpack-ui/commit/f847cc3))
+
+
+
 <a name="4.75.1"></a>
 ## [4.75.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.75.0...v4.75.1) (2018-04-19)
 
