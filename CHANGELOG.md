@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.76.1"></a>
+## [4.76.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.76.0...v4.76.1) (2018-04-23)
+
+
+### Bug Fixes
+
+* icons not centered no IconButton on IE ([#661](https://github.com/lonelyplanet/backpack-ui/issues/661)) ([c870f81](https://github.com/lonelyplanet/backpack-ui/commit/c870f81))
+* popout player stretches entire height of browser window ([#663](https://github.com/lonelyplanet/backpack-ui/issues/663)) ([ba793ec](https://github.com/lonelyplanet/backpack-ui/commit/ba793ec))
+* SpotlightZone flows off of page on IE 11 ([#662](https://github.com/lonelyplanet/backpack-ui/issues/662)) ([bd0aa90](https://github.com/lonelyplanet/backpack-ui/commit/bd0aa90))
+
+
+
 <a name="4.76.0"></a>
 # [4.76.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.75.1...v4.76.0) (2018-04-20)
 
