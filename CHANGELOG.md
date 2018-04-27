@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.76.2"></a>
+## [4.76.2](https://github.com/lonelyplanet/backpack-ui/compare/v4.76.1...v4.76.2) (2018-04-27)
+
+
+### Bug Fixes
+
+* DOT-314 add height to overlay to prevent going off screen in iOS ([#664](https://github.com/lonelyplanet/backpack-ui/issues/664)) ([c1e14e0](https://github.com/lonelyplanet/backpack-ui/commit/c1e14e0))
+* DOT-316 add default z-index to share menu ([#665](https://github.com/lonelyplanet/backpack-ui/issues/665)) ([accf780](https://github.com/lonelyplanet/backpack-ui/commit/accf780))
+
+
+
 <a name="4.76.1"></a>
 ## [4.76.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.76.0...v4.76.1) (2018-04-23)
 
