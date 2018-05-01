@@ -5,11 +5,17 @@ export default class MultiStepWrapper extends React.Component {
   static propTypes = {
     children: PropTypes.func.isRequired,
     totalSteps: PropTypes.number.isRequired,
-  }
-
-  state = {
-    currentStep: 1,
+    initialStep: PropTypes.number,
   };
+
+  constructor(props) {
+    super(props);
+    const { initialStep, totalSteps } = props;
+
+    this.state = {
+      currentStep: initialStep && initialStep <= totalSteps ? initialStep : 1,
+    };
+  }
 
   setCurrentStep(step) {
     this.setState({
