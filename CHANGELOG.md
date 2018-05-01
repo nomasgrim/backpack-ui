@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.78.0"></a>
+# [4.78.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.77.0...v4.78.0) (2018-05-01)
+
+
+### Features
+
+* add ability to set the inital step of the multistep wrapper ([713300a](https://github.com/lonelyplanet/backpack-ui/commit/713300a))
+* Add commitlint to enforce commit message style ([#668](https://github.com/lonelyplanet/backpack-ui/issues/668)) ([72251e9](https://github.com/lonelyplanet/backpack-ui/commit/72251e9))
+
+
+
 <a name="4.77.0"></a>
 # [4.77.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.76.1...v4.77.0) (2018-05-01)
 
