@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.78.1"></a>
+## [4.78.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.78.0...v4.78.1) (2018-05-02)
+
+
+### Bug Fixes
+
+* Use provider logo images with transparent background ([#669](https://github.com/lonelyplanet/backpack-ui/issues/669)) ([c672101](https://github.com/lonelyplanet/backpack-ui/commit/c672101))
+
+
+
 <a name="4.78.0"></a>
 # [4.78.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.77.0...v4.78.0) (2018-05-01)
 
