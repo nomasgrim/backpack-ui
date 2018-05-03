@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.78.2"></a>
+## [4.78.2](https://github.com/lonelyplanet/backpack-ui/compare/v4.78.1...v4.78.2) (2018-05-03)
+
+
+### Bug Fixes
+
+* Pass an array to PropTypes.oneOf instead of multiple arguments ([458890b](https://github.com/lonelyplanet/backpack-ui/commit/458890b))
+
+
+
 <a name="4.78.1"></a>
 ## [4.78.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.78.0...v4.78.1) (2018-05-02)
 
