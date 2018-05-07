@@ -241,7 +241,7 @@ class VideoEmbed extends Component {
 
   componentDidMount() {
     if (typeof window !== "undefined") {
-      window.addEventListener("scroll", this.onWindowScroll);
+      window.addEventListener("scroll", this.onWindowScroll, false);
     }
 
     this.setupPlayer();
@@ -263,7 +263,7 @@ class VideoEmbed extends Component {
     this.tearDownPlayer();
 
     if (typeof window !== "undefined") {
-      window.removeEventListener("scroll", this.onWindowScroll);
+      window.removeEventListener("scroll", this.onWindowScroll, false);
     }
   }
 
@@ -288,7 +288,7 @@ class VideoEmbed extends Component {
   }
 
   onLoadSetupScript() {
-    const videoElement = document.getElementsByClassName(this.getPlayerVideoClassName())[0];
+    const videoElement = document.getElementById(this.getPlayerVideoId());
 
     if (!videoElement) {
       return;
@@ -608,7 +608,7 @@ class VideoEmbed extends Component {
     return activeCues;
   }
 
-  getPlayerVideoClassName() {
+  getPlayerVideoId() {
     return `VideoEmbed-video-${this.id}`;
   }
 
@@ -621,13 +621,11 @@ class VideoEmbed extends Component {
   }
 
   setupPlayer() {
-    const scriptId = this.getPlayerScriptId();
-    const scriptSrc = `https://players.brightcove.net/${this.accountId}/${this.playerId}_${this.embedId}/index.min.js`;
     const script = document.createElement("script");
 
-    script.id = scriptId;
-    script.src = scriptSrc;
+    script.id = this.getPlayerScriptId();
     script.onload = this.onLoadSetupScript.bind(this);
+    script.src = `https://players.brightcove.net/${this.accountId}/${this.playerId}_${this.embedId}/index.min.js`;
 
     document.body.appendChild(script);
   }
@@ -759,8 +757,7 @@ class VideoEmbed extends Component {
   }
 
   tearDownPlayer() {
-    const scriptId = this.getPlayerScriptId();
-    const script = document.getElementById(scriptId);
+    const script = document.getElementById(this.getPlayerScriptId());
 
     if (script) {
       script.remove();
@@ -815,6 +812,7 @@ class VideoEmbed extends Component {
 
     const controls = this.player.controls();
     const enableCaptionsButton = this.container.querySelector(".vjs-captions-menu-item");
+
     if (enableCaptionsButton) {
       if (controls) {
         this.player.controls(false);
@@ -835,6 +833,7 @@ class VideoEmbed extends Component {
 
     const controls = this.player.controls();
     const enableCaptionsButton = this.container.querySelector(".vjs-captions-menu-item");
+
     if (enableCaptionsButton) {
       const disableCaptionsButton = enableCaptionsButton.previousElementSibling;
 
@@ -999,7 +998,8 @@ class VideoEmbed extends Component {
           data-account={this.accountId}
           data-player={this.playerId}
           data-embed={this.embedId}
-          className={`video-js ${this.getPlayerVideoClassName()}`}
+          id={this.getPlayerVideoId()}
+          className="video-js VideoEmbed-video"
           playsInline={playsInline}
         />
 
