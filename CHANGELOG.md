@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.78.3"></a>
+## [4.78.3](https://github.com/lonelyplanet/backpack-ui/compare/v4.78.2...v4.78.3) (2018-05-11)
+
+
+### Bug Fixes
+
+* Give the video element a unique ID instead of className ([ccfba2b](https://github.com/lonelyplanet/backpack-ui/commit/ccfba2b))
+
+
+
 <a name="4.78.2"></a>
 ## [4.78.2](https://github.com/lonelyplanet/backpack-ui/compare/v4.78.1...v4.78.2) (2018-05-03)
 
