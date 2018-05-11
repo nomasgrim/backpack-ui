@@ -214,6 +214,9 @@ class VideoEmbed extends Component {
     this.container = null;
     this.player = null;
 
+    this.videoElement = null;
+    this.scriptElement = null;
+
     this.playWhenInView = props.playWhenInView;
     this.inView = this.isInView();
 
@@ -288,13 +291,11 @@ class VideoEmbed extends Component {
   }
 
   onLoadSetupScript() {
-    const videoElement = document.getElementById(this.getPlayerVideoId());
-
-    if (!videoElement) {
+    if (!this.videoElement) {
       return;
     }
 
-    this.player = window.videojs(videoElement);
+    this.player = window.videojs(this.videoElement);
 
     this.updatePlayerProps();
 
@@ -608,26 +609,21 @@ class VideoEmbed extends Component {
     return activeCues;
   }
 
-  getPlayerVideoId() {
-    return `VideoEmbed-video-${this.id}`;
-  }
-
-  getPlayerScriptId() {
-    return `VideoEmbed-initialize-${this.id}`;
-  }
-
   getAdOverlayId() {
     return `ad-overlay-${this.id}`;
+  }
+
+  setVideoRef = (element) => {
+    this.videoElement = element;
   }
 
   setupPlayer() {
     const script = document.createElement("script");
 
-    script.id = this.getPlayerScriptId();
     script.onload = this.onLoadSetupScript.bind(this);
     script.src = `https://players.brightcove.net/${this.accountId}/${this.playerId}_${this.embedId}/index.min.js`;
 
-    document.body.appendChild(script);
+    this.scriptElement = document.body.appendChild(script);
   }
 
   setPreviewBounds() {
@@ -757,10 +753,9 @@ class VideoEmbed extends Component {
   }
 
   tearDownPlayer() {
-    const script = document.getElementById(this.getPlayerScriptId());
-
-    if (script) {
-      script.remove();
+    if (this.scriptElement) {
+      this.scriptElement.remove();
+      this.scriptElement = null;
     }
 
     if (this.player) {
@@ -991,6 +986,7 @@ class VideoEmbed extends Component {
         />
 
         <video
+          ref={this.setVideoRef}
           style={[
             styles.video.default,
             cover && styles.video.cover,
@@ -998,7 +994,6 @@ class VideoEmbed extends Component {
           data-account={this.accountId}
           data-player={this.playerId}
           data-embed={this.embedId}
-          id={this.getPlayerVideoId()}
           className="video-js VideoEmbed-video"
           playsInline={playsInline}
         />
