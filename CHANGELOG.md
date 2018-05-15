@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.79.0"></a>
+# [4.79.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.78.3...v4.79.0) (2018-05-15)
+
+
+### Features
+
+* **flights-widget:** add flight fetcher DOT-309 ([#674](https://github.com/lonelyplanet/backpack-ui/issues/674)) ([46cb19e](https://github.com/lonelyplanet/backpack-ui/commit/46cb19e))
+
+
+
 <a name="4.78.3"></a>
 ## [4.78.3](https://github.com/lonelyplanet/backpack-ui/compare/v4.78.2...v4.78.3) (2018-05-11)
 
