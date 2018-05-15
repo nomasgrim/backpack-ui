@@ -74,7 +74,7 @@ import ErrorMessages from "../src/components/form/errorMessages";
 import ExpandButton from "../src/components/expandButton";
 import FeaturedArticle from "../src/components/featuredArticle";
 import Flag from "../src/components/flag";
-import FlightSearchWidget from "../src/components/flightSearchWidget";
+import { FlightSearchWidget, NoFlightResults } from "../src/components/flightSearchWidget";
 import Flyout from "../src/components/flyout";
 import GridColumn from "../src/components/gridColumn";
 import GridRow from "../src/components/gridRow";
@@ -387,31 +387,35 @@ storiesOf("Buttons", module)
             customStyles={{
               alignItems: "center",
               display: "inline-flex",
-              paddingBottom:"0.5em",
-              paddingLeft:"1.3em",
-              paddingRight:"1.3em",
-              paddingTop:"0.7em",
+              paddingBottom: "0.5em",
+              paddingLeft: "1.3em",
+              paddingRight: "1.3em",
+              paddingTop: "0.7em",
               textTransform: "capitalize",
             }}
           >
             {true ?
-              <Icon.BookmarkActive style={{
-                height: "16px",
-                marginBottom: "3px",
-                marginRight: "4px",
-                width: "auto",
-              }}/> :
-              <Icon.Bookmark style={{
-                height: "16px",
-                width: "auto",
-                marginRight: "4px",
-                marginBottom: "3px",
-              }}/>
+              <Icon.BookmarkActive
+                style={{
+                  height: "16px",
+                  marginBottom: "3px",
+                  marginRight: "4px",
+                  width: "auto",
+                }}
+              /> :
+              <Icon.Bookmark
+                style={{
+                  height: "16px",
+                  width: "auto",
+                  marginRight: "4px",
+                  marginBottom: "3px",
+                }}
+              />
             }
             Save
           </Button>
         }
-        />
+      />
     </Center>
   ))
 
@@ -1206,6 +1210,35 @@ storiesOf("Loaders", module)
     </StyleRoot>
   ));
 
+storiesOf("Flights Widget", module)
+  .addDecorator(withKnobs)
+  .add("Flight search widget", () => (
+    <FlightSearchWidget
+      depart={{
+        airportCode: "BNA",
+        city: "Nashville",
+      }}
+      arrive={{
+        airportCode: "LAX",
+        city: "Los Angeles",
+      }}
+      price={{
+        amount: 600,
+        currency: "USD",
+      }}
+      onClick={action("Flight search widget")}
+    />
+  ))
+  .add("No Flight Results", () => (
+    <StyleRoot>
+      <NoFlightResults
+        link={text("Url", "#")}
+        destinationName={text("Destination Name")}
+        children={text("Message", "We couldn't find any matching flights")}
+      />
+    </StyleRoot >
+  ));
+
 storiesOf("Lockups", module)
   .addDecorator(withKnobs)
   .add("Accordion", () => (
@@ -1345,23 +1378,6 @@ storiesOf("Lockups", module)
         }}
       />
     </StyleRoot>
-  ))
-  .add("Flight search widget", () => (
-    <FlightSearchWidget
-      depart={{
-        airportCode: "BNA",
-        city: "Nashville",
-      }}
-      arrive={{
-        airportCode: "LAX",
-        city: "Los Angeles",
-      }}
-      price={{
-        amount: 600,
-        currency: "USD",
-      }}
-      onClick={action("Flight search widget")}
-    />
   ))
   .add("Icon callout group", () => (
     <StyleRoot>
@@ -1667,7 +1683,7 @@ storiesOf("Maps", module)
         tours: "Tours",
         transport: "Transportation",
       },
-      "sights")}
+        "sights")}
       size={number("Size", 128)}
       hideShadow={boolean("Hide shadow", false)}
       inverse={boolean("Inverse", false)}
@@ -1858,19 +1874,21 @@ storiesOf("Popovers", module)
             customStyles={{
               alignItems: "center",
               display: "inline-flex",
-              paddingBottom:"0.5em",
-              paddingLeft:"1.3em",
-              paddingRight:"1.3em",
-              paddingTop:"0.7em",
+              paddingBottom: "0.5em",
+              paddingLeft: "1.3em",
+              paddingRight: "1.3em",
+              paddingTop: "0.7em",
               textTransform: "capitalize",
             }}
           >
-            <Icon.Share style={{
-              height: "16px",
-              marginBottom: "3px",
-              marginRight: "4px",
-              width: "auto",
-            }} />
+            <Icon.Share
+              style={{
+                height: "16px",
+                marginBottom: "3px",
+                marginRight: "4px",
+                width: "auto",
+              }}
+            />
             Share
           </Button>
         }
@@ -3110,7 +3128,7 @@ storiesOf("App-specific", module)
           setStep={setCurrentStep}
           authActions={{}}
           showLogo
-          doneAction={() => {}}
+          doneAction={() => { }}
         />
       )}}
     </MultiStepWrapper>
