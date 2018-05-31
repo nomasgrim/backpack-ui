@@ -59,6 +59,7 @@ import CardShelfVideo from "../src/components/cardShelfVideo";
 import CardShelfVideoSlider from "../src/components/cardShelfVideoSlider";
 import CardShelfVideoSwiper from "../src/components/cardShelfVideoSwiper";
 import CardVideo from "../src/components/cardVideo";
+import CardBook from "../src/components/cardBook";
 import CategoryLabel from "../src/components/categoryLabel";
 import CategoryLabelLink from "../src/components/categoryLabelLink";
 import Checkbox from "../src/components/checkbox";
@@ -667,6 +668,25 @@ storiesOf("Cards", module)
           theme={select("Theme", ["light", "dark"], "light")}
           spacing={select("Spacing", ["normal", "compact"], "normal")}
           aspectRatio={select("Aspect ratio", ["video", "poster"], "video")}
+        />
+      </div>
+    </StyleRoot>
+  ))
+  .add("Card - book", () => (
+    <StyleRoot>
+      <div style={{ width: "500px", padding: "32px" }}>
+        <CardBook
+          title={text("Title", "Book or activity title")}
+          subtitle={text("Subtitle", "Ages 0-0")}
+          shopLinkText={text("Link text", "Associated bookshop link")}
+          shopLinkUrl={text("Link url", "https://www.lonelyplanet.com")}
+          imageSrc={text("Image source", "//media.gadventures.com/media-server/cache/a6/2c/a62ca9f86982dd950319138334e7248b.jpg")}
+          aspectRatio={select("Aspect ratio", ["portrait", "landscape"], "portrait")}
+          previewLink="https://www.lonelyplanet.com"
+          downloadLink="https://www.lonelyplanet.com"
+          shareText="test"
+          shareUrl="https://www.lonelyplanet.com"
+          hideShareButton={boolean("Hide share button", false)}
         />
       </div>
     </StyleRoot>
