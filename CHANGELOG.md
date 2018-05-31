@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.80.0"></a>
+# [4.80.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.79.1...v4.80.0) (2018-05-31)
+
+
+### Bug Fixes
+
+* update diamond logo icon ([dc1ceae](https://github.com/lonelyplanet/backpack-ui/commit/dc1ceae))
+* update ReviewedBadge component ([bc381fa](https://github.com/lonelyplanet/backpack-ui/commit/bc381fa))
+
+
+### Features
+
+* add download icon ([4ff12cb](https://github.com/lonelyplanet/backpack-ui/commit/4ff12cb))
+
+
+
 <a name="4.79.1"></a>
 ## [4.79.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.79.0...v4.79.1) (2018-05-30)
 
