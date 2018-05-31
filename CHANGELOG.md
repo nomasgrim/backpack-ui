@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.80.1"></a>
+## [4.80.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.80.0...v4.80.1) (2018-05-31)
+
+
+### Bug Fixes
+
+* make ReviewedBadge icon size relative ([#678](https://github.com/lonelyplanet/backpack-ui/issues/678)) ([201e9a7](https://github.com/lonelyplanet/backpack-ui/commit/201e9a7))
+
+
+
 <a name="4.80.0"></a>
 # [4.80.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.79.1...v4.80.0) (2018-05-31)
 
