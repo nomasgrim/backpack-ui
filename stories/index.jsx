@@ -1184,6 +1184,9 @@ storiesOf("Labels", module)
   .add("Number marker", () => (
     <NumberMarker number={number("Number", 4)} />
   ))
+  .add("Reviewed badge", () => (
+    <ReviewedBadge />
+  ))
   .add("Sponsor label", () => (
     <SponsorLabel>
       {text("Text", "Sponsored")}
@@ -3569,7 +3572,4 @@ storiesOf("Deprecated", module)
         })}
       />
     </StyleRoot>
-  ))
-  .add("Reviewed badge - deprecated", () => (
-    <ReviewedBadge />
   ));
