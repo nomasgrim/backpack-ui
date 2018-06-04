@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.80.2"></a>
+## [4.80.2](https://github.com/lonelyplanet/backpack-ui/compare/v4.80.1...v4.80.2) (2018-06-04)
+
+
+### Bug Fixes
+
+* add book card ([8f54659](https://github.com/lonelyplanet/backpack-ui/commit/8f54659))
+
+
+
 <a name="4.80.1"></a>
 ## [4.80.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.80.0...v4.80.1) (2018-05-31)
 
