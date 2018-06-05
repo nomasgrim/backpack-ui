@@ -258,6 +258,19 @@ storiesOf("Ads", module)
         />
       </Center>
     </StyleRoot>
+  ))
+  .add("Ad Wrapper", () => (
+    <StyleRoot>
+      <Center>
+        <Ad
+          id={text("ID", "backpackAdIdentifier")}
+          framed={boolean("Framed", true)}
+          className={text("Class Name", "")}
+        >
+          <div>Add Children to the Ad to use the Ad Component as a Wrapper.</div>
+        </Ad>
+      </Center>
+    </StyleRoot>
   ));
 
 storiesOf("Authors", module)

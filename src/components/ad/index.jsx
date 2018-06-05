@@ -50,7 +50,7 @@ const styles = {
   },
 };
 
-function Ad({ id, framed, className, style }) {
+function Ad({ id, framed, className, style, children }) {
   const AdUnit = (
     <div
       className={cn("Ad", className)}
@@ -60,7 +60,7 @@ function Ad({ id, framed, className, style }) {
         framed && styles.ad.framed,
         style && style,
       ]}
-    />
+    >{children}</div>
   );
 
   if (framed) {
@@ -91,6 +91,7 @@ Ad.propTypes = {
   id: PropTypes.string.isRequired,
   framed: PropTypes.bool,
   className: PropTypes.string,
+  children: PropTypes.node,
   style: PropTypes.objectOf(
     PropTypes.oneOfType([
       PropTypes.string,
