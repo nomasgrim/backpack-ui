@@ -8,6 +8,7 @@ import {
 import colors from "../../styles/colors";
 import CategoryLabelLink from "../categoryLabelLink";
 import Menu from "./menu";
+import propTypes from "../../utils/propTypes";
 
 const styles = {
   container: {
@@ -53,9 +54,10 @@ const CardBook = ({
   subtitle,
   shopLinkText,
   shopLinkUrl,
+  style,
   ...menuProps
 }) => (
-  <div style={{ width: `${imageSizes[aspectRatio].width}` }}>
+  <div style={[{ width: `${imageSizes[aspectRatio].width}` }, style]}>
     <div
       style={[
         styles.container,
@@ -89,6 +91,7 @@ CardBook.propTypes = {
     "landscape",
   ]),
   hideShareButton: PropTypes.bool,
+  style: propTypes.style,
 };
 
 CardBook.defaultProps = {
