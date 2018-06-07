@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.82.0"></a>
+# [4.82.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.81.1...v4.82.0) (2018-06-07)
+
+
+### Features
+
+* VideoPlaylist to show less overlay text ([#683](https://github.com/lonelyplanet/backpack-ui/issues/683)) ([46d07fb](https://github.com/lonelyplanet/backpack-ui/commit/46d07fb))
+
+
+
 <a name="4.81.1"></a>
 ## [4.81.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.81.0...v4.81.1) (2018-06-06)
 
