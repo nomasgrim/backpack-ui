@@ -700,6 +700,7 @@ storiesOf("Cards", module)
           shareText="test"
           shareUrl="https://www.lonelyplanet.com"
           hideShareButton={boolean("Hide share button", false)}
+          hideBorder={boolean("Hide border", false)}
         />
       </div>
     </StyleRoot>
