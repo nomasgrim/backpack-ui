@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.82.1"></a>
+## [4.82.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.82.0...v4.82.1) (2018-06-07)
+
+
+### Bug Fixes
+
+* add border switch (book card) ([26efda1](https://github.com/lonelyplanet/backpack-ui/commit/26efda1))
+
+
+
 <a name="4.82.0"></a>
 # [4.82.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.81.1...v4.82.0) (2018-06-07)
 
