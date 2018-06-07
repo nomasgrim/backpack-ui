@@ -1,14 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import radium from "radium";
-import {
-  textHeading6,
-  textHeading8,
-} from "../../utils/typography";
 import colors from "../../styles/colors";
 import CategoryLabelLink from "../categoryLabelLink";
 import Menu from "./menu";
 import propTypes from "../../utils/propTypes";
+import { Heading } from "../text";
 
 const styles = {
   container: {
@@ -24,7 +21,6 @@ const styles = {
 
   border: {
     backgroundColor: `${colors.borderPrimary}`,
-    height: "1px",
     width: "80%",
     margin: "10px auto 2px",
   },
@@ -55,6 +51,7 @@ const CardBook = ({
   shopLinkText,
   shopLinkUrl,
   style,
+  hideBorder,
   ...menuProps
 }) => (
   <div style={[{ width: `${imageSizes[aspectRatio].width}` }, style]}>
@@ -70,9 +67,20 @@ const CardBook = ({
       </div>
     </div>
     <div style={{ textAlign: "center" }}>
-      <div style={textHeading6()}>{title}</div>
-      <div style={[textHeading8(), { color: colors.textSecondary }]}>{subtitle}</div>
-      <div style={styles.border} />
+      <Heading
+        size={6}
+        level={2}
+      >
+        {title}
+      </Heading>
+      <Heading
+        size={8}
+        level={2}
+        style={{ color: colors.textSecondary }}
+      >
+        {subtitle}
+      </Heading>
+      {!hideBorder && <hr style={styles.border} />}
       <CategoryLabelLink href={shopLinkUrl}>
         {shopLinkText}
       </CategoryLabelLink>
@@ -91,12 +99,14 @@ CardBook.propTypes = {
     "landscape",
   ]),
   hideShareButton: PropTypes.bool,
+  hideBorder: PropTypes.bool,
   style: propTypes.style,
 };
 
 CardBook.defaultProps = {
   aspectRatio: "portrait",
   hideShareButton: false,
+  hideBorder: false,
 };
 
 export default radium(CardBook);
