@@ -501,6 +501,7 @@ storiesOf("Buttons", module)
           "BookmarkAlt",
           "BookmarkAltActive",
           "Ellipsis",
+          "Map",
         ], "Ellipsis")}
       />
     </Center>

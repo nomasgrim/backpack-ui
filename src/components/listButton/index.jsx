@@ -76,6 +76,7 @@ ListButton.propTypes = {
     "BookmarkAlt",
     "BookmarkAltActive",
     "Ellipsis",
+    "Map",
   ]).isRequired,
   label: PropTypes.string,
   owns: PropTypes.string,
