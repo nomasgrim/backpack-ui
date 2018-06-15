@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.83.0"></a>
+# [4.83.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.82.1...v4.83.0) (2018-06-15)
+
+
+### Bug Fixes
+
+* add map icon to ListButton ([d07fdd9](https://github.com/lonelyplanet/backpack-ui/commit/d07fdd9))
+
+
+### Features
+
+* add map icon ([9fcd700](https://github.com/lonelyplanet/backpack-ui/commit/9fcd700))
+* add WeChat to Icons and include in ShareSettings with QR URL ([#685](https://github.com/lonelyplanet/backpack-ui/issues/685)) ([06f72e9](https://github.com/lonelyplanet/backpack-ui/commit/06f72e9))
+
+
+
 <a name="4.82.1"></a>
 ## [4.82.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.82.0...v4.82.1) (2018-06-07)
 
