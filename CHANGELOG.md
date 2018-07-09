@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.84.0"></a>
+# [4.84.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.83.1...v4.84.0) (2018-07-09)
+
+
+### Features
+
+* added muted overlay via videojs-lp support ([#688](https://github.com/lonelyplanet/backpack-ui/issues/688)) ([d90a82b](https://github.com/lonelyplanet/backpack-ui/commit/d90a82b))
+
+
+
 <a name="4.83.1"></a>
 ## [4.83.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.83.0...v4.83.1) (2018-06-29)
 
