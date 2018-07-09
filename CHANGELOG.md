@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.84.1"></a>
+## [4.84.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.84.0...v4.84.1) (2018-07-09)
+
+
+### Bug Fixes
+
+* prevent pinterest hover widgets from hijacking staticMap links ([#689](https://github.com/lonelyplanet/backpack-ui/issues/689)) ([7581f9f](https://github.com/lonelyplanet/backpack-ui/commit/7581f9f))
+
+
+
 <a name="4.84.0"></a>
 # [4.84.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.83.1...v4.84.0) (2018-07-09)
 
