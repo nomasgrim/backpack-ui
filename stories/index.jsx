@@ -2356,7 +2356,7 @@ storiesOf("Video components", module)
         onDescriptionIconClick={action("Action for icon")}
         imageIcon={text("Image icon", "Play")}
         imageIconLabel={text("Image icon label", "Play")}
-        theme={select("Theme", ["light", "dark"], "light")}
+        theme={select("Theme", ["light", "dark", "active"], "light")}
       />
     </StyleRoot>
   ))
@@ -2658,6 +2658,7 @@ storiesOf("Video components", module)
     <StyleRoot>
       <VideoPlaylist
         heading={text("Heading", "Featured videos")}
+        theme={select("Theme", ["light", "dark"], "light")}
         autoplay={boolean("Autoplay", false)}
         hideList={boolean("Hide list", false)}
         showFeaturedVideoCover={boolean("Show featured video cover", false)}
@@ -2720,6 +2721,7 @@ storiesOf("Video components", module)
     <StyleRoot>
       <VideoPlaylistWithSlider
         heading={text("Heading", "Featured videos")}
+        theme={select("Theme", ["light", "dark"], "light")}
         sliderHeading={text("Slider heading", "Featured")}
         visibleVideosDesktop={number("Visible videos (desktop)", 6)}
         visibleVideosMobile={number("Visible videos (mobile)", 4)}
