@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.85.0"></a>
+# [4.85.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.84.1...v4.85.0) (2018-07-18)
+
+
+### Features
+
+* added light theme to video playlist components ([#690](https://github.com/lonelyplanet/backpack-ui/issues/690)) ([000e8db](https://github.com/lonelyplanet/backpack-ui/commit/000e8db))
+
+
+
 <a name="4.84.1"></a>
 ## [4.84.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.84.0...v4.84.1) (2018-07-09)
 
