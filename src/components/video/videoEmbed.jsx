@@ -10,20 +10,23 @@ import { fontSizeHeading8, fontWeightRegular } from "../../styles/typography";
 import { rgba } from "../../utils/color";
 import propTypes from "../../utils/propTypes";
 
-// Setup lodash
 const _ = { uniqueId };
 
 const bcPlayerIds = {
   default: "default",
   background: "BJputewob",
   bestintravel: "HkJcclwoZ",
+  blackforest: "ryeUCvtBb7",
+  blackforest2: "S16yttBbX",
   copilot: "Hy3iMpP2M",
   destination: "HkPdqeDiZ",
   eed: "rJtMIpi7M",
   home: "HJe5vuWSVG",
   interest: "S1gCMqoEG",
   jnto: "Bkg3o1opuz",
-  test: "H1SwHfqIM",
+  puremichigan: "Hy9srNpMQ",
+  test: "HyOg9VOQb",
+  test2: "H1SwHfqIM",
 };
 
 const cueDuration = 15;
@@ -205,7 +208,7 @@ class VideoEmbed extends Component {
 
     this.id = _.uniqueId();
     this.accountId = "5104226627001";
-    this.playerId = bcPlayerIds[props.playerName];
+    this.playerId = bcPlayerIds[props.playerName] || props.playerName;
     this.embedId = "default";
 
     this.cueEndTime = null;
@@ -1032,17 +1035,7 @@ class VideoEmbed extends Component {
 
 VideoEmbed.propTypes = {
   videoId: PropTypes.string.isRequired,
-  playerName: PropTypes.oneOf([
-    "default",
-    "background",
-    "bestintravel",
-    "destination",
-    "eed",
-    "home",
-    "interest",
-    "jnto",
-    "test",
-  ]),
+  playerName: PropTypes.string,
   nextVideo: PropTypes.shape({
     title: PropTypes.string,
     image: PropTypes.string,
