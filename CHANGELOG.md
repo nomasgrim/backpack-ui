@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.86.0"></a>
+# [4.86.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.85.0...v4.86.0) (2018-07-20)
+
+
+### Features
+
+* added borderwidth and bordercolor props to iconbutton ([#692](https://github.com/lonelyplanet/backpack-ui/issues/692)) ([7bd14d6](https://github.com/lonelyplanet/backpack-ui/commit/7bd14d6))
+* made playername proptype validation more lenient on videoembed ([#691](https://github.com/lonelyplanet/backpack-ui/issues/691)) ([c5be36d](https://github.com/lonelyplanet/backpack-ui/commit/c5be36d))
+* updated videoembed to apply video element attrs on initial render ([#693](https://github.com/lonelyplanet/backpack-ui/issues/693)) ([d6abebc](https://github.com/lonelyplanet/backpack-ui/commit/d6abebc))
+
+
+
 <a name="4.85.0"></a>
 # [4.85.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.84.1...v4.85.0) (2018-07-18)
 
