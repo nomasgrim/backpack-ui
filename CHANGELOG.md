@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.87.1"></a>
+## [4.87.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.87.0...v4.87.1) (2018-08-02)
+
+
+### Bug Fixes
+
+* updated videopopout to stay 16:9 independent of parent container ([#695](https://github.com/lonelyplanet/backpack-ui/issues/695)) ([1a4f1ca](https://github.com/lonelyplanet/backpack-ui/commit/1a4f1ca))
+
+
+
 <a name="4.87.0"></a>
 # [4.87.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.86.0...v4.87.0) (2018-07-24)
 
