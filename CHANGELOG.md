@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.88.0"></a>
+# [4.88.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.87.2...v4.88.0) (2018-08-14)
+
+
+### Features
+
+* add lastSelectableDate to calendar ([a13a110](https://github.com/lonelyplanet/backpack-ui/commit/a13a110))
+
+
+
 <a name="4.87.2"></a>
 ## [4.87.2](https://github.com/lonelyplanet/backpack-ui/compare/v4.87.1...v4.87.2) (2018-08-07)
 
