@@ -17,8 +17,10 @@ import {
   object,
   select,
   color,
+  date,
 } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
+import moment from "moment";
 import data from "./data.json";
 import Center from "./center";
 import Colors from "./Colors";
@@ -840,14 +842,47 @@ storiesOf("Controls", module)
       onClick={action(event)}
     />
   ))
-  .add("Date range", () => (
+  .add("Date range - without selection", () => (
     <DateRange
       id="testDateRange"
       numberOfMonths={number("Number of Months", 1)}
       startDatePlaceholderText={text("Start Date Placeholder", "Check-in")}
       endDatePlaceholderText={text("End Date Placeholder", "Check-out")}
-      startDate={text("Start Date", "")}
-      endDate={text("End Date", "")}
+      startDate={object("Start Date", null)}
+      endDate={object("End Date", null)}
+      lastSelectableDate={object("Last selectable date", moment().add(365, "days"))}
+      noBorder={boolean("noBorder", false)}
+      withFullScreenPortal={boolean("withFullScreenPortal", false)}
+      focusedInput={boolean("focusedInput", false)}
+      soldOut={boolean("soldOut", false)}
+      onDatesChange={action(event)}
+      onFocusChange={action(event)}
+    />
+  ))
+  .add("Date range - with just startDate selected", () => (
+    <DateRange
+      id="testDateRange"
+      numberOfMonths={number("Number of Months", 1)}
+      startDatePlaceholderText={text("Start Date Placeholder", "Check-in")}
+      endDatePlaceholderText={text("End Date Placeholder", "Check-out")}
+      startDate={object("Start Date", moment().add(1, "days"))}
+      endDate={object("End Date", null)}
+      noBorder={boolean("noBorder", false)}
+      withFullScreenPortal={boolean("withFullScreenPortal", false)}
+      focusedInput={boolean("focusedInput", false)}
+      soldOut={boolean("soldOut", false)}
+      onDatesChange={action(event)}
+      onFocusChange={action(event)}
+    />
+  ))
+  .add("Date range - with selection", () => (
+    <DateRange
+      id="testDateRange"
+      numberOfMonths={number("Number of Months", 1)}
+      startDatePlaceholderText={text("Start Date Placeholder", "Check-in")}
+      endDatePlaceholderText={text("End Date Placeholder", "Check-out")}
+      startDate={object("Start Date", moment().add(35, "days"))}
+      endDate={object("End Date", moment().add(36, "days"))}
       noBorder={boolean("noBorder", false)}
       withFullScreenPortal={boolean("withFullScreenPortal", false)}
       focusedInput={boolean("focusedInput", false)}
