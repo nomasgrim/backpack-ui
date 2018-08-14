@@ -2,6 +2,7 @@ import React from "react";
 import moment from "moment";
 import radium, { Style } from "radium";
 import PropTypes from "prop-types";
+import momentPropTypes from "react-moment-proptypes";
 import DateRangePicker from "react-dates/lib/components/DateRangePicker";
 import { END_DATE } from "react-dates/constants";
 import colors from "../../styles/colors";
@@ -34,14 +35,6 @@ const styles = {
 };
 
 class DateRange extends React.Component {
-  static initialVisibleMonth() {
-    const isTodayLastDayOfMonth = moment() === moment().endOf("month");
-    const nextMonth = moment().add(1, "months");
-    const thisMonth = moment();
-
-    return isTodayLastDayOfMonth ? nextMonth : thisMonth;
-  }
-
   constructor(props) {
     super(props);
 
@@ -49,6 +42,7 @@ class DateRange extends React.Component {
       focusedInput: props.focusedInput,
     };
 
+    this.initialVisibleMonth = this.initialVisibleMonth.bind(this);
     this.onFocusChange = this.onFocusChange.bind(this);
     this.isOutsideRange = this.isOutsideRange.bind(this);
   }
@@ -69,16 +63,35 @@ class DateRange extends React.Component {
     });
   }
 
+  initialVisibleMonth() {
+    const { startDate } = this.props;
+    if (startDate) {
+      return startDate;
+    }
+
+    const isTodayLastDayOfMonth = moment() === moment().endOf("month");
+    const nextMonth = moment().add(1, "months");
+    const thisMonth = moment();
+
+    return isTodayLastDayOfMonth ? nextMonth : thisMonth;
+  }
+
   isOutsideRange(date) {
+    const { startDate, lastSelectableDate } = this.props;
     if (
       this.state.focusedInput === END_DATE &&
-      this.props.startDate &&
-      date.diff(this.props.startDate, "days") > 30
+      startDate &&
+      date.diff(startDate, "days") > 30
     ) {
       return true;
     }
 
-    return date < moment();
+    const isPastDate = date < moment();
+    if (lastSelectableDate) {
+      return isPastDate || date.isAfter(lastSelectableDate);
+    }
+
+    return isPastDate;
   }
 
   render() {
@@ -226,7 +239,7 @@ class DateRange extends React.Component {
           withFullScreenPortal={withFullScreenPortal}
           displayFormat="ddd, MMM D"
           isOutsideRange={this.isOutsideRange}
-          initialVisibleMonth={() => DateRange.initialVisibleMonth()}
+          initialVisibleMonth={this.initialVisibleMonth}
           showClearDates
         />
       </div>
@@ -249,12 +262,20 @@ DateRange.propTypes = {
 
   onFocusChange: PropTypes.func,
 
-  startDate: PropTypes.string,
+  /**
+   * The start date as a moment object
+   */
+  startDate: momentPropTypes.momentObj,
 
   /**
    * Puts a red border around the input
    */
   soldOut: PropTypes.bool,
+
+  /**
+   * The last selectable date on the calendar as a moment object
+   */
+  lastSelectableDate: momentPropTypes.momentObj,
 };
 
 DateRange.defaultProps = {
@@ -267,6 +288,8 @@ DateRange.defaultProps = {
   onFocusChange: "",
 
   soldOut: false,
+
+  lastSelectableDate: null,
 };
 
 export default radium(DateRange);
