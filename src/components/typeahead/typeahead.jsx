@@ -15,10 +15,10 @@ import KeyEvent from "./utils/keyEvent";
  * Renders an text input that shows options nearby that you can use the
  * keyboard or mouse to select. Requires CSS for MASSIVE DAMAGE.
  */
+let count = 0;
+
 class Typeahead extends Component {
   static getInstanceCount() {
-    let count = 0;
-
     return ++count; // eslint-disable-line no-plusplus
   }
 
@@ -270,17 +270,37 @@ class Typeahead extends Component {
     return null;
   }
 
-  onBlur(event) {
+  async onBlur(event) {
     this.setState({
       isFocused: false,
     }, () => {
       this.onTextEntryUpdated();
     });
 
-    if (this.props.forceSelection &&
-        (this.state.searchResults.indexOf(this.state.entryValue) === -1) &&
-        this.state.selectionIndex === null) {
-      this.setState({ entryValue: this.props.initialValue });
+    const thereAreSearchResults = this.state.searchResults.length > 0;
+    const thereIsInput = event.target.value !== "";
+    /**
+     * If the user is not hovering or arrow-keying over any particular option, we may safely
+     * select the topmost option among the search results. It'll either be the one
+     * that they've already selected, or they otherwise are not disclosing any specific preference.
+     */
+    const noSpecificSelectionIsPending = [null, -1].includes(this.state.selectionIndex);
+    const insertFirstSearchResult = [
+      this.props.forceSelection,
+      noSpecificSelectionIsPending,
+      thereAreSearchResults,
+      thereIsInput,
+    ].every(Boolean);
+
+    if (insertFirstSearchResult) {
+      // Force selection of the first search result.
+      const [option] = this.state.searchResults;
+      const optionString = this.displayOption(option, 0);
+      await this.setSelectedOption(option);
+      if (this.props.validate) {
+        this.props.validate(optionString, this.state.searchResults);
+      }
+      this.props.onOptionSelected(event, option);
     }
 
     if (this.props.onBlur) {
@@ -291,37 +311,13 @@ class Typeahead extends Component {
   }
 
   onOptionSelected(event, option) {
+    const optionString = this.displayOption(option, 0);
     this.inputElement.focus();
-
-    const displayOption = Accessor.generateOptionToStringFor(
-      this.props.inputDisplayOption || this.props.displayOption,
-    );
-
-    const optionString = displayOption(option, 0);
-
-    const formInputOption = Accessor.generateOptionToStringFor(
-      this.props.formInputOption || displayOption,
-    );
-    const formInputOptionString = formInputOption(option);
-
-    this.inputElement.value = optionString;
-
-    const results = this.getOptionsForValue(optionString, this.props.options);
-
-    this.setState({
-      searchResults: results,
-      selection: formInputOptionString,
-      selectionIndex: results.indexOf(optionString),
-      entryValue: optionString,
-      showResults: false,
-    });
-
+    this.setSelectedOption(option);
     this.inputElement.blur();
-
     if (this.props.validate) {
       this.props.validate(optionString, this.state.searchResults);
     }
-
     return this.props.onOptionSelected(event, option);
   }
 
@@ -333,6 +329,22 @@ class Typeahead extends Component {
       searchResults: this.getOptionsForValue(value, options),
       selection: "",
       entryValue: value,
+    });
+  }
+
+  async setSelectedOption(option) {
+    const optionString = this.displayOption(option, 0);
+    const formInputOptionString = this.formInputOption(option);
+    this.inputElement.value = optionString;
+    const results = this.getOptionsForValue(optionString, this.props.options);
+    await new Promise((resolve) => {
+      this.setState({
+        searchResults: results,
+        selection: formInputOptionString,
+        selectionIndex: results.indexOf(optionString),
+        entryValue: optionString,
+        showResults: false,
+      }, resolve);
     });
   }
 
@@ -436,6 +448,18 @@ class Typeahead extends Component {
     return areResultsTruncated ? (
       message || `There are ${countTruncatedResults} more results.`
     ) : "";
+  }
+
+  get displayOption() {
+    return Accessor.generateOptionToStringFor(
+      this.props.inputDisplayOption || this.props.displayOption,
+    );
+  }
+
+  get formInputOption() {
+    return Accessor.generateOptionToStringFor(
+      this.props.formInputOption || this.displayOption,
+    );
   }
 
   handleWindowClose(event) {
