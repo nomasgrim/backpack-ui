@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.88.1"></a>
+## [4.88.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.88.0...v4.88.1) (2018-08-27)
+
+
+### Features
+
+* [DOT-600] Select First Search Result ([294b0b6](https://github.com/lonelyplanet/backpack-ui/commit/294b0b6))
+
+
+
 <a name="4.88.0"></a>
 # [4.88.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.87.2...v4.88.0) (2018-08-14)
 
