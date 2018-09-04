@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.88.2"></a>
+## [4.88.2](https://github.com/lonelyplanet/backpack-ui/compare/v4.88.1...v4.88.2) (2018-09-04)
+
+
+### Bug Fixes
+
+* truncate button text overflow ([2ea16f6](https://github.com/lonelyplanet/backpack-ui/commit/2ea16f6))
+
+
+
 <a name="4.88.1"></a>
 ## [4.88.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.88.0...v4.88.1) (2018-08-27)
 
