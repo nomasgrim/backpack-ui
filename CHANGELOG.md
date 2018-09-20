@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.89.0"></a>
+# [4.89.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.88.2...v4.89.0) (2018-09-20)
+
+
+### Features
+
+* adjusted whitespace on various video components ([#702](https://github.com/lonelyplanet/backpack-ui/issues/702)) ([8dc8c7e](https://github.com/lonelyplanet/backpack-ui/commit/8dc8c7e))
+
+
+
 <a name="4.88.2"></a>
 ## [4.88.2](https://github.com/lonelyplanet/backpack-ui/compare/v4.88.1...v4.88.2) (2018-09-04)
 
