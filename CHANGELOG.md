@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.89.1"></a>
+## [4.89.1](https://github.com/lonelyplanet/backpack-ui/compare/v4.89.0...v4.89.1) (2018-10-01)
+
+
+### Bug Fixes
+
+* add world nomads provider icon ([#703](https://github.com/lonelyplanet/backpack-ui/issues/703)) ([1f5b247](https://github.com/lonelyplanet/backpack-ui/commit/1f5b247))
+
+
+
 <a name="4.89.0"></a>
 # [4.89.0](https://github.com/lonelyplanet/backpack-ui/compare/v4.88.2...v4.89.0) (2018-09-20)
 
