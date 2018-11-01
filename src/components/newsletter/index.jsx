@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import radium, { Style } from "radium";
 import axios from "axios";
 import Recaptcha from "react-recaptcha";
+import { analytics, getTrackMethod, EventNames } from "@lonelyplanet/lp-analytics";
 
 import colors from "../../styles/colors";
 import mq from "../../styles/mq";
@@ -144,6 +145,10 @@ class Newsletter extends Component {
       acceptLegalOptIn: false,
     };
 
+    this.track = () => null;
+    if (typeof window !== "undefined") {
+      this.track = getTrackMethod();
+    }
     this.handleInput = this.handleInput.bind(this);
     this.handleOptIn = this.handleOptIn.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -217,15 +222,18 @@ class Newsletter extends Component {
 
     axios
       .post(endpoint, data, config)
-      .then(response =>
+      .then(response => {
         this.setState({
           success: true,
           showSuccess: true,
           showCaptcha: false,
           response,
           waiting: false,
-        })
-      )
+        });
+        this.track({
+          [analytics.eventName]: EventNames.newsletterSubscription,
+        });
+      })
       .catch(error =>
         this.setState({
           success: false,
