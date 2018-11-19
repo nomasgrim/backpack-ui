@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.90.3"></a>
+## [4.90.3](https://github.com/lonelyplanet/backpack-ui/compare/v4.90.2...v4.90.3) (2018-11-19)
+
+
+### Bug Fixes
+
+* allow custom tag styles in tagList ([7b00857](https://github.com/lonelyplanet/backpack-ui/commit/7b00857))
+
+
+
 <a name="4.90.2"></a>
 ## [4.90.2](https://github.com/lonelyplanet/backpack-ui/compare/v4.90.1...v4.90.2) (2018-11-08)
 
