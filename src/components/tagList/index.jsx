@@ -51,7 +51,7 @@ class TagList extends React.Component {
         {React.Children.map(children, (child, index) => (
           React.cloneElement(child, {
             key: index,
-            style: styles.tag,
+            style: [styles.tag, child.props.style],
           })
         )).slice(0, this.state.expanded
           ? this.props.children.length
