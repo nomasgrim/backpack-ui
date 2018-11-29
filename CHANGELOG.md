@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.90.4"></a>
+## [4.90.4](https://github.com/lonelyplanet/backpack-ui/compare/v4.90.3...v4.90.4) (2018-11-29)
+
+
+### Bug Fixes
+
+* add pointer cursor to MoreLink ([a06bd47](https://github.com/lonelyplanet/backpack-ui/commit/a06bd47))
+
+
+
 <a name="4.90.3"></a>
 ## [4.90.3](https://github.com/lonelyplanet/backpack-ui/compare/v4.90.2...v4.90.3) (2018-11-19)
 
