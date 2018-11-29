@@ -190,21 +190,13 @@ MoreLink.propTypes = {
 
 MoreLink.defaultProps = {
   href: null,
-
   size: "",
-
   onClick: null,
-
   caps: false,
-
   hideIcon: false,
-
   isNested: false,
-
   style: {},
-
   arrowDirection: "right",
-
   target: null,
 };
 
