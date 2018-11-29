@@ -14,6 +14,7 @@ const styles = {
     base: assign({}, blueLink(), {
       backgroundColor: "transparent",
       border: 0,
+      cursor: "pointer",
       display: "inline-block",
       fontFamily: font("benton"),
       fontSize: "13px",
@@ -189,21 +190,13 @@ MoreLink.propTypes = {
 
 MoreLink.defaultProps = {
   href: null,
-
   size: "",
-
   onClick: null,
-
   caps: false,
-
   hideIcon: false,
-
   isNested: false,
-
   style: {},
-
   arrowDirection: "right",
-
   target: null,
 };
 
