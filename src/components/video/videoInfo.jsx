@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import radium, { Style } from "radium";
 import defer from "lodash/defer";
+import { AnalyticsEvent } from "@lonelyplanet/lp-analytics";
 import Heading from "../heading";
 import Link from "../link";
 import SocialIconButton from "../socialIconButton";
@@ -272,7 +273,13 @@ class VideoInfo extends React.Component {
     window.open(url);
   }
 
-  onClickTwitter = () => {
+  onClickTwitter = (track) => {
+
+    track({
+      [analytics.eventName]: "social-share",
+
+    });
+
     const { video } = this.props;
     const videoUrl = video.url.startsWith("http") ? video.url : `https://www.lonelyplanet.com${video.url}`;
     const href = encodeURIComponent(videoUrl);
@@ -400,11 +407,16 @@ class VideoInfo extends React.Component {
                     />
                   }
 
-                  <SocialIconButton
-                    network="twitter"
-                    onClick={this.onClickTwitter}
-                    style={styles.socialLinkDesktop}
+                  <AnalyticsEvent
+                    render={({ track }) => (
+                      <SocialIconButton
+                        network="twitter"
+                        onClick={() => this.onClickTwitter(track)}
+                        style={styles.socialLinkDesktop}
+                      />
+                    )}
                   />
+
 
                   <SocialIconButton
                     network="whatsapp"
