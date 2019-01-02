@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.90.6"></a>
+## [4.90.6](https://github.com/lonelyplanet/backpack-ui/compare/v4.90.4...v4.90.6) (2019-01-02)
+
+
+### Bug Fixes
+
+* lock version of react-measure ([17127d8](https://github.com/lonelyplanet/backpack-ui/commit/17127d8))
+
+
+
 <a name="4.90.5"></a>
 ## [4.90.5](https://github.com/lonelyplanet/backpack-ui/compare/v4.90.4...v4.90.5) (2018-12-18)
 
