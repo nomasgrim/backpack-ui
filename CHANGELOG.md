@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.90.10"></a>
+## [4.90.10](https://github.com/lonelyplanet/backpack-ui/compare/v4.90.9...v4.90.10) (2019-01-07)
+
+
+### Bug Fixes
+
+* add className prop to PaginatorButton component ([#718](https://github.com/lonelyplanet/backpack-ui/issues/718)) ([b890569](https://github.com/lonelyplanet/backpack-ui/commit/b890569))
+
+
+
 <a name="4.90.9"></a>
 ## [4.90.9](https://github.com/lonelyplanet/backpack-ui/compare/v4.90.8...v4.90.9) (2019-01-07)
 
