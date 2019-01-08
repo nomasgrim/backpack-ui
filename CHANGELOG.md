@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.90.12"></a>
+## [4.90.12](https://github.com/lonelyplanet/backpack-ui/compare/v4.90.11...v4.90.12) (2019-01-08)
+
+
+### Bug Fixes
+
+* remove legacy luna link for username + password login ([#720](https://github.com/lonelyplanet/backpack-ui/issues/720)) ([adb4101](https://github.com/lonelyplanet/backpack-ui/commit/adb4101))
+* remove unused link for username & password login information ([d082af2](https://github.com/lonelyplanet/backpack-ui/commit/d082af2))
+* use button for legacy log in link in MultiStepLogin ([#722](https://github.com/lonelyplanet/backpack-ui/issues/722)) ([3f2641e](https://github.com/lonelyplanet/backpack-ui/commit/3f2641e))
+
+
+
 <a name="4.90.11"></a>
 ## [4.90.11](https://github.com/lonelyplanet/backpack-ui/compare/v4.90.10...v4.90.11) (2019-01-07)
 
