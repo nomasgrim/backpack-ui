@@ -48,7 +48,7 @@ const styles = {
 
 const disclaimer = `If you sign up with Twitter, Facebook or Google, we’ll automatically import your
   profile information. We’ll never post without your permission. Alternatively sign in with a
-  <a href="#">username and password</a>. To sign into
+  username and password. To sign into
   Lonely Planet you must have cookies enabled and agree to the
   <a href="https://www.lonelyplanet.com/legal/website-terms/">Terms of Service</a> and read the
   <a href="https://www.lonelyplanet.com/legal/privacy-policy/">Privacy Policy</a> and
