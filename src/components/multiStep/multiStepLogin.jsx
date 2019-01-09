@@ -28,6 +28,7 @@ const styles = {
     fontWeight: fontWeightMedium,
   },
   legacyButton: {
+    backgroundColor: colors.bgPrimary,
     color: colors.linkPrimary,
     fontWeight: fontWeightMedium,
   },
