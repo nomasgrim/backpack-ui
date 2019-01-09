@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.90.13"></a>
+## [4.90.13](https://github.com/lonelyplanet/backpack-ui/compare/v4.90.12...v4.90.13) (2019-01-09)
+
+
+### Bug Fixes
+
+* change background for username+password login link ([40e6030](https://github.com/lonelyplanet/backpack-ui/commit/40e6030))
+
+
+
 <a name="4.90.12"></a>
 ## [4.90.12](https://github.com/lonelyplanet/backpack-ui/compare/v4.90.11...v4.90.12) (2019-01-08)
 
