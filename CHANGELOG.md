@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.90.14"></a>
+## [4.90.14](https://github.com/lonelyplanet/backpack-ui/compare/v4.90.13...v4.90.14) (2019-01-09)
+
+
+### Bug Fixes
+
+* add webkit prefix for sticky nav ([#724](https://github.com/lonelyplanet/backpack-ui/issues/724)) ([40401c4](https://github.com/lonelyplanet/backpack-ui/commit/40401c4))
+
+
+
 <a name="4.90.13"></a>
 ## [4.90.13](https://github.com/lonelyplanet/backpack-ui/compare/v4.90.12...v4.90.13) (2019-01-09)
 
