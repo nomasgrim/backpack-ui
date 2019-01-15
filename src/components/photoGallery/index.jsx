@@ -10,6 +10,19 @@ function markup(htmlContent) {
   };
 }
 
+const uiOptions = {
+  timeToIdle: 0,
+  timeToIdleOutside: 0,
+  closeEl: true,
+  captionEl: true,
+  fullscreenEl: false,
+  zoomEl: false,
+  shareEl: false,
+  counterEl: false,
+  arrowEl: true,
+  preloaderEl: false,
+};
+
 const PhotoGallery = ({
   photos,
   options,
@@ -25,7 +38,7 @@ const PhotoGallery = ({
     <PhotoSwipe
       isOpen={isOpen}
       items={photos}
-      options={options}
+      options={Object.assign({}, options, uiOptions)}
       onClose={onClose}
       beforeChange={beforeChange}
       afterChange={afterChange}
