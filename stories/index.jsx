@@ -3201,25 +3201,25 @@ storiesOf("Widgets", module)
     <PhotoGallery
       photos={[
         {
-          src: "https://lonelyplanet.com/travel-blog/tip-article/wordpress_uploads/2016/10/Trinidad-6666420241af.jpg",
+          src: "https://lonelyplanetwp.imgix.net/2016/10/Trinidad-6666420241af.jpg?w=1500&h=1000&fit=crop",
           w: 1500,
           h: 1000,
           title: "A radiant blue-chinned sapphire hummingbird perched in a branch in Trinidad © ArenFrancis",
         },
         {
-          src: "https://lonelyplanet.com/travel-blog/tip-article/wordpress_uploads/2016/10/Iguazu-falls-86198db70380.jpg",
+          src: "https://lonelyplanetwp.imgix.net/2016/10/Iguazu-falls-86198db70380.jpg?w=1500&h=1000&fit=crop",
           w: 1500,
           h: 1000,
           title: "Get an eyeful of Brazil's Iguazu Falls © Michael Runkel / Getty Images",
         },
         {
-          src: "https://lonelyplanet.com/travel-blog/tip-article/wordpress_uploads/2016/10/Panda-f1ebbbd0fe6b.jpg",
+          src: "https://lonelyplanetwp.imgix.net/2016/10/Panda-f1ebbbd0fe6b.jpg?w=1500&h=1000&fit=crop",
           w: 1500,
-          h: 1691,
+          h: 1000,
           title: "A giant panda cub at the Chengdu Giant Panda Breeding Research Base in Sichuan © Feng Wei Photography / Getty Images",
         },
         {
-          src: "https://lonelyplanet.com/travel-blog/tip-article/wordpress_uploads/2016/10/Shere-Khan-848929cc2677.jpg",
+          src: "https://lonelyplanetwp.imgix.net/2016/10/Shere-Khan-848929cc2677.jpg?w=1500&h=1000&fit=crop",
           w: 1500,
           h: 1000,
           title: "Stalk the forests of Madhya Pradesh for a chance of spotting Shere Khan © Andrew Parkinson / Getty Images",
