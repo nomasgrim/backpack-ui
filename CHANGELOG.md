@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.90.16"></a>
+## [4.90.16](https://github.com/lonelyplanet/backpack-ui/compare/v4.90.15...v4.90.16) (2019-01-16)
+
+
+### Bug Fixes
+
+* update PhotoGallery component ([4b6df94](https://github.com/lonelyplanet/backpack-ui/commit/4b6df94))
+
+
+
 <a name="4.90.15"></a>
 ## [4.90.15](https://github.com/lonelyplanet/backpack-ui/compare/v4.90.14...v4.90.15) (2019-01-14)
 
