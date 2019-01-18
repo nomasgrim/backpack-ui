@@ -6,6 +6,13 @@ import colors from "../../styles/colors";
 import mq from "../../styles/mq";
 import Bullet from "../bullet";
 
+const currencySymbols = {
+  AUD: "$",
+  EUR: "€",
+  GBP: "£",
+  USD: "$",
+};
+
 const styles = {
   container: {
     base: {
@@ -170,13 +177,6 @@ function Price({
   poiType,
   style,
 }) {
-  const currencySymbol = {
-    AUD: "$",
-    EUR: "€",
-    GBP: "£",
-    USD: "$",
-  };
-
   return (
     <div
       className="Price clearfix"
@@ -202,7 +202,7 @@ function Price({
 
       {parent === "card" && discountedAmount > 0 &&
         <div style={styles.card.salePrice}>
-          was <span style={styles.card.crossThrough}>{currencySymbol[currency]}{discountedAmount ? Math.round(amount) : ""}</span>
+          was <span style={styles.card.crossThrough}>{currencySymbols[currency]}{discountedAmount ? Math.round(amount) : ""}</span>
         </div>
       }
 
@@ -224,12 +224,12 @@ function Price({
                 emphasized && styles.currencySymbol.emphasized,
               ]}
             >
-              {currencySymbol[currency]}
+              {currencySymbols[currency]}
             </span>
           }
 
           {!emphasized &&
-            `${currencySymbol[currency]}`
+            `${currencySymbols[currency]}`
           }
 
           {discountedAmount ? Math.round(discountedAmount) : Math.round(amount)}
@@ -245,7 +245,7 @@ function Price({
         >
           <div><strong>On sale</strong></div>
           <div style={styles.onSale.oldPrice}>
-            Was – {currencySymbol[currency]}{discountedAmount ? Math.round(amount) : ""}
+            Was – {currencySymbols[currency]}{discountedAmount ? Math.round(amount) : ""}
           </div>
         </div>
       }
@@ -300,7 +300,9 @@ Price.propTypes = {
   /**
    * The currency in which the price is displayed in
    */
-  currency: PropTypes.string,
+  currency: PropTypes.oneOf(
+    Object.keys(currencySymbols),
+  ),
 
   /**
    * Change the color to show emphasis
