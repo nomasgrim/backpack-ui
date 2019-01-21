@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.90.17"></a>
+## [4.90.17](https://github.com/lonelyplanet/backpack-ui/compare/v4.90.16...v4.90.17) (2019-01-21)
+
+
+### Bug Fixes
+
+* update newsletter component per legal ([#729](https://github.com/lonelyplanet/backpack-ui/issues/729)) ([ea77bc4](https://github.com/lonelyplanet/backpack-ui/commit/ea77bc4))
+
+
+
 <a name="4.90.16"></a>
 ## [4.90.16](https://github.com/lonelyplanet/backpack-ui/compare/v4.90.15...v4.90.16) (2019-01-16)
 
