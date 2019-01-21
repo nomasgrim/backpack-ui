@@ -293,3 +293,23 @@ DateRange.defaultProps = {
 };
 
 export default radium(DateRange);
+
+export const DeveloperNote = () => (
+  /**
+   * A developer-facing note that is being written as a component
+   * for inclusion in storybook, which I figure gets more eyes than the readme.
+   */
+  <div style={{ margin: "32px" }}>
+    <em>Note to developers:</em>
+    <small style={{ display: "block" }}>
+      This component uses <a href="https://github.com/airbnb/react-dates">Airbnb's "react-dates" package/component</a>,
+      which requires some one-time global setup in order to properly load its styles.
+      You'll need to
+      <ul>
+        <li><a href="https://github.com/airbnb/react-dates#install-dependencies">install it as a dependency</a>,</li>
+        <li><a href="https://github.com/airbnb/react-dates#initialize">initialize the package</a>,</li>
+        <li>and then <a href="https://github.com/airbnb/react-dates#webpack">include its styles</a>.</li>
+      </ul>
+    </small>
+  </div>
+);

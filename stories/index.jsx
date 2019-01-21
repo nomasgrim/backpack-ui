@@ -67,7 +67,7 @@ import CategoryLabelLink from "../src/components/categoryLabelLink";
 import Checkbox from "../src/components/checkbox";
 import Container from "../src/components/container";
 import ContentHeader from "../src/components/contentHeader";
-import DateRange from "../src/components/form/daterange";
+import DateRange, { DeveloperNote as DateRangeDeveloperNote} from "../src/components/form/daterange";
 import Dialog from "../src/components/dialog";
 import DisclaimerText from "../src/components/disclaimerText";
 import DotLoader from "../src/components/dotLoader";
@@ -843,50 +843,59 @@ storiesOf("Controls", module)
     />
   ))
   .add("Date range - without selection", () => (
-    <DateRange
-      id="testDateRange"
-      numberOfMonths={number("Number of Months", 1)}
-      startDatePlaceholderText={text("Start Date Placeholder", "Check-in")}
-      endDatePlaceholderText={text("End Date Placeholder", "Check-out")}
-      startDate={object("Start Date", null)}
-      endDate={object("End Date", null)}
-      lastSelectableDate={object("Last selectable date", moment().add(365, "days"))}
-      noBorder={boolean("noBorder", false)}
-      withFullScreenPortal={boolean("withFullScreenPortal", false)}
-      soldOut={boolean("soldOut", false)}
-      onDatesChange={action(event)}
-      onFocusChange={action(event)}
-    />
+    <React.Fragment>
+      <DateRange
+        id="testDateRange"
+        numberOfMonths={number("Number of Months", 1)}
+        startDatePlaceholderText={text("Start Date Placeholder", "Check-in")}
+        endDatePlaceholderText={text("End Date Placeholder", "Check-out")}
+        startDate={object("Start Date", null)}
+        endDate={object("End Date", null)}
+        lastSelectableDate={object("Last selectable date", moment().add(365, "days"))}
+        noBorder={boolean("noBorder", false)}
+        withFullScreenPortal={boolean("withFullScreenPortal", false)}
+        soldOut={boolean("soldOut", false)}
+        onDatesChange={action(event)}
+        onFocusChange={action(event)}
+      />
+      <DateRangeDeveloperNote />
+    </React.Fragment>
   ))
   .add("Date range - with just startDate selected", () => (
-    <DateRange
-      id="testDateRange"
-      numberOfMonths={number("Number of Months", 1)}
-      startDatePlaceholderText={text("Start Date Placeholder", "Check-in")}
-      endDatePlaceholderText={text("End Date Placeholder", "Check-out")}
-      startDate={object("Start Date", moment().add(1, "days"))}
-      endDate={object("End Date", null)}
-      noBorder={boolean("noBorder", false)}
-      withFullScreenPortal={boolean("withFullScreenPortal", false)}
-      soldOut={boolean("soldOut", false)}
-      onDatesChange={action(event)}
-      onFocusChange={action(event)}
-    />
+    <React.Fragment>
+      <DateRange
+        id="testDateRange"
+        numberOfMonths={number("Number of Months", 1)}
+        startDatePlaceholderText={text("Start Date Placeholder", "Check-in")}
+        endDatePlaceholderText={text("End Date Placeholder", "Check-out")}
+        startDate={object("Start Date", moment().add(1, "days"))}
+        endDate={object("End Date", null)}
+        noBorder={boolean("noBorder", false)}
+        withFullScreenPortal={boolean("withFullScreenPortal", false)}
+        soldOut={boolean("soldOut", false)}
+        onDatesChange={action(event)}
+        onFocusChange={action(event)}
+      />
+      <DateRangeDeveloperNote />
+    </React.Fragment>
   ))
   .add("Date range - with selection", () => (
-    <DateRange
-      id="testDateRange"
-      numberOfMonths={number("Number of Months", 1)}
-      startDatePlaceholderText={text("Start Date Placeholder", "Check-in")}
-      endDatePlaceholderText={text("End Date Placeholder", "Check-out")}
-      startDate={object("Start Date", moment().add(35, "days"))}
-      endDate={object("End Date", moment().add(36, "days"))}
-      noBorder={boolean("noBorder", false)}
-      withFullScreenPortal={boolean("withFullScreenPortal", false)}
-      soldOut={boolean("soldOut", false)}
-      onDatesChange={action(event)}
-      onFocusChange={action(event)}
-    />
+    <React.Fragment>
+      <DateRange
+        id="testDateRange"
+        numberOfMonths={number("Number of Months", 1)}
+        startDatePlaceholderText={text("Start Date Placeholder", "Check-in")}
+        endDatePlaceholderText={text("End Date Placeholder", "Check-out")}
+        startDate={object("Start Date", moment().add(35, "days"))}
+        endDate={object("End Date", moment().add(36, "days"))}
+        noBorder={boolean("noBorder", false)}
+        withFullScreenPortal={boolean("withFullScreenPortal", false)}
+        soldOut={boolean("soldOut", false)}
+        onDatesChange={action(event)}
+        onFocusChange={action(event)}
+      />
+      <DateRangeDeveloperNote />
+    </React.Fragment>
   ))
   .add("Dropdown", () => (
     <Dropdown
